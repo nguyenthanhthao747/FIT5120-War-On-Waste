@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>C&D Waste</title>
+    {% load static %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Raleway:400,700" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+
+    <!--animate css modal-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+
+    <!--Swiper CSS-->
+    <link rel="stylesheet" href="{% static 'dist/css/swiper.min.css'%}">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/business-casual.css'%}" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Title of website -->
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+        <span class="site-heading-upper text-primary mb-3">Construction and Demolition Waste</span>
+        <span class="site-heading-lower">War on Waste</span>
+    </h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none">Construction and
+                Demolition Waste</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{% url 'home'%}">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{% url 'statistics'%}">Statistics</a>
+                    </li>
+                    <!--<li class="nav-item px-lg-4">-->
+                        <!--<a class="nav-link text-uppercase text-expanded" href="dropSite.html">DropSite</a>-->
+                    <!--</li>-->
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{% url 'about'%}">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-section clearfix">
+        <div class="container">
+            <div class="intro">
+                <!-- Image Carousel -->
+                <div class="intro-img img-fluid mb-3 mb-lg-0 rounded">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block img-fluid w-100" src="{% static 'img/homeImage1.jpg'%}" alt="">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid w-100" src="{% static 'img/homeImage2.jpg'%}" alt="">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid w-100" src="{% static 'img/homeImage3.jpg'%}" alt="">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid w-100" src="{% static 'img/homeImage4.jpg'%}" alt="">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid w-100" src="{% static 'img/homeImage5.jpg'%}" alt="">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid w-100" src="{% static 'img/homeImage6.jpg'%}" alt="">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid w-100" src="{% static 'img/homeImage7.jpg'%}" alt="">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!--Description for home page-->
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower">LET'S REDUCE & RECYCLE!</span>
+                    </h2>
+                    <p class="mb-3">Over 71% of the contribution to landfill waste in Australia is from Construction and Demolition waste. With a waste disposal of over 8.5 million tons in Australia nationally, about 55% is the current recovery recycle rate of the C&D waste. But there is much more each and everyone of us can do…
+                    </p>
+                    <!-- <div class="intro-button mx-auto">
+                        <a class="btn btn-primary btn-xl" href="#">Visit Us Today!</a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--<section class="page-section cta">-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-xl-9 mx-auto">-->
+                    <!--<div class="cta-inner text-center rounded">-->
+                        <!--<h2 class="section-heading mb-4">-->
+                            <!--<span class="section-heading-upper">Our Promise</span>-->
+                            <!--<span class="section-heading-lower">To You</span>-->
+                        <!--</h2>-->
+                        <!--<p class="mb-0">When you walk into our shop to start your day, we are dedicated to providing-->
+                            <!--you with friendly service, a welcoming atmosphere, and above all else, excellent products-->
+                            <!--made with the highest quality ingredients. If you are not satisfied, please let us know and-->
+                            <!--we will do whatever we can to make things right!</p>-->
+
+                        <!--<div id="calculator"></div>-->
+
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</section>-->
+
+
+    <section class="page-section cta">
+        <div class="container">
+            <div class="col-xl-10 mx-auto">
+                <div class="cta-inner text-center rounded">
+
+                    <h2 class="section-heading mb-4">
+
+                        <span class="section-heading-lower">Waste Calculator</span>
+                        <h5>Our waste calculator is used for calculate
+                        the waste generated when </h5>
+                    </h2>
+                    <p class="mb-0"></p>
+                    <div class="swiper-container">
+                        <!--add three kinds of building choices-->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide swiper-no-swiping">
+
+                                <img  src="{% static 'img/calculator-residential.jpeg'%}" width="300">
+                                <p class="calculatorDescription">Residential</p>
+                            </div>
+                            <div class="swiper-slide swiper-no-swiping">
+
+                                <img  src="{% static 'img/calculator-hotel.jpeg'%}" width="300">
+                                <p class="calculatorDescription">Hotel</p>
+                            </div>
+                            <div class="swiper-slide swiper-no-swiping">
+
+                                <img  src="{% static 'img/calculator-accommodation.jpeg'%}" width="300">
+                                <p class="calculatorDescription">Student Accommodation</p>
+                            </div>
+                        </div>
+                        <!-- if need navigation button -->
+                        <div class="swiper-button-prev" onclick="prevCalculator()"></div>
+                        <div class="swiper-button-next" onclick="nextCalculator()"></div>
+
+                    </div>
+                    <div class="container col-md-12">
+                        <div id="mainCalculator" class="input-group">
+                            <!--<input type="text" class="form-control" placeholder="please type in square meters" aria-label="Large">-->
+                            <!--<div class="input-group-append">-->
+                                <!--<a id="calculatorModal" class="btn btn-outline-secondary" href="#animatedModal">Calculate</a>-->
+                            <!--</div>-->
+
+                            <input type="number" class="form-control col-lg-3" id="basic-addon1">
+
+                            <input type="number" class="form-control col-lg-3" id="basic-addon2">
+
+                            <input type="number" class="form-control col-lg-3" id="basic-addon3">
+
+                            <div class="input-group-append col-lg-3">
+                                <div class="container">
+                                    <a id="calculatorModal" class="btn btn-outline-secondary" href="#animatedModal">Calculate</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--calculatorModal-->
+    <div id="animatedModal">
+        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
+        <div id="closebt-container" class="close-animatedModal">
+            <img src="https://png.icons8.com/ios/50/000000/cancel.png">
+        </div>
+
+        <div id="modal-container" class="col-sm-8 col-md-8 col-lg-8">
+
+            <!--Your modal content goes here-->
+            <div class="container col-md-10">
+                <div style="text-align: center">You waste these:</div>
+                <div class="row">
+
+
+                    <div class="col-md-4">
+
+                        <div class="wrap">
+                            <div class="box"><img src="{% static 'img/calculator-brick.jpg'%}"/></div>
+
+                        </div>
+
+                        <h4 id="brickWaste" class="displayWaste"></h4>
+
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="wrap">
+                            <div class="box"><img src="{% static 'img/calculator-timber.jpg'%}"/></div>
+
+                        </div>
+
+                        <h4 id="timberWaste" class="displayWaste"></h4>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="wrap">
+                            <div class="box"><img src="{% static 'img/calculator-concrete.jpg'%}"/></div>
+                        </div>
+
+                        <h4 id="concreteWaste" class="displayWaste"></h4>
+
+                    </div>
+                </div>
+            </div>
+
+                    <!--<div class="zoomImage" style="background-image:url(img/calculator-brick.jpg)"></div>-->
+                    <!--<img src="img/calculator-brick.jpg" height="480" width="640"/>-->
+                    <!--<img src="img/calculator-timber.jpg" height="427" width="640"/>-->
+                    <!--<img src="img/calculator-concrete.jpg" height="438" width="640"/>-->
+
+        </div>
+    </div>
+
+    <footer class="footer text-faded text-center py-5">
+        <div class="container">
+            <p class="m-0 small">Copyright &copy; Team Cavaliers 2018</p>
+            <a href="https://icons8.com">Icon pack by Icons8</a>
+        </div>
+    </footer>
+
+    <!--javascript for calculator-->
+    <script src="{% static 'js/calculator.js'%}"></script>
+
+    <script src="{% static 'dist/js/swiper.min.js'%}"></script>
+
+    <script src="{% static 'js/animatedModal.min.js'%}"></script>
+
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+
+            slidesPerView: 3,
+            centeredSlides: true,
+            spaceBetween: 100,
+
+            // need navigation button
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+        })
+    </script>
+
+    <script>
+
+        var indexOfPicture = 0;
+        showCalculator();
+        //console.log(indexOfPicture);
+
+        function prevCalculator() {
+            indexOfPicture -= 1;
+            //console.log(indexOfPicture);
+            showCalculator();
+        }
+
+        function nextCalculator() {
+            indexOfPicture += 1;
+            //console.log(indexOfPicture);
+            showCalculator();
+        }
+
+        function showCalculator() {
+            if (indexOfPicture < 0) {
+                indexOfPicture = 0;
+            } else if (indexOfPicture > 3) {
+                indexOfPicture = 3;
+            } else {
+
+                switch (indexOfPicture) {
+
+                    case 0:
+                        clearInput();
+                        document.getElementById("basic-addon1").placeholder = "One Bedroom";
+
+                        document.getElementById("basic-addon2").placeholder = "Two Bedrooms";
+
+                        document.getElementById("basic-addon3").placeholder = "Three Bedrooms";
+
+                        break;
+
+                    case 1:
+                        clearInput();
+                        document.getElementById("basic-addon1").placeholder = "Hotel rooms";
+
+                        document.getElementById("basic-addon2").placeholder = "Serviced apartments";
+
+                        document.getElementById("basic-addon3").placeholder = "Car parks";
+
+                        break;
+
+                    case 2:
+                        clearInput();
+                        document.getElementById("basic-addon1").placeholder = "Student apartments";
+
+                        document.getElementById("basic-addon2").placeholder = "Student beds";
+
+                        document.getElementById("basic-addon3").placeholder = "Car parks";
+
+                        break;
+                }
+
+            }
+
+        }
+
+        function clearInput() {
+            document.getElementById("basic-addon1").value = "";
+
+            document.getElementById("basic-addon2").value = "";
+
+            document.getElementById("basic-addon3").value = "";
+        }
+
+
+        $("#calculatorModal").animatedModal({
+            modalTarget:'animatedModal',
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#f9f1e6',
+
+            beforeOpen: function () {
+
+            },
+
+            afterOpen: function () {
+                var firstInput = $("#basic-addon1").val();
+                var secondInput = $("#basic-addon2").val();
+                var thirdInput = $("#basic-addon3").val();
+
+                console.log(firstInput,secondInput,thirdInput,indexOfPicture);
+
+                var squareMeter;
+
+                function showNumber(squareMeter) {
+                    $("#brickWaste").text("Brick: " + squareMeter * 0.5 * 0.06 + " T");
+                    $("#timberWaste").text("Timber: " + squareMeter * 0.75 * 0.08 + " T");
+                    $("#concreteWaste").text("Concrete: " + squareMeter * 0.04 + " T");
+                }
+
+
+                if (indexOfPicture < 0) {
+                    indexOfPicture = 0;
+                } else if (indexOfPicture > 3) {
+                    indexOfPicture = 3;
+                } else {
+                    switch (indexOfPicture) {
+                        case 0:
+                            squareMeter = firstInput * 58 + secondInput * 91 + thirdInput * 148;
+                            showNumber(squareMeter);
+
+                            break;
+
+                        case 1:
+                            squareMeter = firstInput * 30.6 + secondInput * 62.6 + thirdInput * 15.7;
+                            showNumber(squareMeter);
+
+                            break;
+
+
+                        case 2:
+                            squareMeter = firstInput * 12 + secondInput * 2.18 + thirdInput * 15.7;
+                            showNumber(squareMeter);
+
+                            break;
+                    }
+                }
+            },
+
+            beforeClose: function () {
+                clearInput();
+            }
+
+        });
+
+    </script>
+</body>
+</html>
