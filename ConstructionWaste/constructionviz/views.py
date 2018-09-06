@@ -14,6 +14,10 @@ import ast # for parsinf list from string list '[13, 12]'
 def home(request):
     return render(request, 'index.html')
 
+#view for search location
+def search_location(request):
+    return render(request, 'searchLocation.html')
+
 #view for statistics page
 def statistics(request):
     return render(request, 'statistics.html')
