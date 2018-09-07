@@ -10,5 +10,6 @@ urlpatterns = [
     path('about', views.about, name='about'),
     path('statistics', views.statistics, name='statistics'),
     path('searchLocation', views.search_location, name='SearchLocation'),
+    path('get_all_locations', views.get_all_locations, name='get_all_locations'),
 
 ]

@@ -164,34 +164,39 @@ pp.post_code, cc.clue_small_area, pp.geometry
         raise Http404('Construction not found')
 
 
-"""
-# old way
 
-    my_test_json_str = '''
-{
-"type":"FeatureCollection",
-"features":[{
-    "type":"Feature",
-    "id":"01",
-    "properties": {
-        "name":"Alabama",
-        "density":94.65
-    },
-    "geometry":{
-        "type":"Polygon",
-        "coordinates":[[
-            [-87.359296,35.00118],[-85.606675,34.984749],[-85.431413,34.124869],[-85.184951,32.859696],[-85.069935,32.580372],
-            [-84.960397,32.421541],[-85.004212,32.322956],[-84.889196,32.262709],[-85.058981,32.13674],[-85.053504,32.01077],
-            [-85.141136,31.840985],[-85.042551,31.539753],[-85.113751,31.27686],[-85.004212,31.003013],[-85.497137,30.997536],
-            [-87.600282,30.997536],[-87.633143,30.86609],[-87.408589,30.674397],[-87.446927,30.510088],[-87.37025,30.427934],
-            [-87.518128,30.280057],[-87.655051,30.247195],[-87.90699,30.411504],[-87.934375,30.657966],[-88.011052,30.685351],
-            [-88.10416,30.499135],[-88.137022,30.318396],[-88.394438,30.367688],[-88.471115,31.895754],[-88.241084,33.796253],
-            [-88.098683,34.891641],[-88.202745,34.995703],[-87.359296,35.00118]
-        ]]
-    }
-}]
-}
-        '''
-    obj = json.loads(my_test_json_str)
+def get_all_locations(request):
 
-"""
+    dict_data = {}
+    dict_data["reuse"] = []
+    dict_data["recycle"] = []
+    dict_data["drop-off"] = []
+
+    try:
+        sql_str = f"""
+        select * from locations
+        """
+
+        cursor = connection.cursor();
+        cursor.execute(sql_str)
+        the_rs = cursor.fetchall()
+
+        for var in the_rs:
+            record = {
+            "name": var[0],
+            "address": var[1],
+            "postcode":var[2]
+            }
+
+            if var[3] == "recycle":
+                print("record")
+                dict_data["recycle"].append(record)
+            if var[3] == "reuse":
+                dict_data["reuse"].append(record)
+            if var[3] == "drop-off":
+                dict_data["drop-off"].append(record)
+
+        return JsonResponse(dict_data, safe=False)
+
+    except Construction.DoesNotExist:
+        raise Http404('Construction not found')
