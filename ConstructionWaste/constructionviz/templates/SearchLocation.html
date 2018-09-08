@@ -17,16 +17,10 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static 'css/business-casual.min.css'%}" rel="stylesheet">
-    <link href="{% static 'css/about.css'%}" rel="stylesheet">
+    <link href="{% static 'css/goomap.css'%}" rel="stylesheet">
 
-    <!--Style for google map-->
-    <style>
-        /* Set the size of the div element that contains the map */
-        #map {
-            height: 400px; /* The height is 400 pixels */
-            width: 100%; /* The width is the width of the web page */
-        }
-    </style>
+    <!--import map js file-->
+    <script src="{% static 'js/goomap.js'%}"></script>
 </head>
 <body>
 <h1 class="site-heading text-center text-white d-none d-lg-block">
@@ -67,32 +61,44 @@
 <section class="page-section cta">
     <div class="container">
         <div class="row">
-            <div class="col-xl-9 mx-auto">
+            <div class="col-xl-12 mx-auto">
                 <div class="cta-inner text-center rounded">
                     <h2 class="section-heading mb-5">
                         <span class="section-heading-upper">Search Drop-off Locations!</span>
                         <!--<span class="section-heading-lower">Search Drop-off Locations!</span>-->
                     </h2>
-                    <div id="map"></div>
-                    <script>
-                        // Initialize and add the map
-                        function initMap() {
-                            // The location of Uluru
-                            var uluru = {lat: -25.344, lng: 131.036};
-                            // The map, centered at Uluru
-                            var map = new google.maps.Map(
-                                document.getElementById('map'), {zoom: 4, center: uluru});
-                            // The marker, positioned at Uluru
-                            var marker = new google.maps.Marker({position: uluru, map: map});
-                        }
-                    </script>
-                    <script async defer
-                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdbpJmI8iKeGH9HNu4BGI2i9AOVlfVyok&callback=initMap">
-                    </script>
+                    <div class="row">
+                        <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
+                            <select id="search_type">
+                                <option value="Sell">Sell</option>
+                                <option value="Recycle">Recycle</option>
+                            </select>
+                            <div id='results-container'>
+                                <table class="table table-hover">
+                                    <tbody>
+                                    <tr class="Sell">
+                                        <td>Clayton Council</td>
+                                    </tr>
+                                    <tr class="Recycle">
+                                        <td>Monash Council</td>
+                                    </tr>
+                                    <tr class="Recycle">
+                                        <td>Caulfield Council</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 col-md-6 col-lg-8 col-xl-9">
+                            <input id="pac-input" class="controls" type="text" placeholder="Search by address">
+                            <div id="map" ></div>
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-I2HyS_JDhn5oAzxhdS85HRa2Mo2COOo&libraries=places&callback=initAutocomplete"
+                                    async defer></script>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </section>
 

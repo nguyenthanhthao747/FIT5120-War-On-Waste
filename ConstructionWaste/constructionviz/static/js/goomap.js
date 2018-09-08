@@ -1,66 +1,68 @@
-﻿//-- This code tells the browser to execute the "Initialize" method only when the complete document model has been loaded.
-    $(document).ready(function () {
-        Initialize();
+﻿function initAutocomplete() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -37.814, lng: 144.96332},
+        zoom: 13,
+        mapTypeId: 'roadmap'
     });
 
-// Where all the fun happens 
-function Initialize() {
+    // Create the search box and link it to the UI element.
+    var input = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(input);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-    // Google has tweaked their interface somewhat - this tells the api to use that new UI
-    google.maps.visualRefresh = true;
-    var Liverpool = new google.maps.LatLng(53.408841, -2.981397);
 
-    // These are options that set initial zoom level, where the map is centered globally to start, and the type of map to show
-    var mapOptions = {
-        zoom: 14,
-        center: Liverpool,
-        mapTypeId: google.maps.MapTypeId.G_NORMAL_MAP
-    };
 
-    // This makes the div with id "map_canvas" a google map
-    var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-
-    // This shows adding a simple pin "marker" - this happens to be the Tate Gallery in Liverpool!
-    var myLatlng = new google.maps.LatLng(53.40091, -2.994464);
-       
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        title: 'Tate Gallery'
+    // Bias the SearchBox results towards current map's viewport.
+    map.addListener('bounds_changed', function () {
+        searchBox.setBounds(map.getBounds());
     });
 
-    // You can make markers different colors...  google it up!
-    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
+    var markers = [];
+    // Listen for the event fired when the user selects a prediction and retrieve
+    // more details for that place.
+    searchBox.addListener('places_changed', function () {
+        var places = searchBox.getPlaces();
+        if (places.length == 0) {
+            return;
+        }
 
-    // a sample list of JSON encoded data of places to visit in Liverpool, UK
-    // you can either make up a JSON list server side, or call it from a controller using JSONResult
-    var data = [
-              { "Id": 1, "PlaceName": "Liverpool Museum", "OpeningHours":"9-5, M-F","GeoLong": "53.410146", "GeoLat": "-2.979919" },
-              { "Id": 2, "PlaceName": "Merseyside Maritime Museum ", "OpeningHours": "9-1,2-5, M-F", "GeoLong": "53.401217", "GeoLat": "-2.993052" },
-              { "Id": 3, "PlaceName": "Walker Art Gallery", "OpeningHours": "9-7, M-F", "GeoLong": "53.409839", "GeoLat": "-2.979447" },
-              { "Id": 4, "PlaceName": "National Conservation Centre", "OpeningHours": "10-6, M-F", "GeoLong": "53.407511", "GeoLat": "-2.984683" }
-    ];
 
-    // Using the JQuery "each" selector to iterate through the JSON list and drop marker pins
-    $.each(data, function (i, item) {
-        var marker = new google.maps.Marker({
-            'position': new google.maps.LatLng(item.GeoLong, item.GeoLat),
-            'map': map,
-            'title': item.PlaceName
+        // Clear out the old markers.
+        markers.forEach(function (marker) {
+            marker.setMap(null);
         });
+        markers = [];
 
-        // Make the marker-pin blue!
-        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png')
+        // For each place, get the icon, name and location.
+        var bounds = new google.maps.LatLngBounds();
+        places.forEach(function (place) {
+            if (!place.geometry) {
+                console.log("Returned place contains no geometry");
+                return;
+            }
+            var icon = {
+                url: place.icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25)
+            };
 
-        // put in some information about each json object - in this case, the opening hours.
-        var infowindow = new google.maps.InfoWindow({
-            content: "<div class='infoDiv'><h2>" + item.PlaceName + "</h2>" + "<div><h4>Opening hours: " + item.OpeningHours + "</h4></div></div>"
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+                map: map,
+                icon: icon,
+                title: place.name,
+                position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+                // Only geocodes have viewport.
+                bounds.union(place.geometry.viewport);
+            } else {
+                bounds.extend(place.geometry.location);
+            }
         });
-
-        // finally hook up an "OnClick" listener to the map so it pops up out info-window when the marker-pin is clicked!
-        google.maps.event.addListener(marker, 'click', function () {
-            infowindow.open(map, marker);
-        });
-
-    })
+        map.fitBounds(bounds);
+    });
 }
