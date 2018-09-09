@@ -202,3 +202,40 @@ def get_all_locations(request):
 
     except Construction.DoesNotExist:
         raise Http404('Construction not found')
+
+def search_locations(request, type, longi, latti):
+    dict_data = {}
+    dict_data["result"] = []
+
+
+    try:
+        sql_str = f"""
+        select *
+        from locations
+        where type = '{type}'
+        order by sqrt(({latti} - lat)*({latti} - lat)+({longi} - long)*({longi}  - long) )
+        fetch first 4 rows only;
+        """
+
+        cursor = connection.cursor();
+        cursor.execute(sql_str)
+        the_rs = cursor.fetchall()
+
+        for var in the_rs:
+            record = {
+            "name": var[0],
+            "address": var[1],
+            "postcode":var[2],
+            "type":var[3],
+            "lat":var[4],
+            "long":var[5]
+            }
+
+
+            dict_data["result"].append(record)
+
+
+        return JsonResponse(dict_data, safe=False)
+
+    except Construction.DoesNotExist:
+        raise Http404('Construction not found')
