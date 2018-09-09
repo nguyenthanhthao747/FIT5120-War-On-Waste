@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30113fc2-7b8b-4d20-b171-af9fe124edda" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/SearchLocation.html" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/SearchLocation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,13 +40,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="772" />
+          <entry key="CSS" value="5" />
+          <entry key="HTML" value="1025" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="772" />
+          <entry key="css" value="5" />
+          <entry key="html" value="1025" />
         </counts>
       </usages-collector>
     </session>
@@ -53,50 +56,23 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html">
+        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2911">
-              <caret line="205" column="33" selection-start-line="205" selection-start-column="33" selection-end-line="205" selection-end-column="33" />
+            <state relative-caret-position="-249">
+              <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
               <folding>
-                <element signature="e#9#15#0" expanded="true" />
-                <element signature="e#24#30#0" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="62" column="25" lean-forward="true" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/SearchLocation.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/about.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
-              <caret line="107" column="73" selection-start-line="107" selection-start-column="73" selection-end-line="107" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4314" />
+            <state relative-caret-position="288">
+              <caret line="266" column="22" lean-forward="true" selection-start-line="266" selection-start-column="22" selection-end-line="266" selection-end-column="22" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -108,9 +84,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html" />
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/about.html" />
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/SearchLocation.html" />
+        <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html" />
+        <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css" />
       </list>
     </option>
   </component>
@@ -155,6 +132,14 @@
               <item name="ConstructionWaste" type="462c0819:PsiDirectoryNode" />
               <item name="constructionviz" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FIT5120-War-On-Waste" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FIT5120-War-On-Waste" type="462c0819:PsiDirectoryNode" />
+              <item name="ConstructionWaste" type="462c0819:PsiDirectoryNode" />
+              <item name="constructionviz" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FIT5120-War-On-Waste" type="b2602c69:ProjectViewProjectNode" />
@@ -251,7 +236,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10227000" />
+    <option name="totallyTimeSpent" value="13026000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -296,11 +281,6 @@
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/dist/css/animate.min.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4314" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="677">
@@ -308,29 +288,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/SearchLocation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2911">
           <caret line="205" column="33" selection-start-line="205" selection-start-column="33" selection-end-line="205" selection-end-column="33" />
-          <folding>
-            <element signature="e#9#15#0" expanded="true" />
-            <element signature="e#24#30#0" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="62" column="25" lean-forward="true" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+        <state relative-caret-position="-249">
+          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/SearchLocation.html">
+    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+        <state relative-caret-position="288">
+          <caret line="266" column="22" lean-forward="true" selection-start-line="266" selection-start-column="22" selection-end-line="266" selection-end-column="22" />
         </state>
       </provider>
     </entry>

@@ -168,8 +168,8 @@
 
 
     <section class="page-section cta">
-        <div class="container">
-            <div class="col-xl-10 mx-auto">
+
+
                 <!--<div class="cta-inner text-center rounded">-->
 
                     <!--<h2 class="section-heading mb-4">-->
@@ -226,14 +226,24 @@
 
 
                 <div data-space-between="10" data-direction="vertical" class="swiper-container">
-                    <div class="swiper-pagination"></div>
+                    <!--<div class="swiper-pagination"></div>-->
                     <div class="swiper-wrapper">
                         <!--the first page for the calculator-->
                         <div class="swiper-slide swiper-no-swiping">
 
-                            <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">Do you want to know how much you waste?</p>
-                            <button type="button" class="btn btn-dark swiper-button-next-customized">go check</button>
+                            <div class="container col-md-10">
+                                <div class="row">
+                                    <p class="ani col-md-3" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="0.5s">Do you</p>
+                                    <p class="ani col-md-3" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1.5s">want to know</p>
+                                    <p class="ani col-md-3" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="2.5s">how much</p>
+                                    <p class="ani col-md-3" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="3.5s">you waste?</p>
 
+                                </div>
+
+
+                                <button type="button" class="btn btn-dark swiper-button-next-customized ani"
+                                    swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="4.5s" style="animation-iteration-count: infinite">go check</button>
+                            </div>
                         </div>
 
                         <div class="swiper-slide swiper-no-swiping chooseConstruction">
@@ -298,8 +308,8 @@
 
 
                 <!--</div>-->
-            </div>
-        </div>
+
+
     </section>
 
 
@@ -393,12 +403,23 @@
 
             on:{
                 init: function(){
-                    swiperAnimateCache(this); //隐藏动画元素
-                    swiperAnimate(this); //初始化完成开始动画
+
+
+
+
+                    //hide animate
+                    swiperAnimateCache(this);
+
+                    //start animate
+
+                    swiperAnimate(this);
+
+
                 },
                 slideChangeTransitionEnd: function(){
-                    swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
-                }
+                    swiperAnimate(this);
+                },
+
             }
         });
         
