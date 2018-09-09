@@ -231,38 +231,42 @@
                         <!--the first page for the calculator-->
                         <div class="swiper-slide swiper-no-swiping">
 
-                            <div class="container col-md-10">
+                            <div class="container" style="margin-top: 50px">
                                 <div class="row">
-                                    <p class="ani col-md-3" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="0.5s">Do you</p>
-                                    <p class="ani col-md-3" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1.5s">want to know</p>
-                                    <p class="ani col-md-3" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="2.5s">how much</p>
-                                    <p class="ani col-md-3" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="3.5s">you waste?</p>
+                                    <p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="0.5s">Do you</p>
+
+                                    <p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1s">want to know</p>
+
+                                    <p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1.5s">how much</p>
+
+                                    <p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="2s">you waste?</p>
 
                                 </div>
 
 
                                 <button type="button" class="btn btn-dark swiper-button-next-customized ani"
-                                    swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="4.5s" style="animation-iteration-count: infinite">go check</button>
+                                    swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="3s" style="animation-iteration-count: infinite">go check</button>
                             </div>
                         </div>
 
-                        <div class="swiper-slide swiper-no-swiping chooseConstruction">
+                        <!--choose the type of construction-->
+                        <div class="swiper-slide swiper-no-swiping">
 
-                            <div>choose type of construction</div>
+                            <!--<div>choose type of construction</div>-->
 
-                            <div class="container">
-                                <div class="row">
-                                    <div>
-                                        <button type="button" class="btn btn-dark swiper-button-next-customized">building</button>
-                                    </div>
-                                    <div>
-                                        <button type="button" class="btn btn-dark" onclick="moveTwoPageAfter()">home</button>
-                                    </div>
+                            <div class="containerForSplitView">
+                                <div class="split left">
+                                    <h1>Builder</h1>
+                                    <button class="btn btn-dark button" onclick="moveOnePageAfter()">Read More</button>
+                                </div>
+                                <div class="split right">
+                                    <h1>Home owner</h1>
+                                    <button class="btn btn-dark button" onclick="moveTwoPageAfter()">Read More</button>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="swiper-slide swiper-no-swiping">
+                        <div class="swiper-slide swiper-no-swiping chooseKindOfBuilding">
                             what kind of building
                             <div class="container">
                                 <div class="row">
@@ -285,6 +289,17 @@
                         </div>
                         <div class="swiper-slide swiper-no-swiping typeInDetailPage">
                             user type in details
+
+
+
+
+
+
+
+
+
+
+
                             <button type="button" class="btn btn-dark swiper-button-next-customized">calculate</button>
 
                         </div>
@@ -389,6 +404,31 @@
 
     <script>
 
+
+        // for the split view on second page
+        const left = document.querySelector(".left");
+        const right = document.querySelector(".right");
+        const container = document.querySelector(".containerForSplitView");
+
+        left.addEventListener("mouseenter", () => {
+            container.classList.add("hover-left");
+        });
+
+        left.addEventListener("mouseleave", () => {
+            container.classList.remove("hover-left");
+        });
+
+        right.addEventListener("mouseenter", () => {
+            container.classList.add("hover-right");
+        });
+
+        right.addEventListener("mouseleave", () => {
+            container.classList.remove("hover-right");
+        });
+
+
+
+
         var swiper = new Swiper ('.swiper-container', {
             direction: 'vertical',
 
@@ -426,6 +466,10 @@
         
         function moveTwoPageAfter() {
             swiper.slideTo( $('.typeInDetailPage').index(),1000,false);
+        }
+
+        function moveOnePageAfter() {
+            swiper.slideTo( $('.chooseKindOfBuilding').index(),1000,false);
         }
 
 
