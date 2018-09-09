@@ -185,7 +185,9 @@ def get_all_locations(request):
             record = {
             "name": var[0],
             "address": var[1],
-            "postcode":var[2]
+            "postcode":var[2],
+            "lat":var[4],
+            "long":var[5]
             }
 
             if var[3] == "recycle":
