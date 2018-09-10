@@ -33,6 +33,15 @@
     <link href="{% static 'dist/css/animate.min.css'%}" rel="stylesheet">
 </head>
 <body>
+    {% if user.is_authenticated %}
+    <nav class="nav justify-content-end text-primary p-1">
+      <!-- <a class="navbar-brand">Navbar</a> -->
+        <span class="float-right">
+          Hi {{ user.username }}! &nbsp;
+          <a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important" href="{% url 'logout' %}">logout</a>
+        </span>
+    </nav>
+    {% endif %}
 
     <!-- Title of website -->
     <h1 class="site-heading text-center text-white d-none d-lg-block">

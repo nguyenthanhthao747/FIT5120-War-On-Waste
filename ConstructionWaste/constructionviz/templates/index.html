@@ -33,15 +33,15 @@
 
 </head>
 <body>
-{% if user.is_authenticated %}
-<nav class="nav justify-content-end text-primary p-1">
-  <!-- <a class="navbar-brand">Navbar</a> -->
-    <span class="float-right">
-      Hi {{ user.username }}! &nbsp;
-      <a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important" href="{% url 'logout' %}">logout</a>
-    </span>
-</nav>
-{% endif %}
+    {% if user.is_authenticated %}
+    <nav class="nav justify-content-end text-primary p-1">
+      <!-- <a class="navbar-brand">Navbar</a> -->
+        <span class="float-right">
+          Hi {{ user.username }}! &nbsp;
+          <a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important" href="{% url 'logout' %}">logout</a>
+        </span>
+    </nav>
+    {% endif %}
 
     <!-- Title of website -->
     <h1 class="site-heading text-center text-white d-none d-lg-block">
@@ -309,63 +309,6 @@
 
     </section>
 
-
-
-    <!--calculatorModal-->
-    <!--useless for now-->
-    <!--<div id="animatedModal">-->
-    <!--&lt;!&ndash;THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" &ndash;&gt;-->
-    <!--<div id="closebt-container" class="close-animatedModal">-->
-    <!--<img src="https://png.icons8.com/ios/50/000000/cancel.png">-->
-    <!--</div>-->
-
-    <!--<div id="modal-container" class="col-sm-8 col-md-8 col-lg-8">-->
-
-    <!--&lt;!&ndash;Your modal content goes here&ndash;&gt;-->
-    <!--<div class="container col-md-10">-->
-    <!--<div style="text-align: center">You waste these:</div>-->
-    <!--<div class="row">-->
-
-
-    <!--<div class="col-md-4">-->
-
-    <!--<div class="wrap">-->
-    <!--<div class="box"><img src="{% static 'img/calculator-brick.jpg'%}"/></div>-->
-
-    <!--</div>-->
-
-    <!--<h4 id="brickWaste" class="displayWaste"></h4>-->
-
-    <!--</div>-->
-    <!--<div class="col-md-4">-->
-
-    <!--<div class="wrap">-->
-    <!--<div class="box"><img src="{% static 'img/calculator-timber.jpg'%}"/></div>-->
-
-    <!--</div>-->
-
-    <!--<h4 id="timberWaste" class="displayWaste"></h4>-->
-
-    <!--</div>-->
-    <!--<div class="col-md-4">-->
-    <!--<div class="wrap">-->
-    <!--<div class="box"><img src="{% static 'img/calculator-concrete.jpg'%}"/></div>-->
-    <!--</div>-->
-
-    <!--<h4 id="concreteWaste" class="displayWaste"></h4>-->
-
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--&lt;!&ndash;<div class="zoomImage" style="background-image:url(img/calculator-brick.jpg)"></div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<img src="img/calculator-brick.jpg" height="480" width="640"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;<img src="img/calculator-timber.jpg" height="427" width="640"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;<img src="img/calculator-concrete.jpg" height="438" width="640"/>&ndash;&gt;-->
-
-    <!--</div>-->
-    <!--</div>-->
-
     <footer class="footer text-faded text-center py-5">
         <div class="container">
             <p class="m-0 small">Copyright &copy; Team Cavaliers 2018</p>
@@ -418,10 +361,6 @@
 
         //for the fourth page
 
-
-
-
-
         var swiper = new Swiper ('.swiper-container', {
             direction: 'vertical',
 
@@ -457,136 +396,6 @@
         function moveOnePageAfter() {
             swiper.slideTo( $('.chooseKindOfBuilding').index(),1000,false);
         }
-
-
-        // var indexOfPicture = 0;
-        // showCalculator();
-        // //console.log(indexOfPicture);
-        //
-        // function prevCalculator() {
-        //     indexOfPicture -= 1;
-        //     //console.log(indexOfPicture);
-        //     showCalculator();
-        // }
-        //
-        // function nextCalculator() {
-        //     indexOfPicture += 1;
-        //     //console.log(indexOfPicture);
-        //     showCalculator();
-        // }
-        //
-        // function showCalculator() {
-        //     if (indexOfPicture < 0) {
-        //         indexOfPicture = 0;
-        //     } else if (indexOfPicture > 3) {
-        //         indexOfPicture = 3;
-        //     } else {
-        //
-        //         switch (indexOfPicture) {
-        //
-        //             case 0:
-        //                 clearInput();
-        //                 document.getElementById("basic-addon1").placeholder = "1-apartment";
-        //
-        //                 document.getElementById("basic-addon2").placeholder = "2-apartment";
-        //
-        //                 document.getElementById("basic-addon3").placeholder = "3-apartment";
-        //
-        //                 break;
-        //
-        //             case 1:
-        //                 clearInput();
-        //                 document.getElementById("basic-addon1").placeholder = "Hotel rooms";
-        //
-        //                 document.getElementById("basic-addon2").placeholder = "Serviced apartments";
-        //
-        //                 document.getElementById("basic-addon3").placeholder = "Car parks";
-        //
-        //                 break;
-        //
-        //             case 2:
-        //                 clearInput();
-        //                 document.getElementById("basic-addon1").placeholder = "Student apartments";
-        //
-        //                 document.getElementById("basic-addon2").placeholder = "Student beds";
-        //
-        //                 document.getElementById("basic-addon3").placeholder = "Car parks";
-        //
-        //                 break;
-        //         }
-        //
-        //     }
-        //
-        // }
-        //
-        // function clearInput() {
-        //     document.getElementById("basic-addon1").value = "";
-        //
-        //     document.getElementById("basic-addon2").value = "";
-        //
-        //     document.getElementById("basic-addon3").value = "";
-        // }
-        //
-        //
-        // $("#calculatorModal").animatedModal({
-        //     modalTarget:'animatedModal',
-        //     animatedIn: 'zoomIn',
-        //     animatedOut: 'bounceOut',
-        //     color: '#f9f1e6',
-        //
-        //     beforeOpen: function () {
-        //
-        //     },
-        //
-        //     afterOpen: function () {
-        //         var firstInput = $("#basic-addon1").val();
-        //         var secondInput = $("#basic-addon2").val();
-        //         var thirdInput = $("#basic-addon3").val();
-        //
-        //         console.log(firstInput,secondInput,thirdInput,indexOfPicture);
-        //
-        //         var squareMeter;
-        //
-        //         function showNumber(squareMeter) {
-        //             $("#brickWaste").text("Brick: " + squareMeter * 0.5 * 0.06 + " T");
-        //             $("#timberWaste").text("Timber: " + squareMeter * 0.75 * 0.08 + " T");
-        //             $("#concreteWaste").text("Concrete: " + squareMeter * 0.04 + " T");
-        //         }
-        //
-        //
-        //         if (indexOfPicture < 0) {
-        //             indexOfPicture = 0;
-        //         } else if (indexOfPicture > 3) {
-        //             indexOfPicture = 3;
-        //         } else {
-        //             switch (indexOfPicture) {
-        //                 case 0:
-        //                     squareMeter = firstInput * 58 + secondInput * 91 + thirdInput * 148;
-        //                     showNumber(squareMeter);
-        //
-        //                     break;
-        //
-        //                 case 1:
-        //                     squareMeter = firstInput * 30.6 + secondInput * 62.6 + thirdInput * 15.7;
-        //                     showNumber(squareMeter);
-        //
-        //                     break;
-        //
-        //
-        //                 case 2:
-        //                     squareMeter = firstInput * 12 + secondInput * 2.18 + thirdInput * 15.7;
-        //                     showNumber(squareMeter);
-        //
-        //                     break;
-        //             }
-        //         }
-        //     },
-        //
-        //     beforeClose: function () {
-        //         clearInput();
-        //     }
-        //
-        // });
 
     </script>
 </body>
