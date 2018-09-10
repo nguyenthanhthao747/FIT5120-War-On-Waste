@@ -26,6 +26,9 @@ def statistics(request):
 def about(request):
     return render(request, 'about.html')
 
+def waste_calculator(request):
+    return render(request, 'WasteCalculator.html')
+
 #view for test the website
 def test_json(request):
 
