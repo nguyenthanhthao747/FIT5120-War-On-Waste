@@ -104,21 +104,21 @@ def get_json_data(request, year):
 
     try:
         sql_str = f"""
-    SELECT
-	pp.post_code,
-    cc.clue_small_area,
-    pp.geometry,
-	(
-		SUM(studio_dwe)* 362 + SUM(one_bdrm_dwe)* 625 + SUM(two_bdrm_dwe)* 937 + SUM(three_bdrm_dwe)* 1114 +(
-			SUM(resi_dwellings)- SUM(studio_dwe)- SUM(one_bdrm_dwe)- SUM(two_bdrm_dwe)- SUM(three_bdrm_dwe)
-		)* 1012 + SUM(student_apartments)* 1012 + SUM(student_beds)* 1012 + SUM(intitutional_accom_beds)* 1012 + SUM(hotel_rooms)* 1012 + SUM(serviced_apartments)* 1012 + SUM(hostel_beds)* 1012 + SUM(childcare_places)* 1012 + SUM(office_flr * floors_above)+ SUM(retail_flr * floors_above)+ SUM(industrial_flr * floors_above)+ SUM(storage_flr * floors_above)+ SUM(education_flr * floors_above)+ SUM(hospital_flr * floors_above)+ SUM(recreation_flr * floors_above)+ SUM(publicdispaly_flr * floors_above)+ SUM(publicdispaly_flr * floors_above)+ SUM(community_flr * floors_above)+ SUM(car_spaces)* 17
-	) * 7.05 AS construction_size
-FROM
-	processed_postcode_geo pp
-right JOIN constructionviz_construction cc ON pp.post_code = cc.postcode
-where year_completed = {year}
-GROUP BY
-pp.post_code, cc.clue_small_area, pp.geometry
+        SELECT
+    	pp.post_code,
+        cc.clue_small_area,
+        pp.geometry,
+    	(
+    		SUM(studio_dwe)* 362 + SUM(one_bdrm_dwe)* 625 + SUM(two_bdrm_dwe)* 937 + SUM(three_bdrm_dwe)* 1114 +(
+    			SUM(resi_dwellings)- SUM(studio_dwe)- SUM(one_bdrm_dwe)- SUM(two_bdrm_dwe)- SUM(three_bdrm_dwe)
+    		)* 1012 + SUM(student_apartments)* 1012 + SUM(student_beds)* 1012 + SUM(intitutional_accom_beds)* 1012 + SUM(hotel_rooms)* 1012 + SUM(serviced_apartments)* 1012 + SUM(hostel_beds)* 1012 + SUM(childcare_places)* 1012 + SUM(office_flr * floors_above)+ SUM(retail_flr * floors_above)+ SUM(industrial_flr * floors_above)+ SUM(storage_flr * floors_above)+ SUM(education_flr * floors_above)+ SUM(hospital_flr * floors_above)+ SUM(recreation_flr * floors_above)+ SUM(publicdispaly_flr * floors_above)+ SUM(publicdispaly_flr * floors_above)+ SUM(community_flr * floors_above)+ SUM(car_spaces)* 17
+    	) * 7.05 AS construction_size
+        FROM
+        	processed_postcode_geo pp
+        right JOIN constructionviz_construction cc ON pp.post_code = cc.postcode
+        where year_completed = {year}
+        GROUP BY
+        pp.post_code, cc.clue_small_area, pp.geometry
         """
 
         cursor = connection.cursor();
