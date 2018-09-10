@@ -137,6 +137,8 @@ STATICFILES_DIRS = [
 
 # my_project/settings.py
 LOGIN_REDIRECT_URL = '/constructionviz'
+LOGOUT_REDIRECT_URL = '/accounts/login'
+
 
 ACCOUNT_FORMS = {
     'login': 'users.forms.LoginFormWithoutAutofocus'
