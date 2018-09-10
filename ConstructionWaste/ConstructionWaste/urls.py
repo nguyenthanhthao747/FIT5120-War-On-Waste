@@ -5,6 +5,7 @@ from constructionviz import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('constructionviz/', include('constructionviz.urls'))
+    path('constructionviz/', include('constructionviz.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     
 ]

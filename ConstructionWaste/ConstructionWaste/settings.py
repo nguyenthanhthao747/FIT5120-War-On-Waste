@@ -55,7 +55,7 @@ ROOT_URLCONF = 'ConstructionWaste.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,3 +134,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# my_project/settings.py
+LOGIN_REDIRECT_URL = '/constructionviz'
+
+ACCOUNT_FORMS = {
+    'login': 'users.forms.LoginFormWithoutAutofocus'
+}

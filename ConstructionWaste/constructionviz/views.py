@@ -5,31 +5,38 @@ from django.http import JsonResponse
 from django.core import serializers
 from django.db import connection
 from django.http import Http404
-
+from django.contrib.auth.decorators import login_required
 
 import json
 import ast # for parsinf list from string list '[13, 12]'
 
 #view for home page
+@login_required
 def home(request):
     return render(request, 'index.html')
 
 #view for search location
+@login_required
 def search_location(request):
     return render(request, 'searchLocation.html')
 
 #view for statistics page
+@login_required
 def statistics(request):
     return render(request, 'statistics.html')
 
 #view for about page
+@login_required
 def about(request):
     return render(request, 'about.html')
 
+#view for calculator
+@login_required
 def waste_calculator(request):
     return render(request, 'WasteCalculator.html')
 
 #view for test the website
+@login_required
 def test_json(request):
 
     dict_obect = {}
@@ -37,6 +44,7 @@ def test_json(request):
     dict_obect["test_object"] = "Hello World"
     return render(request, 'home.html', {'object': dict_obect})
 
+@login_required
 def detail(request, area):
     try:
         sql_str = f"""select year_completed,
@@ -98,7 +106,8 @@ def detail(request, area):
         raise Http404('Construction not found')
     #return render(request, 'pet_detail.html', {'construction': construction})
 
-
+#function to get the data for map chart
+@login_required
 def get_json_data(request, year):
 
     dict_data = {}
@@ -167,7 +176,8 @@ def get_json_data(request, year):
         raise Http404('Construction not found')
 
 
-
+#function to get all the location for search page
+@login_required
 def get_all_locations(request):
 
     dict_data = {}
@@ -206,11 +216,11 @@ def get_all_locations(request):
     except Construction.DoesNotExist:
         raise Http404('Construction not found')
 
+#function to search locations
+@login_required
 def search_locations(request, type, longi, latti):
     dict_data = {}
     dict_data["result"] = []
-
-
     try:
         sql_str = f"""
         select *
@@ -219,7 +229,6 @@ def search_locations(request, type, longi, latti):
         order by sqrt(({latti} - lat)*({latti} - lat)+({longi} - long)*({longi}  - long) )
         fetch first 4 rows only;
         """
-
         cursor = connection.cursor();
         cursor.execute(sql_str)
         the_rs = cursor.fetchall()
@@ -233,11 +242,7 @@ def search_locations(request, type, longi, latti):
             "lat":var[4],
             "long":var[5]
             }
-
-
             dict_data["result"].append(record)
-
-
         return JsonResponse(dict_data, safe=False)
 
     except Construction.DoesNotExist:
