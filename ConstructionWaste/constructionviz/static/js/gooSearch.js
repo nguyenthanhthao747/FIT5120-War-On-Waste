@@ -4,6 +4,9 @@ var autocomplete;
 var countryRestrict = {'country': 'au'};
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
 var hostnameRegexp = new RegExp('^https?://.+?/');
+var DATA = {};
+var lat = {};
+var long = {};
 
 var countries = {
     'au': {
@@ -34,8 +37,17 @@ function initMap() {
     autocomplete.addListener('place_changed', onPlaceChanged);
 
     // Add a DOM event listener to react when the user selects a country.
-    document.getElementById('country').addEventListener(
-        'change', setAutocompleteCountry);
+    // document.getElementById('country').addEventListener(
+    //     'change', setAutocompleteCountry);
+
+    $.ajax({
+        url: "./get_all_locations",
+        success: function(the_json){
+
+            console.log(the_json);
+
+        }
+    });
 }
 
 // When the user input address, get the place details for the address and
@@ -51,22 +63,17 @@ function onPlaceChanged() {
     }
 }
 
-var lat = {};
-var long = {};
-var location = {};
-var name = {};
-var contentString = {};
+// var lat = {};
+// var long = {};
+// var location = {};
+// var name = {};
+// var contentString = {};
+
 
 
 //add markers to the map
-// function onload_map() {
-//     $.ajax({
-//         url: "./get_all_locations",
-//         success: function (location_json) {
-//             DATA = location_json;
-//             console.log(location_json)
-//         }
-//     });
+function onload_map() {
+
 //
 //     var infowindow = new google.maps.InfoWindow({
 //         content: contentString
@@ -80,4 +87,4 @@ var contentString = {};
 //     marker.addListener('click', function() {
 //         infowindow.open(map, marker);
 //     });
-// };
+};
