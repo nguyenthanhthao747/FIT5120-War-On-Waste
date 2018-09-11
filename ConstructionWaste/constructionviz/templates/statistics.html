@@ -136,7 +136,7 @@
 
                 info.update = function (props) {
                   this._div.innerHTML = '<h4>Choropleth Map</h4>' +  (props ?
-                    '<b>' + props.name + '</b><br />' + props.density + ' tones'
+                    '<b>' + props.name + '</b><br />' + props.density + ' thousand tonnes'
                     : 'Hover over a suburd');
                 };
 
@@ -145,13 +145,13 @@
 
                 // get color depending on population density value
                 function getColor(d) {
-                  return d > 2500000 ? '#800026' :
-                      d > 20000000  ? '#BD0026' :
-                      d > 10000000  ? '#E31A1C' :
-                      d > 1500000  ? '#FC4E2A' :
-                      d > 1000000   ? '#FD8D3C' :
-                      d > 150000   ? '#FEB24C' :
-                      d > 100000   ? '#FED976' :
+                  return d > 25000 ? '#800026' :
+                      d > 20000  ? '#BD0026' :
+                      d > 10000  ? '#E31A1C' :
+                      d > 1500  ? '#FC4E2A' :
+                      d > 1000   ? '#FD8D3C' :
+                      d > 150   ? '#FEB24C' :
+                      d > 100   ? '#FED976' :
                             '#FFEDA0';
                 }
 
@@ -230,7 +230,7 @@
 
                 legend.onAdd = function (map) {
                   var div = L.DomUtil.create('div', 'info legend'),
-                    grades = [0, 100000, 150000, 1000000, 1500000, 10000000, 20000000, 2500000],
+                    grades = [0, 100, 150, 1000, 1500, 10000, 20000, 25000],
                     labels = [],
                     from, to;
 
@@ -254,7 +254,7 @@
                 <div id="mapSection" class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"></div>
                 <div class="product-item-description d-flex mr-auto">
                     <div class="bg-faded p-5 rounded">
-                        <p class="mb-0">The map illustrates how much Melbourne constructions waste in tones in term of timmbers, bricks, plaster boards, tiles and concretes</p>
+                        <p class="mb-0">The map illustrates how much Melbourne constructions waste in thousand tonnes in term of timmbers, bricks, plaster boards, tiles and concretes</p>
                     </div>
                 </div>
             </div>

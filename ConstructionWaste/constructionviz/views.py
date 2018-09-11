@@ -147,7 +147,7 @@ def get_json_data(request, year):
             post_codes.append(var[0])
             post_codes_names.append(var[1])
             geometry.append(var[2])
-            construction_size.append(var[3])
+            construction_size.append(round(var[3]/1000,2))
 
 
 
