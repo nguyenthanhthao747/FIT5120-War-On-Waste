@@ -36,13 +36,38 @@ function initMap() {
     onload_map();
 }
 
+
+//add data table
+jQuery(document).ready(function() {
+    $('#example').DataTable( {
+        initComplete: function () {
+            this.api().columns().every( function () {
+                var column = this;
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo( $(column.footer()).empty() )
+                    .on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
+                            .draw();
+                    } );
+                column.data().unique().sort().each( function ( d, j ) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                } );
+            } );
+        }
+    } );
+} );
+
 // When the user input address, get the place details for the address and
 // zoom the map.
 function onPlaceChanged() {
     var place = autocomplete.getPlace();
     if (place.geometry) {
         map.panTo(place.geometry.location);
-        map.setZoom(15);
+        map.setZoom(13);
     } else {
         document.getElementById('autocomplete').placeholder = 'Search by address';
     }

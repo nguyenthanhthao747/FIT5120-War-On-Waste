@@ -18,8 +18,11 @@
     <!-- Custom styles for this template -->
     <link href="{% static 'css/business-casual.min.css'%}" rel="stylesheet">
     <link href="{% static 'css/goomap.css'%}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
 
     <!--import map js file-->
+    <script src="{% static 'jquery/jquery.min.js'%}"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="{% static 'js/gooSearch.js'%}"></script>
 </head>
 <body>
@@ -81,28 +84,48 @@
                         <!--<span class="section-heading-lower">Search Drop-off Locations!</span>-->
                     </h2>
                     <div class="row">
-                        <div class="col-sm-3 col-md-6 col-lg-4 col-xl-3">
-                            <select id="search_type">
-                                <option value="Sell">Sell</option>
-                                <option value="Recycle">Recycle</option>
-                            </select>
-                            <div id='results-container'>
-                                <table class="table table-hover">
-                                    <tbody>
-                                    <tr class="Sell">
-                                        <td>Clayton Council</td>
-                                    </tr>
-                                    <tr class="Recycle">
-                                        <td>Monash Council</td>
-                                    </tr>
-                                    <tr class="Recycle">
-                                        <td>Caulfield Council</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="col-sm-3 col-md-6 col-lg-4 col-xl-5">
+                            <table id="example" class="display" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Postcode</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>reuse</td>
+                                    <td>a</td>
+                                    <td>add</td>
+                                    <td>1222</td>
+                                </tr>
+                                <tr>
+                                    <td>reuse</td>
+                                    <td>b</td>
+                                    <td>ad</td>
+                                    <td>3212</td>
+                                </tr>
+                                <tr>
+                                    <td>recycle</td>
+                                    <td>c</td>
+                                    <td>ff</td>
+                                    <td>3212</td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Postcode</th>
+
+                                </tr>
+                                </tfoot>
+                            </table>
                         </div>
-                        <div class="col-sm-9 col-md-6 col-lg-8 col-xl-9">
+                        <div class="col-sm-9 col-md-6 col-lg-8 col-xl-7">
                             <!--<input id="pac-input" class="controls" type="text" placeholder="Search by address">-->
                             <!--<div id="map" ></div>-->
 
@@ -140,7 +163,6 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="{% static 'jquery/jquery.min.js'%}"></script>
 <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
 
 
