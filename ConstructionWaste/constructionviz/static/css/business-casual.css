@@ -258,7 +258,7 @@ p {
   width: 80%;
   height: 500px;
   border-radius: 15px;
-  opacity: 0.9;
+
 }
 
 .firstPageTitle {
@@ -963,6 +963,7 @@ card:last-child { margin-bottom: 0; }
   background-position: center;
   background-image:url('https://source.unsplash.com/5IiH_UVYdp0');
   /*background-image:url('https://source.unsplash.com/aOYA7D3fse8');*/
+  opacity: 0.8;
 
 }
 
