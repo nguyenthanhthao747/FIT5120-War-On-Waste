@@ -375,7 +375,7 @@
 
         //for the fourth page
 
-
+        let squareMeter;
 
         const button = document.querySelector('.btnForCalculator');
         const form   = document.querySelector('.form');
@@ -383,14 +383,35 @@
         button.addEventListener('click', function() {
             form.classList.add('form--no');
 
-            let detailBox1 = $('#detailBox1');
-            let detailBox2 = $('#detailBox2');
-            let detailBox3 = $('#detailBox3');
-            let detailBox4 = $('#detailBox4');
-
-            console.log(detailBox1.val());
+            let detailBox1 = $('#detailBox1').val();
+            let detailBox2 = $('#detailBox2').val();
+            let detailBox3 = $('#detailBox3').val();
+            let detailBox4 = $('#detailBox4').val();
 
 
+
+            switch (numberOfBuildingType) {
+                case 0:
+
+
+                    break;
+                case "1":
+
+                    break;
+                case "2":
+                    squareMeter = detailBox1 * 30.6 + detailBox2 * 62.6 + detailBox4 * 15.7;
+                    break;
+                case "3":
+                    squareMeter = detailBox1 * 12 + detailBox2 * 2.18 + detailBox4 * 15.7;
+                    break;
+                case "4":
+                    squareMeter = detailBox1 * 58 + detailBox2 * 91 + detailBox3 * 148 + detailBox4 * 15.7;
+                    break;
+
+
+            }
+
+            console.log(squareMeter);
 
 
 
