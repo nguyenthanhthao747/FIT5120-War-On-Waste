@@ -15,20 +15,54 @@
     <script src="{% static 'jquery/jquery.min.js'%}"></script>
     <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
 
-    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'lib/ionicons/css/ionicons.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/magnific-popup/magnific-popup.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/hover/hover.min.css'%}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+    <!-- Responsive css -->
+    <link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+
+
+    <!-- Custom fonts for this template -->
+    <!--<link href="https://fonts.googleapis.com/css?family=Lora:400,700|Raleway:400,700" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i"
+          rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+
+    <!--animate css modal-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+
+    <!--Swiper CSS-->
+    <link rel="stylesheet" href="{% static 'dist/css/swiper.min.css'%}">
+
+    <!--css file from animate js-->
+    <link href="{% static 'dist/css/animate.min.css'%}" rel="stylesheet">
+
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+            integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+            crossorigin=""></script>
+    <!--<script src="{ % static 'js/mapVisual.js'%}"></script>-->
+
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Raleway:400,700" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
-    <link href="{% static 'css/business-casual.min.css'%}" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
-
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
 
     <style>
-        canvas{
+        canvas {
             -moz-user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
@@ -36,244 +70,267 @@
     </style>
 
     <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-      }
-      #map {
-        width: 600px;
-        height: 400px;
-      }
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #map {
+            width: 600px;
+            height: 400px;
+        }
     </style>
 
-  <style>#map { width: 800px; height: 500px; }
-  .info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
-  .legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }</style>
+    <style>
+        #map {
+            width: 800px;
+            height: 500px;
+        }
+
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .info h4 {
+            margin: 0 0 5px;
+            color: #777;
+        }
+
+        .legend {
+            text-align: left;
+            line-height: 18px;
+            color: #555;
+        }
+
+        .legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        }</style>
 </head>
 <body>
-    {% if user.is_authenticated %}
-    <nav class="nav justify-content-end text-primary p-1">
-      <!-- <a class="navbar-brand">Navbar</a> -->
-        <span class="float-right">
+{% if user.is_authenticated %}
+<nav class="nav justify-content-end text-primary p-1">
+    <!-- <a class="navbar-brand">Navbar</a> -->
+    <span class="float-right">
           Hi {{ user.username }}! &nbsp;
-          <a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important" href="{% url 'logout' %}">logout</a>
+          <a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important"
+             href="{% url 'logout' %}">logout</a>
         </span>
-    </nav>
-    {% endif %}
+</nav>
+{% endif %}
 
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
-        <span class="site-heading-upper text-primary mb-3">Construction and Demolition Waste</span>
-        <!-- <span class="site-heading-lower">War on Waste</span> -->
-    </h1>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+<!-- start section navbar -->
+<nav id="main-nav">
+    <div class="row">
         <div class="container">
-            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Construction and Demolition Waste</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'home'%}">Home</a>
-                    </li>
-                    <li class="nav-item active px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'statistics'%}">Statistics
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'WasteCalculator'%}">Calculator</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'SearchLocation'%}">Search</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'about'%}">About</a>
-                    </li>
-                </ul>
-            </div>
+            <!--<div class="logo">-->
+            <!--<a href="index.html"><img src="{% static 'images/logo.png'%}" alt="logo"></a>-->
+            <!--</div>-->
+
+            <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+            <ul class="nav-menu list-unstyled">
+                <li>
+                    <a class="smoothScroll" href="{% url 'home'%}">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li><a class="smoothScroll" href="{% url 'statistics'%}">Statistics</a></li>
+                <li><a class="smoothScroll" href="{% url 'WasteCalculator'%}">Calculator</a></li>
+                <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Search</a></li>
+                <li><a class="smoothScroll" href="{% url 'about'%}">About</a></li>
+            </ul>
         </div>
-    </nav>
-
-    <section  class="page-section">
-        <div class="container">
-            <div class="product-item">
-                <div class="product-item-title d-flex">
-                    <div class="bg-faded p-5 d-flex ml-auto rounded">
-                        <h2 class="section-heading mb-0">
-                            <span class="section-heading-upper">Melbourne Con Struction Waste</span>
-                            <span class="section-heading-lower">2018</span>
-                        </h2>
-                    </div>
-                </div>
-
-              <div id='map'></div>
-
-              {% load static %}
-
-              <script type="text/javascript">
-
-                var map = L.map('map').setView(['-37.819505', '144.959863'], 13);
-
-                L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidG5ndTAwMTUiLCJhIjoiY2psZDc4emJuMDg5cjNwcDExbXBlMjlwaSJ9._eL7VaMuTYJJzFct2p34Mw', {
-                  maxZoom: 25,
-                  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                  id: 'mapbox.light'
-                }).addTo(map);
+    </div>
+</nav>
+<!-- End section navbar -->
 
 
-                // control that shows state info on hover
-                var info = L.control();
+<!-- start section map visual -->
+<div id= "about" class="paddsection" style="padding-top: 120px">
+    <div class="container">
+        <div class="row justify-content-between">
 
-                info.onAdd = function (map) {
-                  this._div = L.DomUtil.create('div', 'info');
-                  this.update();
-                  return this._div;
-                };
+            <div class="col-lg-8 ">
+                <div class="div-img-bg">
+                    <div class="about-img">
+                        <!--<img src="images/me.jpg" class="img-responsive" alt="me">-->
+                        <div id='map' class="img-responsive" alt="me" style="width: auto"></div>
+                        <script type="text/javascript">
+                            var map = L.map('map').setView(['-37.819505', '144.959863'], 13);
 
-                info.update = function (props) {
-                  this._div.innerHTML = '<h4>Choropleth Map</h4>' +  (props ?
-                    '<b>' + props.name + '</b><br />' + props.density + ' thousand tonnes'
-                    : 'Hover over a suburd');
-                };
+                            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidG5ndTAwMTUiLCJhIjoiY2psZDc4emJuMDg5cjNwcDExbXBlMjlwaSJ9._eL7VaMuTYJJzFct2p34Mw', {
+                                maxZoom: 25,
+                                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                                    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                                id: 'mapbox.light'
+                            }).addTo(map);
 
-                info.addTo(map);
+
+                            // control that shows state info on hover
+                            var info = L.control();
+
+                            info.onAdd = function (map) {
+                                this._div = L.DomUtil.create('div', 'info');
+                                this.update();
+                                return this._div;
+                            };
+
+                            info.update = function (props) {
+                                this._div.innerHTML = '<h4>Choropleth Map</h4>' +  (props ?
+                                    '<b>' + props.name + '</b><br />' + props.density + ' thousand tonnes'
+                                    : 'Hover over a suburd');
+                            };
+
+                            info.addTo(map);
 
 
-                // get color depending on population density value
-                function getColor(d) {
-                  return d > 25000 ? '#800026' :
-                      d > 20000  ? '#BD0026' :
-                      d > 10000  ? '#E31A1C' :
-                      d > 1500  ? '#FC4E2A' :
-                      d > 1000   ? '#FD8D3C' :
-                      d > 150   ? '#FEB24C' :
-                      d > 100   ? '#FED976' :
-                            '#FFEDA0';
-                }
+                            // get color depending on population density value
+                            function getColor(d) {
+                                return d > 25000 ? '#800026' :
+                                    d > 20000  ? '#BD0026' :
+                                        d > 10000  ? '#E31A1C' :
+                                            d > 1500  ? '#FC4E2A' :
+                                                d > 1000   ? '#FD8D3C' :
+                                                    d > 150   ? '#FEB24C' :
+                                                        d > 100   ? '#FED976' :
+                                                            '#FFEDA0';
+                            }
 
-                function style(feature) {
-                  return {
-                    weight: 2,
-                    opacity: 1,
-                    color: 'white',
-                    dashArray: '3',
-                    fillOpacity: 0.7,
-                    fillColor: getColor(feature.properties.density)
-                  };
-                }
+                            function style(feature) {
+                                return {
+                                    weight: 2,
+                                    opacity: 1,
+                                    color: 'white',
+                                    dashArray: '3',
+                                    fillOpacity: 0.7,
+                                    fillColor: getColor(feature.properties.density)
+                                };
+                            }
 
-                function highlightFeature(e) {
-                  var layer = e.target;
+                            function highlightFeature(e) {
+                                var layer = e.target;
 
-                  layer.setStyle({
-                    weight: 5,
-                    color: '#666',
-                    dashArray: '',
-                    fillOpacity: 0.7
-                  });
+                                layer.setStyle({
+                                    weight: 5,
+                                    color: '#666',
+                                    dashArray: '',
+                                    fillOpacity: 0.7
+                                });
 
-                  if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-                    layer.bringToFront();
-                  }
+                                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                                    layer.bringToFront();
+                                }
 
-                  info.update(layer.feature.properties);
-                }
+                                info.update(layer.feature.properties);
+                            }
 
-                var geojson;
+                            var geojson;
 
-                function resetHighlight(e) {
-                  geojson.resetStyle(e.target);
-                  info.update();
-                }
+                            function resetHighlight(e) {
+                                geojson.resetStyle(e.target);
+                                info.update();
+                            }
 
-                function zoomToFeature(e) {
-                  map.fitBounds(e.target.getBounds());
-                }
+                            function zoomToFeature(e) {
+                                map.fitBounds(e.target.getBounds());
+                            }
 
-                function onEachFeature(feature, layer) {
-                  layer.on({
-                    mouseover: highlightFeature,
-                    mouseout: resetHighlight,
-                    click: zoomToFeature
-                  });
-                }
+                            function onEachFeature(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlight,
+                                    click: zoomToFeature
+                                });
+                            }
 
-              var loaded_data = {};
+                            var loaded_data = {};
 
-              // remember to add in year here
-              function on_change_load_data(){
-                $.ajax({
-                  url: "./get_json_data/2018/",
-                  success: function(the_json){
-                    loaded_data = the_json;
+                            // remember to add in year here
+                            function on_change_load_data(){
+                                $.ajax({
+                                    url: "./get_json_data/2018/",
+                                    success: function(the_json){
+                                        loaded_data = the_json;
 
-                    console.log("thao's loaded data", loaded_data);
+                                        console.log("thao's loaded data", loaded_data);
 
-                    geojson = L.geoJson(loaded_data, {
-                      style: style,
-                      onEachFeature: onEachFeature
-                    }).addTo(map);
-                  }
-                });
-              }
+                                        geojson = L.geoJson(loaded_data, {
+                                            style: style,
+                                            onEachFeature: onEachFeature
+                                        }).addTo(map);
+                                    }
+                                });
+                            }
 
-              // on page load load the data
-              on_change_load_data();
+                            // on page load load the data
+                            on_change_load_data();
 
-                map.attributionControl.addAttribution('Construction waste data &copy; <a href="https://data.melbourne.vic.gov.au/Property-Planning/Major-development-projects-Development-Activity-Mo/gh7s-qda8">Melbourne Construction Waste</a>');
+                            map.attributionControl.addAttribution('Construction waste data &copy; <a href="https://data.melbourne.vic.gov.au/Property-Planning/Major-development-projects-Development-Activity-Mo/gh7s-qda8">Melbourne Construction Waste</a>');
 
-                var legend = L.control({position: 'bottomright'});
+                            var legend = L.control({position: 'bottomright'});
 
-                legend.onAdd = function (map) {
-                  var div = L.DomUtil.create('div', 'info legend'),
-                    grades = [0, 100, 150, 1000, 1500, 10000, 20000, 25000],
-                    labels = [],
-                    from, to;
+                            legend.onAdd = function (map) {
+                                var div = L.DomUtil.create('div', 'info legend'),
+                                    grades = [0, 100, 150, 1000, 1500, 10000, 20000, 25000],
+                                    labels = [],
+                                    from, to;
 
-                  for (var i = 0; i < grades.length; i++) {
-                    from = grades[i];
-                    to = grades[i + 1];
+                                for (var i = 0; i < grades.length; i++) {
+                                    from = grades[i];
+                                    to = grades[i + 1];
 
-                    labels.push(
-                      '<i style="background:' + getColor(from + 1) + '"></i> ' +
-                      from + (to ? '&ndash;' + to : '+'));
-                  }
+                                    labels.push(
+                                        '<i style="background:' + getColor(from + 1) + '"></i> ' +
+                                        from + (to ? '&ndash;' + to : '+'));
+                                }
 
-                  div.innerHTML = labels.join('<br>');
-                  return div;
-                };
+                                div.innerHTML = labels.join('<br>');
+                                return div;
+                            };
 
-                legend.addTo(map);
-
-              </script>
-
-                <div id="mapSection" class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"></div>
-                <div class="product-item-description d-flex mr-auto">
-                    <div class="bg-faded p-5 rounded">
-                        <p class="mb-0">The map illustrates how much Melbourne constructions waste in thousand tonnes in term of timmbers, bricks, plaster boards, tiles and concretes</p>
+                            legend.addTo(map);
+                        </script>
                     </div>
                 </div>
             </div>
+            <div class="col-lg-3">
+                <div class="about-descr">
+                    <p class="p-heading">Melbourne C&D Waste - 2018</p>
+                    <p class="separator">The map illustrates how much Melbourne constructions waste in thousand tonnes in
+                        term of timmbers, bricks, plaster boards, tiles and concretes</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</div>
+<!-- end section map visual -->
 
-    <section class="page-section">
-        <div class="container">
-            <div class="product-item">
-                <div class="product-item-title d-flex">
-                    <div class="bg-faded p-5 d-flex mr-auto rounded">
-                        <h2 class="section-heading mb-0">
-                            <span class="section-heading-upper">Line chart for C&D waste</span>
-                            <span class="section-heading-lower">Suburb & Year</span>
-                        </h2>
+
+<!-- start section line chart -->
+<div id="about1" class="paddsection" style="padding-top: 10px">
+    <div class="container">
+        <div class="row justify-content-between">
+
+            <div class="col-lg-8 ">
+                <div class="div-img-bg">
+                    <div class="about-img">
+                        <!--<img src="images/me.jpg" class="img-responsive" alt="me">-->
+                        <canvas id="canvas" class="img-responsive"></canvas>
+
                     </div>
+                </div>
+            </div>
 
-                    <div class="intro-button mx-auto" style="position: absolute; right: 180px; bottom:5px;">
-                        <select id="SuburbSelect" class="btn btn-primary btn-xl" >
+            <div class="col-lg-3">
+                <div class="about-descr">
+                    <div class="intro-button mx-auto" style="right: 180px; bottom:5px;">
+                        <select id="SuburbSelect" class="btn btn-primary btn-xl">
                             <option value="Southbank">Southbank</option>
                             <option value="Parkville">Parkville</option>
                             <option value="West Melbourne (Industrial)">West Melbourne (Industrial)</option>
@@ -288,38 +345,56 @@
                             <option value="Melbourne (Remainder)">Melbourne (Remainder)</option>
                         </select>
                     </div>
+                    <p class="p-heading">Line chart for C&D waste</p>
+                    <p class="separator">This line show the tonnes of waste for different types of construction materials in
+                        each suburb.</p>
 
                 </div>
 
-                <div id="graph-container" style="background-color:#e5e3e3;top:48px;" class="product-item-img mx-auto d-flex img-fluid rounded mb-3 mb-lg-0">
-                    <canvas id="canvas"></canvas>
-                </div>
-
-                <br>
-                <br>
-
-                <div class="product-item-description d-flex ml-auto" style="top:48px;">
-                    <div class="bg-faded p-5 rounded">
-                        <p class="mb-0">This line show the tonnes of waste for different types of construction materials in each suburb.</p>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+<!-- end section line chart -->
 
-    <footer class="footer text-faded text-center py-5">
-        <div class="container">
-            <p class="m-0 small">Copyright &copy; Team Cavaliers 2018</p>
+<!-- start section footer -->
+<div id="footer" class="text-center">
+    <div class="container">
+        <p>&copy; Copyrights Folio. All rights reserved.</p>
+
+        <div class="credits">
+            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Folio
+            -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
-    </footer>
+
+    </div>
+</div>
+<!-- End section footer -->
 
 
+<!--d3 JavaScript-->
+<!-- JavaScript Libraries -->
+<script src="{% static 'lib/jquery/jquery.min.js'%}"></script>
+<script src="{% static 'lib/jquery/jquery-migrate.min.js'%}"></script>
+<script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'lib/typed/typed.js'%}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+<script src="{% static 'lib/magnific-popup/magnific-popup.min.js'%}"></script>
+<script src="{% static 'lib/isotope/isotope.pkgd.min.js'%}"></script>
 
+<!-- Contact Form JavaScript File -->
+<script src="{% static 'contactform/contactform.js'%}"></script>
 
-    <!--d3 JavaScript-->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script src="{% static 'js/lineChart.js' %}"></script>
+<!-- Template Main Javascript File -->
+<script src="{% static 'js/main.js'%}"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="{% static 'js/lineChart.js' %}"></script>
 
 </body>
 </html>

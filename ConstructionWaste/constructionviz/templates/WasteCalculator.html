@@ -15,10 +15,22 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Raleway:400,700" rel="stylesheet">
 
 
-
     <!-- Bootstrap core JavaScript -->
     <script src="{% static 'jquery/jquery.min.js'%}"></script>
     <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'lib/ionicons/css/ionicons.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/magnific-popup/magnific-popup.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/hover/hover.min.css'%}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+    <!-- Responsive css -->
+    <link href="{% static 'css/responsive.css'%}" rel="stylesheet">
 
     <!--animate css modal-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
@@ -33,50 +45,49 @@
     <link href="{% static 'dist/css/animate.min.css'%}" rel="stylesheet">
 </head>
 <body>
+{% if user.is_authenticated %}
+<nav class="nav justify-content-end text-primary p-1">
+    <!-- <a class="navbar-brand">Navbar</a> -->
+    <span class="float-right">
+          Hi {{ user.username }}! &nbsp;
+          <a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important"
+             href="{% url 'logout' %}">logout</a>
+        </span>
+</nav>
+{% endif %}
 
-    <!-- Title of website -->
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
-        <span class="site-heading-upper text-primary mb-3">Construction and Demolition Waste</span>
-        <!--<span class="site-heading-lower">War on Waste</span>-->
-    </h1>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+<!-- start section navbar -->
+<nav id="main-nav">
+    <div class="row">
         <div class="container">
-            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none">Construction and
-                Demolition Waste</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'home'%}">Home</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'statistics'%}">Statistics</a>
-                    </li>
-                    <li class="nav-item active px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'WasteCalculator'%}">Calculator
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'SearchLocation'%}">Search</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'about'%}">About</a>
-                    </li>
-                </ul>
-            </div>
+            <!--<div class="logo">-->
+            <!--<a href="index.html"><img src="{% static 'images/logo.png'%}" alt="logo"></a>-->
+            <!--</div>-->
+
+            <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+            <ul class="nav-menu list-unstyled">
+                <li>
+                    <a class="smoothScroll" href="{% url 'home'%}">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li><a class="smoothScroll" href="{% url 'statistics'%}">Statistics</a></li>
+                <li><a class="smoothScroll" href="{% url 'WasteCalculator'%}">Calculator</a></li>
+                <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Search</a></li>
+                <li><a class="smoothScroll" href="{% url 'about'%}">About</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+<!-- End section navbar -->
 
-    <section class="page-section">
+<!--calculator-->
+<!-- start section map visual -->
+<div id="about" class="paddsection" style="padding-top: 90px">
+    <div class="container">
+        <section class="page-section">
 
-        <div data-space-between="10" data-direction="vertical" class="swiper-container">
-            <div class="parallax-bg"  data-swiper-parallax="-23%"></div>
+            <div data-space-between="10" data-direction="vertical" class="swiper-container">
+                <div class="parallax-bg" data-swiper-parallax="-23%"></div>
 
 
                 <div class="swiper-wrapper">
@@ -85,13 +96,13 @@
 
                         <div class="container" style="margin-top: 50px">
                             <!--<div class="row">-->
-                                <!--<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="0.5s" style="animation-iteration-count: infinite">Do you</p>-->
+                            <!--<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="0.5s" style="animation-iteration-count: infinite">Do you</p>-->
 
-                                <!--<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1s" style="animation-iteration-count: infinite">know</p>-->
+                            <!--<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1s" style="animation-iteration-count: infinite">know</p>-->
 
-                                <!--<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1.5s" style="animation-iteration-count: infinite">how much</p>-->
+                            <!--<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1.5s" style="animation-iteration-count: infinite">how much</p>-->
 
-                                <!--<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="2s" style="animation-iteration-count: infinite">you waste?</p>-->
+                            <!--<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="2s" style="animation-iteration-count: infinite">you waste?</p>-->
 
                             <!--</div>-->
 
@@ -105,7 +116,10 @@
 
                             <div class="container" style="text-align: center; margin-top: 30px">
                                 <button type="button" class="btn btn-dark swiper-button-next-customized ani"
-                                        swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="3s" style="animation-iteration-count: infinite">go check</button>
+                                        swiper-animate-effect="swing" swiper-animate-duration="1s"
+                                        swiper-animate-delay="3s" style="animation-iteration-count: infinite">go
+                                    check
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -190,21 +204,27 @@
 
                             <form class="form">
                                 <div class="form__group">
-                                    <input id="detailBox1" type="text" placeholder="How many bed rooms" class="form__input" />
+                                    <input id="detailBox1" type="text" placeholder="How many bed rooms"
+                                           class="form__input"/>
                                 </div>
 
                                 <div class="form__group">
-                                    <input id="detailBox2" type="text" placeholder="How many living rooms" class="form__input" />
+                                    <input id="detailBox2" type="text" placeholder="How many living rooms"
+                                           class="form__input"/>
                                 </div>
 
                                 <div class="form__group">
-                                    <input id="detailBox3" type="text" placeholder="How many kitchens" class="form__input" />
+                                    <input id="detailBox3" type="text" placeholder="How many kitchens"
+                                           class="form__input"/>
                                 </div>
 
                                 <div class="form__group">
-                                    <input id="detailBox4" type="text" placeholder="How many car parks" class="form__input" />
+                                    <input id="detailBox4" type="text" placeholder="How many car parks"
+                                           class="form__input"/>
                                 </div>
-                                <button class="btnForCalculator swiper-button-next-customized" type="button">Calculate</button>
+                                <button class="btnForCalculator swiper-button-next-customized" type="button">
+                                    Calculate
+                                </button>
                             </form>
                         </div>
 
@@ -223,7 +243,8 @@
                                 <div class="back-facing">
                                     <p>Waste material in tones:</p>
                                     <p>How much they cost:</p>
-                                    <p><a class="btn swiper-button-next-customized" href="" target="_blank">Tips</a></p>
+                                    <p><a class="btn swiper-button-next-customized" href="" target="_blank">Tips</a>
+                                    </p>
                                 </div>
                             </div>
 
@@ -236,7 +257,8 @@
                                 <div class="back-facing">
                                     <p>Waste material in tones:</p>
                                     <p>How much they cost:</p>
-                                    <p><a class="btn swiper-button-next-customized" href="" target="_blank">Tips</a></p>
+                                    <p><a class="btn swiper-button-next-customized" href="" target="_blank">Tips</a>
+                                    </p>
                                 </div>
                             </div>
 
@@ -249,7 +271,8 @@
                                 <div class="back-facing">
                                     <p>Waste material in tones:</p>
                                     <p>How much they cost:</p>
-                                    <p><a class="btn swiper-button-next-customized" href="" target="_blank">Tips</a></p>
+                                    <p><a class="btn swiper-button-next-customized" href="" target="_blank">Tips</a>
+                                    </p>
                                 </div>
                             </div>
 
@@ -262,12 +285,15 @@
                                 <div class="back-facing">
                                     <p>Waste material in tones:</p>
                                     <p>How much they cost:</p>
-                                    <p><a class="btn swiper-button-next-customized" href="" target="_blank">Tips</a></p>
+                                    <p><a class="btn swiper-button-next-customized" href="" target="_blank">Tips</a>
+                                    </p>
                                 </div>
                             </div>
 
                         </div>
-                        <button type="button" class="btn btn-dark swiper-button-next-customized">see how many money wasted</button>
+                        <button type="button" class="btn btn-dark swiper-button-next-customized">see how many money
+                            wasted
+                        </button>
                     </div>
 
                     <div class="swiper-slide swiper-no-swiping">
@@ -281,331 +307,336 @@
                 </div>
 
             </div>
-        </div>
-
-
-    </section>
-
-    <footer class="footer text-faded text-center py-5">
-        <div class="container">
-            <p class="m-0 small">Copyright &copy; Team Cavaliers 2018</p>
-        </div>
-    </footer>
-
-    <!--javascript for calculator-->
-    <script src="{% static 'js/calculator.js'%}"></script>
-
-    <script src="{% static 'dist/js/swiper.min.js'%}"></script>
-
-    <script src="{% static 'js/animatedModal.min.js'%}"></script>
-
-    <!--animate js form -->
-    <script src="{% static 'dist/js/swiper.animate1.0.3.min.js'%}"></script>
-
-
-    <script>
-
-        var numberOfBuildingType = 0;
-
-        // for the split view on second page
-        const left = document.querySelector(".left");
-        const right = document.querySelector(".right");
-        const container = document.querySelector(".containerForSplitView");
-
-        left.addEventListener("mouseenter", () => {
-            container.classList.add("hover-left");
-        });
-
-        left.addEventListener("mouseleave", () => {
-            container.classList.remove("hover-left");
-        });
-
-        right.addEventListener("mouseenter", () => {
-            container.classList.add("hover-right");
-        });
-
-        right.addEventListener("mouseleave", () => {
-            container.classList.remove("hover-right");
-        });
-
-
-        //for the third page
-
-
-
-        $('.cardView').click(function () {
-            numberOfBuildingType = $(this).attr('value');
-
-
-            var box1 = $('#detailBox1');
-            var box2 = $('#detailBox2');
-            var box3 = $('#detailBox3');
-            var box4 = $('#detailBox4');
-
-            //console.log(numberOfBuildingType, typeof numberOfBuildingType, numberOfBuildingType === "1");
-            switch (numberOfBuildingType) {
-                case "1":
-                    //console.log(box1.attr("placeholder"));
-                    box1.attr("placeholder", "How many ");
-                    box2.attr("placeholder", "How many ");
-                    box3.attr("placeholder", "How many ");
-                    box4.attr("placeholder", "How many ");
-                    break;
-                case "2":
-                    box1.attr("placeholder", "How many hotel rooms");
-                    box2.attr("placeholder", "How many Serviced apartments");
-                    box3.attr("placeholder", "How many ");
-                    box4.attr("placeholder", "How many car parks");
-                    break;
-                case "3":
-                    box1.attr("placeholder", "How many student rooms");
-                    box2.attr("placeholder", "How many beds in each room");
-                    box3.attr("placeholder", "How many ");
-                    box4.attr("placeholder", "How many car parks");
-                    break;
-                case "4":
-                    box1.attr("placeholder", "How many one-bedroom units");
-                    box2.attr("placeholder", "How many two-bedroom units");
-                    box3.attr("placeholder", "How many three-bedroom units");
-                    box4.attr("placeholder", "How many car parks");
-                    break;
-            }
-
-        });
-
-        //for the fourth page
-
-        let squareMeter;
-
-        const button = document.querySelector('.btnForCalculator');
-        const form   = document.querySelector('.form');
-
-        button.addEventListener('click', function() {
-            form.classList.add('form--no');
-
-            let detailBox1 = $('#detailBox1').val();
-            let detailBox2 = $('#detailBox2').val();
-            let detailBox3 = $('#detailBox3').val();
-            let detailBox4 = $('#detailBox4').val();
-
-
-
-            switch (numberOfBuildingType) {
-                case 0:
-
-
-                    break;
-                case "1":
-
-                    break;
-                case "2":
-                    squareMeter = detailBox1 * 30.6 + detailBox2 * 62.6 + detailBox4 * 15.7;
-                    break;
-                case "3":
-                    squareMeter = detailBox1 * 12 + detailBox2 * 2.18 + detailBox4 * 15.7;
-                    break;
-                case "4":
-                    squareMeter = detailBox1 * 58 + detailBox2 * 91 + detailBox3 * 148 + detailBox4 * 15.7;
-                    break;
-
-
-            }
-
-            console.log(squareMeter);
-
-
-
-
-
-        });
-
-        //for the fifth page
-
-        $(document).ready(function(){
-
-            $('.element-card').on('click', function(){
-
-                if ( $(this).hasClass('open') ) {
-                    $(this).removeClass('open');
-                } else {
-                    $('.element-card').removeClass('open');
-                    $(this).addClass('open');
-                }
-
-            });
-
-        });
-
-
-
-        //init the swiper
-        var swiper = new Swiper ('.swiper-container', {
-            //direction: 'vertical',
-
-            speed: 400,
-            // spaceBetween: 100,
-
-            // need navigation button
-            navigation: {
-                nextEl: '.swiper-button-next-customized',
-                prevEl: '.swiper-button-prev-customized',
-            },
-
-            on:{
-                init: function(){
-
-                    //hide animate
-                    swiperAnimateCache(this);
-
-                    //start animate
-                    swiperAnimate(this);
-                },
-                slideChangeTransitionEnd: function(){
-                    swiperAnimate(this);
-                },
-            }
-        });
-
-
-        function moveTwoPageAfter() {
-            swiper.slideTo( $('.typeInDetailPage').index(),1000,false);
-        }
-
-        function moveOnePageAfter() {
-            swiper.slideTo( $('.chooseKindOfBuilding').index(),1000,false);
-        }
-
-
-        // var indexOfPicture = 0;
-        // showCalculator();
-        // //console.log(indexOfPicture);
-        //
-        // function prevCalculator() {
-        //     indexOfPicture -= 1;
-        //     //console.log(indexOfPicture);
-        //     showCalculator();
-        // }
-        //
-        // function nextCalculator() {
-        //     indexOfPicture += 1;
-        //     //console.log(indexOfPicture);
-        //     showCalculator();
-        // }
-        //
-        // function showCalculator() {
-        //     if (indexOfPicture < 0) {
-        //         indexOfPicture = 0;
-        //     } else if (indexOfPicture > 3) {
-        //         indexOfPicture = 3;
-        //     } else {
-        //
-        //         switch (indexOfPicture) {
-        //
-        //             case 0:
-        //                 clearInput();
-        //                 document.getElementById("basic-addon1").placeholder = "1-apartment";
-        //
-        //                 document.getElementById("basic-addon2").placeholder = "2-apartment";
-        //
-        //                 document.getElementById("basic-addon3").placeholder = "3-apartment";
-        //
-        //                 break;
-        //
-        //             case 1:
-        //                 clearInput();
-        //                 document.getElementById("basic-addon1").placeholder = "Hotel rooms";
-        //
-        //                 document.getElementById("basic-addon2").placeholder = "Serviced apartments";
-        //
-        //                 document.getElementById("basic-addon3").placeholder = "Car parks";
-        //
-        //                 break;
-        //
-        //             case 2:
-        //                 clearInput();
-        //                 document.getElementById("basic-addon1").placeholder = "Student apartments";
-        //
-        //                 document.getElementById("basic-addon2").placeholder = "Student beds";
-        //
-        //                 document.getElementById("basic-addon3").placeholder = "Car parks";
-        //
-        //                 break;
-        //         }
-        //
-        //     }
-        //
-        // }
-        //
-        // function clearInput() {
-        //     document.getElementById("basic-addon1").value = "";
-        //
-        //     document.getElementById("basic-addon2").value = "";
-        //
-        //     document.getElementById("basic-addon3").value = "";
-        // }
-        //
-        //
-        // $("#calculatorModal").animatedModal({
-        //     modalTarget:'animatedModal',
-        //     animatedIn: 'zoomIn',
-        //     animatedOut: 'bounceOut',
-        //     color: '#f9f1e6',
-        //
-        //     beforeOpen: function () {
-        //
-        //     },
-        //
-        //     afterOpen: function () {
-        //         var firstInput = $("#basic-addon1").val();
-        //         var secondInput = $("#basic-addon2").val();
-        //         var thirdInput = $("#basic-addon3").val();
-        //
-        //         console.log(firstInput,secondInput,thirdInput,indexOfPicture);
-        //
-        //         var squareMeter;
-        //
-        //         function showNumber(squareMeter) {
-        //             $("#brickWaste").text("Brick: " + squareMeter * 0.5 * 0.06 + " T");
-        //             $("#timberWaste").text("Timber: " + squareMeter * 0.75 * 0.08 + " T");
-        //             $("#concreteWaste").text("Concrete: " + squareMeter * 0.04 + " T");
-        //         }
-        //
-        //
-        //         if (indexOfPicture < 0) {
-        //             indexOfPicture = 0;
-        //         } else if (indexOfPicture > 3) {
-        //             indexOfPicture = 3;
-        //         } else {
-        //             switch (indexOfPicture) {
-        //                 case 0:
-        //                     squareMeter = firstInput * 58 + secondInput * 91 + thirdInput * 148;
-        //                     showNumber(squareMeter);
-        //
-        //                     break;
-        //
-        //                 case 1:
-        //                     squareMeter = firstInput * 30.6 + secondInput * 62.6 + thirdInput * 15.7;
-        //                     showNumber(squareMeter);
-        //
-        //                     break;
-        //
-        //
-        //                 case 2:
-        //                     squareMeter = firstInput * 12 + secondInput * 2.18 + thirdInput * 15.7;
-        //                     showNumber(squareMeter);
-        //
-        //                     break;
-        //             }
-        //         }
-        //     },
-        //
-        //     beforeClose: function () {
-        //         clearInput();
-        //     }
-        //
-        // });
-
-    </script>
+        </section>
+    </div>
+</div>
 
 </body>
+<!-- end calculator display -->
+<!-- start section footer -->
+<div id="footer" class="text-center">
+    <div class="container">
+        <p>&copy; Copyrights Folio. All rights reserved.</p>
+        <div class="credits">
+            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Folio
+            -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+
+    </div>
+</div>
+<!-- End section footer -->
+
+<!--javascript for calculator-->
+<script src="{% static 'js/calculator.js'%}"></script>
+
+<script src="{% static 'dist/js/swiper.min.js'%}"></script>
+
+<script src="{% static 'js/animatedModal.min.js'%}"></script>
+
+<!--animate js form -->
+<script src="{% static 'dist/js/swiper.animate1.0.3.min.js'%}"></script>
+
+
+<script>
+
+    var numberOfBuildingType = 0;
+
+    // for the split view on second page
+    const left = document.querySelector(".left");
+    const right = document.querySelector(".right");
+    const container = document.querySelector(".containerForSplitView");
+
+    left.addEventListener("mouseenter", () => {
+        container.classList.add("hover-left");
+    });
+
+    left.addEventListener("mouseleave", () => {
+        container.classList.remove("hover-left");
+    });
+
+    right.addEventListener("mouseenter", () => {
+        container.classList.add("hover-right");
+    });
+
+    right.addEventListener("mouseleave", () => {
+        container.classList.remove("hover-right");
+    });
+
+
+    //for the third page
+
+
+    $('.cardView').click(function () {
+        numberOfBuildingType = $(this).attr('value');
+
+
+        var box1 = $('#detailBox1');
+        var box2 = $('#detailBox2');
+        var box3 = $('#detailBox3');
+        var box4 = $('#detailBox4');
+
+        //console.log(numberOfBuildingType, typeof numberOfBuildingType, numberOfBuildingType === "1");
+        switch (numberOfBuildingType) {
+            case "1":
+                //console.log(box1.attr("placeholder"));
+                box1.attr("placeholder", "How many ");
+                box2.attr("placeholder", "How many ");
+                box3.attr("placeholder", "How many ");
+                box4.attr("placeholder", "How many ");
+                break;
+            case "2":
+                box1.attr("placeholder", "How many hotel rooms");
+                box2.attr("placeholder", "How many Serviced apartments");
+                box3.attr("placeholder", "How many ");
+                box4.attr("placeholder", "How many car parks");
+                break;
+            case "3":
+                box1.attr("placeholder", "How many student rooms");
+                box2.attr("placeholder", "How many beds in each room");
+                box3.attr("placeholder", "How many ");
+                box4.attr("placeholder", "How many car parks");
+                break;
+            case "4":
+                box1.attr("placeholder", "How many one-bedroom units");
+                box2.attr("placeholder", "How many two-bedroom units");
+                box3.attr("placeholder", "How many three-bedroom units");
+                box4.attr("placeholder", "How many car parks");
+                break;
+        }
+
+    });
+
+    //for the fourth page
+
+    let squareMeter;
+
+    const button = document.querySelector('.btnForCalculator');
+    const form = document.querySelector('.form');
+
+    button.addEventListener('click', function () {
+        form.classList.add('form--no');
+
+        let detailBox1 = $('#detailBox1').val();
+        let detailBox2 = $('#detailBox2').val();
+        let detailBox3 = $('#detailBox3').val();
+        let detailBox4 = $('#detailBox4').val();
+
+
+        switch (numberOfBuildingType) {
+            case 0:
+
+
+                break;
+            case "1":
+
+                break;
+            case "2":
+                squareMeter = detailBox1 * 30.6 + detailBox2 * 62.6 + detailBox4 * 15.7;
+                break;
+            case "3":
+                squareMeter = detailBox1 * 12 + detailBox2 * 2.18 + detailBox4 * 15.7;
+                break;
+            case "4":
+                squareMeter = detailBox1 * 58 + detailBox2 * 91 + detailBox3 * 148 + detailBox4 * 15.7;
+                break;
+
+
+        }
+
+        console.log(squareMeter);
+
+
+    });
+
+    //for the fifth page
+
+    $(document).ready(function () {
+
+        $('.element-card').on('click', function () {
+
+            if ($(this).hasClass('open')) {
+                $(this).removeClass('open');
+            } else {
+                $('.element-card').removeClass('open');
+                $(this).addClass('open');
+            }
+
+        });
+
+    });
+
+
+    //init the swiper
+    var swiper = new Swiper('.swiper-container', {
+        //direction: 'vertical',
+
+        speed: 400,
+        // spaceBetween: 100,
+
+        // need navigation button
+        navigation: {
+            nextEl: '.swiper-button-next-customized',
+            prevEl: '.swiper-button-prev-customized',
+        },
+
+        on: {
+            init: function () {
+
+                //hide animate
+                swiperAnimateCache(this);
+
+                //start animate
+                swiperAnimate(this);
+            },
+            slideChangeTransitionEnd: function () {
+                swiperAnimate(this);
+            },
+        }
+    });
+
+
+    function moveTwoPageAfter() {
+        swiper.slideTo($('.typeInDetailPage').index(), 1000, false);
+    }
+
+    function moveOnePageAfter() {
+        swiper.slideTo($('.chooseKindOfBuilding').index(), 1000, false);
+    }
+
+
+    // var indexOfPicture = 0;
+    // showCalculator();
+    // //console.log(indexOfPicture);
+    //
+    // function prevCalculator() {
+    //     indexOfPicture -= 1;
+    //     //console.log(indexOfPicture);
+    //     showCalculator();
+    // }
+    //
+    // function nextCalculator() {
+    //     indexOfPicture += 1;
+    //     //console.log(indexOfPicture);
+    //     showCalculator();
+    // }
+    //
+    // function showCalculator() {
+    //     if (indexOfPicture < 0) {
+    //         indexOfPicture = 0;
+    //     } else if (indexOfPicture > 3) {
+    //         indexOfPicture = 3;
+    //     } else {
+    //
+    //         switch (indexOfPicture) {
+    //
+    //             case 0:
+    //                 clearInput();
+    //                 document.getElementById("basic-addon1").placeholder = "1-apartment";
+    //
+    //                 document.getElementById("basic-addon2").placeholder = "2-apartment";
+    //
+    //                 document.getElementById("basic-addon3").placeholder = "3-apartment";
+    //
+    //                 break;
+    //
+    //             case 1:
+    //                 clearInput();
+    //                 document.getElementById("basic-addon1").placeholder = "Hotel rooms";
+    //
+    //                 document.getElementById("basic-addon2").placeholder = "Serviced apartments";
+    //
+    //                 document.getElementById("basic-addon3").placeholder = "Car parks";
+    //
+    //                 break;
+    //
+    //             case 2:
+    //                 clearInput();
+    //                 document.getElementById("basic-addon1").placeholder = "Student apartments";
+    //
+    //                 document.getElementById("basic-addon2").placeholder = "Student beds";
+    //
+    //                 document.getElementById("basic-addon3").placeholder = "Car parks";
+    //
+    //                 break;
+    //         }
+    //
+    //     }
+    //
+    // }
+    //
+    // function clearInput() {
+    //     document.getElementById("basic-addon1").value = "";
+    //
+    //     document.getElementById("basic-addon2").value = "";
+    //
+    //     document.getElementById("basic-addon3").value = "";
+    // }
+    //
+    //
+    // $("#calculatorModal").animatedModal({
+    //     modalTarget:'animatedModal',
+    //     animatedIn: 'zoomIn',
+    //     animatedOut: 'bounceOut',
+    //     color: '#f9f1e6',
+    //
+    //     beforeOpen: function () {
+    //
+    //     },
+    //
+    //     afterOpen: function () {
+    //         var firstInput = $("#basic-addon1").val();
+    //         var secondInput = $("#basic-addon2").val();
+    //         var thirdInput = $("#basic-addon3").val();
+    //
+    //         console.log(firstInput,secondInput,thirdInput,indexOfPicture);
+    //
+    //         var squareMeter;
+    //
+    //         function showNumber(squareMeter) {
+    //             $("#brickWaste").text("Brick: " + squareMeter * 0.5 * 0.06 + " T");
+    //             $("#timberWaste").text("Timber: " + squareMeter * 0.75 * 0.08 + " T");
+    //             $("#concreteWaste").text("Concrete: " + squareMeter * 0.04 + " T");
+    //         }
+    //
+    //
+    //         if (indexOfPicture < 0) {
+    //             indexOfPicture = 0;
+    //         } else if (indexOfPicture > 3) {
+    //             indexOfPicture = 3;
+    //         } else {
+    //             switch (indexOfPicture) {
+    //                 case 0:
+    //                     squareMeter = firstInput * 58 + secondInput * 91 + thirdInput * 148;
+    //                     showNumber(squareMeter);
+    //
+    //                     break;
+    //
+    //                 case 1:
+    //                     squareMeter = firstInput * 30.6 + secondInput * 62.6 + thirdInput * 15.7;
+    //                     showNumber(squareMeter);
+    //
+    //                     break;
+    //
+    //
+    //                 case 2:
+    //                     squareMeter = firstInput * 12 + secondInput * 2.18 + thirdInput * 15.7;
+    //                     showNumber(squareMeter);
+    //
+    //                     break;
+    //             }
+    //         }
+    //     },
+    //
+    //     beforeClose: function () {
+    //         clearInput();
+    //     }
+    //
+    // });
+
+</script>
 </html>

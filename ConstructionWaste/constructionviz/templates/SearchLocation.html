@@ -12,11 +12,23 @@
     <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Raleway:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i"
+          rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'lib/ionicons/css/ionicons.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/magnific-popup/magnific-popup.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/hover/hover.min.css'%}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+    <!-- Responsive css -->
+    <link href="{% static 'css/responsive.css'%}" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
-    <link href="{% static 'css/business-casual.min.css'%}" rel="stylesheet">
     <link href="{% static 'css/goomap.css'%}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
 
@@ -41,108 +53,52 @@
     <!-- <span class="site-heading-lower">War on Waste</span> -->
 </h1>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Construction and
-            Demolition Waste</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Home</a>
+<!-- start section navbar -->
+<nav id="main-nav">
+    <div class="row">
+        <div class="container">
+            <!--<div class="logo">-->
+            <!--<a href="index.html"><img src="{% static 'images/logo.png'%}" alt="logo"></a>-->
+            <!--</div>-->
+
+            <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+            <ul class="nav-menu list-unstyled">
+                <li>
+                    <a class="smoothScroll" href="{% url 'home'%}">Home<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="{% url 'statistics' %}">Statistics</a>
-                </li>
-                <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="{% url 'WasteCalculator'%}">Calculator</a>
-                </li>
-                <li class="nav-item px-lg-4 active">
-                    <a class="nav-link text-uppercase text-expanded" href="{% url 'SearchLocation'%}">Search
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="{% url 'about' %} ">About</a>
-                </li>
+                <li><a class="smoothScroll" href="{% url 'statistics'%}">Statistics</a></li>
+                <li><a class="smoothScroll" href="{% url 'WasteCalculator'%}">Calculator</a></li>
+                <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Search</a></li>
+                <li><a class="smoothScroll" href="{% url 'about'%}">About</a></li>
             </ul>
         </div>
     </div>
 </nav>
+<!-- End section navbar -->
 
-<section class="page-section cta">
+<!-- start section line chart -->
+<div id="about1" class="paddsection" style="padding-top: 90px">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-12 mx-auto">
-                <div class="cta-inner text-center rounded">
-                    <h2 class="section-heading mb-5">
-                        <span class="section-heading-upper">Search Drop-off Locations!</span>
-                        <!--<span class="section-heading-lower">Search Drop-off Locations!</span>-->
-                    </h2>
-                    <div class="row">
-                        <div class="col-sm-3 col-md-6 col-lg-4 col-xl-5">
-                            <table id="example" class="display" style="width:100%">
-                                <thead>
-                                <tr>
-                                    <th>Type</th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Postcode</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>reuse</td>
-                                    <td>a</td>
-                                    <td>add</td>
-                                    <td>1222</td>
-                                </tr>
-                                <tr>
-                                    <td>reuse</td>
-                                    <td>b</td>
-                                    <td>ad</td>
-                                    <td>3212</td>
-                                </tr>
-                                <tr>
-                                    <td>recycle</td>
-                                    <td>c</td>
-                                    <td>ff</td>
-                                    <td>3212</td>
-                                </tr>
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>Type</th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Postcode</th>
+        <div class="cta-inner text-center rounded">
+            <h2 class="section-heading mb-5">
+                <span class="section-heading-upper">Search Drop-off Locations!</span>
+                <!--<span class="section-heading-lower">Search Drop-off Locations!</span>-->
+            </h2>
+        </div>
+        <div class="row justify-content-between">
 
-                                </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                        <div class="col-sm-9 col-md-6 col-lg-8 col-xl-7">
-                            <!--<input id="pac-input" class="controls" type="text" placeholder="Search by address">-->
-                            <!--<div id="map" ></div>-->
-
-                            <div id="findhotels">
-                                Find drop-off locations in:
+            <div class="col-lg-12 ">
+                <div class="div-img-bg">
+                    <div class="about-img">
+                        <div class="img-responsive">
+                            <div class="about-descr">
+                                <p></p>
+                                <div id="findhotels" class="p-heading" style="padding-top: 10px;padding-bottom: 10px;padding-left: 20px">Find drop-off locations in:</div>
+                                <div id="locationField" style="padding-top: 10px; padding-bottom: 10px;padding-left: 20px">
+                                    <input id="autocomplete" placeholder="Search by address" style="width: 400px" type="text"/>
+                                </div>
+                                <div id="controls" style="display: none"><select id="country"><option value="au">Melbourne</option></select></div>
                             </div>
-
-                            <div id="locationField">
-                                <input id="autocomplete" placeholder="Search by address" type="text"/>
-                            </div>
-
-                            <div id="controls" style="display: none">
-                                <select id="country">
-                                    <option value="au">Melbourne</option>
-                                </select>
-                            </div>
-
                             <div id="map"></div>
                         </div>
 
@@ -151,16 +107,87 @@
                     </div>
                 </div>
             </div>
+
+            <!--<div class="col-lg-4">-->
+            <!--<div class="about-descr">-->
+            <!--<table id="example" class="display" style="width:100%">-->
+            <!--<thead>-->
+            <!--<tr>-->
+            <!--<th>Type</th>-->
+            <!--<th>Name</th>-->
+            <!--<th>Address</th>-->
+            <!--<th>Postcode</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr>-->
+            <!--<td>reuse</td>-->
+            <!--<td>a</td>-->
+            <!--<td>add</td>-->
+            <!--<td>1222</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+            <!--<td>reuse</td>-->
+            <!--<td>b</td>-->
+            <!--<td>ad</td>-->
+            <!--<td>3212</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+            <!--<td>recycle</td>-->
+            <!--<td>c</td>-->
+            <!--<td>ff</td>-->
+            <!--<td>3212</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+            <!--<tfoot>-->
+            <!--<tr>-->
+            <!--<th>Type</th>-->
+            <!--<th>Name</th>-->
+            <!--<th>Address</th>-->
+            <!--<th>Postcode</th>-->
+
+            <!--</tr>-->
+            <!--</tfoot>-->
+            <!--</table>-->
+            <!--</div>-->
+
+            <!--</div>-->
         </div>
     </div>
-    </div>
-</section>
-
-<footer class="footer text-faded text-center py-5">
+</div>
+<!-- start section footer -->
+<div id="footer" class="text-center">
     <div class="container">
-        <p class="m-0 small">Copyright &copy; Team Cavaliers 2018</p>
+        <p>&copy; Copyrights Folio. All rights reserved.</p>
+
+        <div class="credits">
+            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Folio
+            -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+
     </div>
-</footer>
+</div>
+<!-- End section footer -->
+
+
+<!--d3 JavaScript-->
+<!-- JavaScript Libraries -->
+<script src="{% static 'lib/jquery/jquery.min.js'%}"></script>
+<script src="{% static 'lib/jquery/jquery-migrate.min.js'%}"></script>
+<script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'lib/typed/typed.js'%}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+<script src="{% static 'lib/magnific-popup/magnific-popup.min.js'%}"></script>
+<script src="{% static 'lib/isotope/isotope.pkgd.min.js'%}"></script>
+
+<!-- Template Main Javascript File -->
+<script src="{% static 'js/main.js'%}"></script>
+
 
 <!-- Bootstrap core JavaScript -->
 <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
