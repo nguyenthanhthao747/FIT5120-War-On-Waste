@@ -92,37 +92,37 @@
 
                 <div class="swiper-wrapper">
                     <!--the first page for the calculator-->
-                    <div class="swiper-slide swiper-no-swiping">
+                    <!--<div class="swiper-slide swiper-no-swiping">-->
 
-                        <div class="container" style="margin-top: 50px">
-                            <!--<div class="row">-->
-                            <!--<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="0.5s" style="animation-iteration-count: infinite">Do you</p>-->
+                        <!--<div class="container" style="margin-top: 50px">-->
+                            <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="0.5s" style="animation-iteration-count: infinite">Do you</p>&ndash;&gt;-->
 
-                            <!--<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1s" style="animation-iteration-count: infinite">know</p>-->
+                            <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1s" style="animation-iteration-count: infinite">know</p>&ndash;&gt;-->
 
-                            <!--<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1.5s" style="animation-iteration-count: infinite">how much</p>-->
+                            <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1.5s" style="animation-iteration-count: infinite">how much</p>&ndash;&gt;-->
 
-                            <!--<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="2s" style="animation-iteration-count: infinite">you waste?</p>-->
+                            <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="2s" style="animation-iteration-count: infinite">you waste?</p>&ndash;&gt;-->
+
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                            <!--<div class="containerForSlogan">-->
+
+                                <!--<div class="slogan"><span>Do you know</span></div>-->
+                                <!--<div class="slogan"><span>how much</span></div>-->
+                                <!--<div class="slogan"><span>you waste?</span></div>-->
 
                             <!--</div>-->
 
-                            <div class="containerForSlogan">
-
-                                <div class="slogan"><span>Do you know</span></div>
-                                <div class="slogan"><span>how much</span></div>
-                                <div class="slogan"><span>you waste?</span></div>
-
-                            </div>
-
-                            <div class="container" style="text-align: center; margin-top: 30px">
-                                <button type="button" class="btn btn-dark swiper-button-next-customized ani"
-                                        swiper-animate-effect="swing" swiper-animate-duration="1s"
-                                        swiper-animate-delay="3s" style="animation-iteration-count: infinite">go
-                                    check
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                            <!--<div class="container" style="text-align: center; margin-top: 30px">-->
+                                <!--<button type="button" class="btn btn-dark swiper-button-next-customized ani"-->
+                                        <!--swiper-animate-effect="swing" swiper-animate-duration="1s"-->
+                                        <!--swiper-animate-delay="3s" style="animation-iteration-count: infinite">go-->
+                                    <!--check-->
+                                <!--</button>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
 
                     <!--choose the type of construction-->
                     <div class="swiper-slide swiper-no-swiping">
@@ -132,16 +132,22 @@
                         <div class="containerForSplitView">
                             <div class="split left">
                                 <h1>Builder</h1>
-                                <button class="btn btn-dark button" onclick="moveOnePageAfter()">Read More</button>
+                                <button class="btn btn-dark button" onclick="moveOnePageAfter()">Select</button>
                             </div>
                             <div class="split right">
-                                <h1>Home owner</h1>
-                                <button class="btn btn-dark button" onclick="moveTwoPageAfter()">Read More</button>
+                                <h1>Home builder</h1>
+                                <button class="btn btn-dark button" onclick="moveTwoPageAfter()">Select</button>
                             </div>
                         </div>
 
                     </div>
                     <div class="swiper-slide swiper-no-swiping chooseKindOfBuilding">
+
+
+                        <a class="back swiper-button-prev-customized" href="">
+                            <span></span>
+                        </a>
+
 
                         <div class="row" style="height: 100%; width: 90%; margin: 0 auto 0">
                             <div class="containerForCard col-md-3">
@@ -200,6 +206,10 @@
                     </div>
                     <div class="swiper-slide swiper-no-swiping typeInDetailPage">
 
+                        <a class="back swiper-button-prev-customized" href="">
+                            <span></span>
+                        </a>
+
                         <div class="user">
 
                             <form class="form">
@@ -231,6 +241,9 @@
                     </div>
                     <div class="swiper-slide swiper-no-swiping">
 
+                        <a class="back swiper-button-prev-customized" href="">
+                            <span></span>
+                        </a>
 
                         <div class="containerForDisplay">
 
@@ -241,9 +254,9 @@
 
                                 </div>
                                 <div class="back-facing">
-                                    <p>Waste material in tones:</p>
+                                    <p>Waste material in units:</p>
                                     <p>How much they cost:</p>
-                                    <p><a class="btn swiper-button-next-customized" href="" target="_blank">Tips</a>
+                                    <p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>
                                     </p>
                                 </div>
                             </div>
@@ -257,7 +270,7 @@
                                 <div class="back-facing">
                                     <p>Waste material in tones:</p>
                                     <p>How much they cost:</p>
-                                    <p><a class="btn swiper-button-next-customized" href="" target="_blank">Tips</a>
+                                    <p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>
                                     </p>
                                 </div>
                             </div>
@@ -271,7 +284,7 @@
                                 <div class="back-facing">
                                     <p>Waste material in tones:</p>
                                     <p>How much they cost:</p>
-                                    <p><a class="btn swiper-button-next-customized" href="" target="_blank">Tips</a>
+                                    <p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>
                                     </p>
                                 </div>
                             </div>
@@ -285,25 +298,23 @@
                                 <div class="back-facing">
                                     <p>Waste material in tones:</p>
                                     <p>How much they cost:</p>
-                                    <p><a class="btn swiper-button-next-customized" href="" target="_blank">Tips</a>
+                                    <p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>
                                     </p>
                                 </div>
                             </div>
 
                         </div>
-                        <button type="button" class="btn btn-dark swiper-button-next-customized">see how many money
-                            wasted
-                        </button>
-                    </div>
-
-                    <div class="swiper-slide swiper-no-swiping">
-                        <div class="container">
-
-                            <p>her are some tips:</p>
-                            <a href="{% url 'SearchLocation'%}">go to map</a>
-                        </div>
 
                     </div>
+
+                    <!--<div class="swiper-slide swiper-no-swiping">-->
+                        <!--<div class="container">-->
+
+                            <!--<p>her are some tips:</p>-->
+                            <!--<a href="{% url 'SearchLocation'%}">go to map</a>-->
+                        <!--</div>-->
+
+                    <!--</div>-->
                 </div>
 
             </div>
