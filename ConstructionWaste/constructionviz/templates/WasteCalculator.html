@@ -245,65 +245,86 @@
                             <span></span>
                         </a>
 
-                        <div class="containerForDisplay">
+                        <!--<div class="containerForDisplay">-->
 
-                            <div class="element-card">
-                                <div class="front-facing">
-                                    <img src="{% static 'img/brickCard.png'%}">
-                                    <p class="title">Brick</p>
+                            <!--<div class="element-card">-->
+                                <!--<div class="front-facing">-->
+                                    <!--<img src="{% static 'img/brickCard.png'%}">-->
+                                    <!--<p class="title">Brick</p>-->
 
-                                </div>
-                                <div class="back-facing">
-                                    <p>Waste material in units:</p>
-                                    <p>How much they cost:</p>
-                                    <p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>
-                                    </p>
-                                </div>
-                            </div>
+                                <!--</div>-->
+                                <!--<div class="back-facing">-->
+                                    <!--<p>Waste material in units:</p>-->
+                                    <!--<p>How much they cost:</p>-->
+                                    <!--<p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
 
-                            <div class="element-card">
-                                <div class="front-facing">
-                                    <img src="{% static 'img/timberCard.png'%}">
-                                    <p class="title">Timber</p>
+                            <!--<div class="element-card">-->
+                                <!--<div class="front-facing">-->
+                                    <!--<img src="{% static 'img/timberCard.png'%}">-->
+                                    <!--<p class="title">Timber</p>-->
 
-                                </div>
-                                <div class="back-facing">
-                                    <p>Waste material in tones:</p>
-                                    <p>How much they cost:</p>
-                                    <p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>
-                                    </p>
-                                </div>
-                            </div>
+                                <!--</div>-->
+                                <!--<div class="back-facing">-->
+                                    <!--<p>Waste material in tones:</p>-->
+                                    <!--<p>How much they cost:</p>-->
+                                    <!--<p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
 
-                            <div class="element-card">
-                                <div class="front-facing">
-                                    <img src="https://source.unsplash.com/tSSB4PL-w-E">
-                                    <p class="title">Sand</p>
+                            <!--<div class="element-card">-->
+                                <!--<div class="front-facing">-->
+                                    <!--<img src="https://source.unsplash.com/tSSB4PL-w-E">-->
+                                    <!--<p class="title">Sand</p>-->
 
-                                </div>
-                                <div class="back-facing">
-                                    <p>Waste material in tones:</p>
-                                    <p>How much they cost:</p>
-                                    <p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>
-                                    </p>
-                                </div>
-                            </div>
+                                <!--</div>-->
+                                <!--<div class="back-facing">-->
+                                    <!--<p>Waste material in tones:</p>-->
+                                    <!--<p>How much they cost:</p>-->
+                                    <!--<p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
 
-                            <div class="element-card">
-                                <div class="front-facing">
-                                    <img src="{% static 'img/cementCard.png'%}">
-                                    <p class="title">Cement</p>
+                            <!--<div class="element-card">-->
+                                <!--<div class="front-facing">-->
+                                    <!--<img src="{% static 'img/cementCard.png'%}">-->
+                                    <!--<p class="title">Cement</p>-->
 
-                                </div>
-                                <div class="back-facing">
-                                    <p>Waste material in tones:</p>
-                                    <p>How much they cost:</p>
-                                    <p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>
-                                    </p>
-                                </div>
-                            </div>
+                                <!--</div>-->
+                                <!--<div class="back-facing">-->
+                                    <!--<p>Waste material in tones:</p>-->
+                                    <!--<p>How much they cost:</p>-->
+                                    <!--<p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
 
-                        </div>
+                        <!--</div>-->
+
+
+                        <!--<div class="card">-->
+                            <!--<div class="photo"></div>-->
+                            <!--<h2>STEPS</h2>-->
+                            <!--<p>THIS WEEK</p>-->
+                            <!--<div class="chart">-->
+                                <!--<div class="bar bar1"><span>20,000</span></div>-->
+                                <!--<div class="bar bar2"><span>10,000</span></div>-->
+                                <!--<div class="bar bar3"><span>15,000</span></div>-->
+                                <!--<div class="bar bar4"><span>24,000</span></div>-->
+                                <!--<div class="bar bar5"><span>7,000</span></div>-->
+                                <!--<div class="bar bar6"><span>7,000</span></div>-->
+                            <!--</div>-->
+                            <!--<h3>93,000</h3>-->
+                        <!--</div>-->
+
+
+
+
+
 
                     </div>
 
@@ -466,20 +487,22 @@
 
     //for the fifth page
 
-    $(document).ready(function () {
+    // $(document).ready(function () {
+    //
+    //     $('.element-card').on('click', function () {
+    //
+    //         if ($(this).hasClass('open')) {
+    //             $(this).removeClass('open');
+    //         } else {
+    //             $('.element-card').removeClass('open');
+    //             $(this).addClass('open');
+    //         }
+    //
+    //     });
+    //
+    // });
 
-        $('.element-card').on('click', function () {
 
-            if ($(this).hasClass('open')) {
-                $(this).removeClass('open');
-            } else {
-                $('.element-card').removeClass('open');
-                $(this).addClass('open');
-            }
-
-        });
-
-    });
 
 
     //init the swiper
