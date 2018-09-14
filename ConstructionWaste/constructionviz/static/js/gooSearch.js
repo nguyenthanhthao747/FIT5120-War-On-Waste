@@ -36,6 +36,26 @@ function initMap() {
     onload_map();
 }
 
+// When the user input address, get the place details for the address and
+// zoom the map.
+function onPlaceChanged() {
+    var place = autocomplete.getPlace();
+    if (place.geometry) {
+        map.panTo(place.geometry.location);
+        map.setZoom(13);
+    } else {
+        document.getElementById('autocomplete').placeholder = 'Search by address';
+    }
+}
+
+var lat = [];
+var long = [];
+var name = [];
+var address = [];
+var markers = [];
+var contentString = [];
+var infoWindow = [];
+var cardContent = [];
 
 //add data table
 jQuery(document).ready(function() {
@@ -61,26 +81,6 @@ jQuery(document).ready(function() {
     } );
 } );
 
-// When the user input address, get the place details for the address and
-// zoom the map.
-function onPlaceChanged() {
-    var place = autocomplete.getPlace();
-    if (place.geometry) {
-        map.panTo(place.geometry.location);
-        map.setZoom(13);
-    } else {
-        document.getElementById('autocomplete').placeholder = 'Search by address';
-    }
-}
-
-var lat = [];
-var long = [];
-var name = [];
-var address = [];
-var markers = [];
-var contentString = [];
-var infoWindow = [];
-
 //add markers to the map to default mel map
 function onload_map() {
     $.ajax({
@@ -95,6 +95,7 @@ function onload_map() {
                     long = parseFloat(DATA.reuse[i].long);
                     name = DATA.reuse[i].name;
                     address = DATA.reuse[i].address;
+
                     markers[i] = new google.maps.Marker({
                         position: {lat: lat, lng: long},
                         map: map,
