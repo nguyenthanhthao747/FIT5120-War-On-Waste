@@ -35,17 +35,18 @@
     <!--import map js file-->
     <script src="{% static 'jquery/jquery.min.js'%}"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="{% static 'js/gooSearch.js'%}"></script>
+    <!--<script src="{% static 'js/gooSearch.js'%}"></script>-->
+    <script src="{% static 'js/list-map.js'%}"></script>
 </head>
 <body>
 <!--{% if user.is_authenticated %}-->
 <!--<nav class="nav justify-content-end text-primary p-1">-->
-    <!--&lt;!&ndash; <a class="navbar-brand">Navbar</a> &ndash;&gt;-->
-    <!--<span class="float-right">-->
-          <!--Hi {{ user.username }}! &nbsp;-->
-          <!--<a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important"-->
-             <!--href="{% url 'logout' %}">logout</a>-->
-        <!--</span>-->
+<!--&lt;!&ndash; <a class="navbar-brand">Navbar</a> &ndash;&gt;-->
+<!--<span class="float-right">-->
+<!--Hi {{ user.username }}! &nbsp;-->
+<!--<a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important"-->
+<!--href="{% url 'logout' %}">logout</a>-->
+<!--</span>-->
 <!--</nav>-->
 <!--{% endif %}-->
 
@@ -63,7 +64,9 @@
                 <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Search</a></li>
                 <li><a class="smoothScroll" href="{% url 'about'%}">About</a></li>
                 {% if user.is_authenticated %}
-                <li><button class="logbutton" href="{% url 'logout' %}">logout</button></li>
+                <li>
+                    <button class="logbutton" href="{% url 'logout' %}">logout</button>
+                </li>
                 {% endif %}
             </ul>
         </div>
@@ -80,18 +83,38 @@
             </h2>
         </div>
         <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <table id="example" class="display" style="width:100%">
+                    <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                    </tr>
+                    </thead>
+                    <tbody id="carddata">
+                    </tbody>
+                </table>
+            </div>
 
-            <div class="col-lg-12 ">
+            <div class="col-lg-7">
                 <div class="div-img-bg">
                     <div class="about-img">
                         <div class="img-responsive">
                             <div class="about-descr">
                                 <p></p>
-                                <div id="findhotels" class="p-heading" style="padding-top: 10px;padding-bottom: 10px;padding-left: 20px">Find drop-off locations in:</div>
-                                <div id="locationField" style="padding-top: 10px; padding-bottom: 10px;padding-left: 20px">
-                                    <input id="autocomplete" placeholder="Search by address" style="width: 400px" type="text"/>
+                                <div id="findhotels" class="p-heading"
+                                     style="padding-top: 10px;padding-bottom: 10px;padding-left: 20px">Find drop-off
+                                    locations in:
                                 </div>
-                                <div id="controls" style="display: none"><select id="country"><option value="au">Melbourne</option></select></div>
+                                <div id="locationField"
+                                     style="padding-top: 10px; padding-bottom: 10px;padding-left: 20px">
+                                    <input id="autocomplete" placeholder="Search by address" style="width: 400px"
+                                           type="text"/>
+                                </div>
+                                <div id="controls" style="display: none"><select id="country">
+                                    <option value="au">Melbourne</option>
+                                </select></div>
                             </div>
                             <div id="map"></div>
                         </div>
@@ -126,7 +149,7 @@
 
 <!--d3 JavaScript-->
 <!-- JavaScript Libraries -->
-<script src="{% static 'lib/jquery/jquery.min.js'%}"></script>
+<!--<script src="{% static 'lib/jquery/jquery.min.js'%}"></script>-->
 <script src="{% static 'lib/jquery/jquery-migrate.min.js'%}"></script>
 <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 <script src="{% static 'lib/typed/typed.js'%}"></script>
