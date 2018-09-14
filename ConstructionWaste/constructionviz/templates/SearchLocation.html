@@ -38,38 +38,33 @@
     <script src="{% static 'js/gooSearch.js'%}"></script>
 </head>
 <body>
-{% if user.is_authenticated %}
-<nav class="nav justify-content-end text-primary p-1">
-    <!-- <a class="navbar-brand">Navbar</a> -->
-    <span class="float-right">
-          Hi {{ user.username }}! &nbsp;
-          <a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important"
-             href="{% url 'logout' %}">logout</a>
-        </span>
-</nav>
-{% endif %}
-<h1 class="site-heading text-center text-white d-none d-lg-block">
-    <span class="site-heading-upper text-primary mb-3">Construction and Demolition Waste</span>
-    <!-- <span class="site-heading-lower">War on Waste</span> -->
-</h1>
+<!--{% if user.is_authenticated %}-->
+<!--<nav class="nav justify-content-end text-primary p-1">-->
+    <!--&lt;!&ndash; <a class="navbar-brand">Navbar</a> &ndash;&gt;-->
+    <!--<span class="float-right">-->
+          <!--Hi {{ user.username }}! &nbsp;-->
+          <!--<a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important"-->
+             <!--href="{% url 'logout' %}">logout</a>-->
+        <!--</span>-->
+<!--</nav>-->
+<!--{% endif %}-->
 
 <!-- start section navbar -->
 <nav id="main-nav">
     <div class="row">
         <div class="container">
-            <!--<div class="logo">-->
-            <!--<a href="index.html"><img src="{% static 'images/logo.png'%}" alt="logo"></a>-->
-            <!--</div>-->
-
             <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
             <ul class="nav-menu list-unstyled">
                 <li>
                     <a class="smoothScroll" href="{% url 'home'%}">Home<span class="sr-only">(current)</span></a>
                 </li>
-                <li><a class="smoothScroll" href="{% url 'statistics'%}">Statistics</a></li>
                 <li><a class="smoothScroll" href="{% url 'WasteCalculator'%}">Calculator</a></li>
+                <li><a class="smoothScroll" href="{% url 'statistics'%}">Statistics</a></li>
                 <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Search</a></li>
                 <li><a class="smoothScroll" href="{% url 'about'%}">About</a></li>
+                {% if user.is_authenticated %}
+                <li><button class="logbutton" href="{% url 'logout' %}">logout</button></li>
+                {% endif %}
             </ul>
         </div>
     </div>
@@ -82,7 +77,6 @@
         <div class="cta-inner text-center rounded">
             <h2 class="section-heading mb-5">
                 <span class="section-heading-upper">Search Drop-off Locations!</span>
-                <!--<span class="section-heading-lower">Search Drop-off Locations!</span>-->
             </h2>
         </div>
         <div class="row justify-content-between">
@@ -107,51 +101,6 @@
                     </div>
                 </div>
             </div>
-
-            <!--<div class="col-lg-4">-->
-            <!--<div class="about-descr">-->
-            <!--<table id="example" class="display" style="width:100%">-->
-            <!--<thead>-->
-            <!--<tr>-->
-            <!--<th>Type</th>-->
-            <!--<th>Name</th>-->
-            <!--<th>Address</th>-->
-            <!--<th>Postcode</th>-->
-            <!--</tr>-->
-            <!--</thead>-->
-            <!--<tbody>-->
-            <!--<tr>-->
-            <!--<td>reuse</td>-->
-            <!--<td>a</td>-->
-            <!--<td>add</td>-->
-            <!--<td>1222</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<td>reuse</td>-->
-            <!--<td>b</td>-->
-            <!--<td>ad</td>-->
-            <!--<td>3212</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<td>recycle</td>-->
-            <!--<td>c</td>-->
-            <!--<td>ff</td>-->
-            <!--<td>3212</td>-->
-            <!--</tr>-->
-            <!--</tbody>-->
-            <!--<tfoot>-->
-            <!--<tr>-->
-            <!--<th>Type</th>-->
-            <!--<th>Name</th>-->
-            <!--<th>Address</th>-->
-            <!--<th>Postcode</th>-->
-
-            <!--</tr>-->
-            <!--</tfoot>-->
-            <!--</table>-->
-            <!--</div>-->
-
-            <!--</div>-->
         </div>
     </div>
 </div>
