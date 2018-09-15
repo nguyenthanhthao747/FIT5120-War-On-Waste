@@ -1,7 +1,7 @@
 
 .swiper-container {
-  width: 80%;
-  height: 500px;
+  width: 100%;
+  height: 100%;
   border-radius: 15px;
 
 }
@@ -34,7 +34,7 @@
   white-space: nowrap;
 }
 
-.button {
+.containerForSplitView .button {
   display: block;
   position: absolute;
   left: 50%;
@@ -63,7 +63,7 @@
 .containerForSplitView {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 500px;
   background: var(--container-bg-color);
 }
 
@@ -155,7 +155,7 @@
 
 .containerForCard{
   position:relative;
-  margin: auto 0 auto 0;
+  margin: 20px 0 auto 0;
 
 }
 
@@ -245,7 +245,7 @@ figure .caption {
   background: #fff;
   content: '';
   transition: transform 0.35s;
-  transform: translate3d(-200%,0,0);
+  transform: translate3d(-400%,0,0);
 }
 
 .front:hover h2 {
@@ -659,3 +659,66 @@ figure a{
 
 
 /*css for display the detail data*/
+/*body {*/
+  /*width: 100%;*/
+  /*height: 100%;*/
+  /*font-family: "Open Sans", "open-sans", sans-serif;*/
+  /*letter-spacing: 0.03em;*/
+  /*line-height: 1.6;*/
+  /*color: #000;*/
+/*}*/
+.containerForDisplay {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin-left: 10px;
+}
+
+.containerForDisplay .card {
+  width: 90%;
+  height: 100%;
+  float: left;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  text-align: center;
+  transition: all 0.25s;
+  margin-top: 30px;
+}
+
+.containerForDisplay .card img{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.containerForDisplay .card:nth-child(2) {
+  margin: 0 50px;
+}
+
+.containerForDisplay .card:hover {
+  top: -15px;
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.containerForDisplay .card h4 {
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.containerForDisplay .card p {
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/*.containerForDisplay .card a {*/
+  /*font-weight: 500;*/
+  /*text-decoration: none;*/
+  /*color: #3498db;*/
+/*}*/
