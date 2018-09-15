@@ -152,12 +152,14 @@ function onPlaceChanged() {
                     // document.getElementById('carddata').innerHTML = "";
                     var datas =[];
                     for (var i = 0; i < DATA.reuse.length; i++) {
-                        type1 = "Reuse";
+                        type = "Reuse";
                         lat1 = parseFloat(DATA.reuse[i].lat);
                         long1 = parseFloat(DATA.reuse[i].long);
-                        name1 = DATA.reuse[i].name;
-                        address1 = DATA.reuse[i].address;
+                        name = DATA.reuse[i].name;
+                        address = DATA.reuse[i].address;
                         dist2 = calcDistance(origin_lat,origin_long,lat1,long1);
+                        dist2 = dist2 / 1000;
+                        dist2 = dist2.toFixed(2);
                         console.log("name1:"+name1+";dist1:"+dist2);
 
                         if (dist2 < 20000) {
