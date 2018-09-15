@@ -63,10 +63,10 @@
         <div class="container">
             <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
             <ul class="nav-menu list-unstyled">
+                <li><a class="smoothScroll" href="{% url 'home'%}">Home</a></li>
                 <li>
-                    <a class="smoothScroll" href="{% url 'home'%}">Home<span class="sr-only">(current)</span></a>
+                    <a class="smoothScroll" href="{% url 'WasteCalculator'%}">Calculator<span class="sr-only">(current)</span></a>
                 </li>
-                <li><a class="smoothScroll" href="{% url 'WasteCalculator'%}">Calculator</a></li>
                 <li><a class="smoothScroll" href="{% url 'statistics'%}">Statistics</a></li>
                 <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Search</a></li>
                 <li><a class="smoothScroll" href="{% url 'about'%}">About</a></li>
@@ -83,263 +83,243 @@
 <!-- start section map visual -->
 <div id="about" class="paddsection" style="padding-top: 90px">
     <div class="container">
-        <section class="page-section">
-
-            <div data-space-between="10" data-direction="vertical" class="swiper-container">
-                <div class="parallax-bg" data-swiper-parallax="-23%"></div>
 
 
-                <div class="swiper-wrapper">
-                    <!--the first page for the calculator-->
-                    <!--<div class="swiper-slide swiper-no-swiping">-->
+        <div data-space-between="10" data-direction="vertical" class="swiper-container">
+            <div class="parallax-bg" data-swiper-parallax="-23%"></div>
 
-                        <!--<div class="container" style="margin-top: 50px">-->
-                            <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="0.5s" style="animation-iteration-count: infinite">Do you</p>&ndash;&gt;-->
 
-                            <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1s" style="animation-iteration-count: infinite">know</p>&ndash;&gt;-->
+            <div class="swiper-wrapper">
+                <!--the first page for the calculator-->
+                <!--<div class="swiper-slide swiper-no-swiping">-->
 
-                            <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1.5s" style="animation-iteration-count: infinite">how much</p>&ndash;&gt;-->
+                    <!--<div class="container" style="margin-top: 50px">-->
+                        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="0.5s" style="animation-iteration-count: infinite">Do you</p>&ndash;&gt;-->
 
-                            <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="2s" style="animation-iteration-count: infinite">you waste?</p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1s" style="animation-iteration-count: infinite">know</p>&ndash;&gt;-->
 
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1.5s" style="animation-iteration-count: infinite">how much</p>&ndash;&gt;-->
 
-                            <!--<div class="containerForSlogan">-->
+                        <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="2s" style="animation-iteration-count: infinite">you waste?</p>&ndash;&gt;-->
 
-                                <!--<div class="slogan"><span>Do you know</span></div>-->
-                                <!--<div class="slogan"><span>how much</span></div>-->
-                                <!--<div class="slogan"><span>you waste?</span></div>-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                            <!--</div>-->
+                        <!--<div class="containerForSlogan">-->
 
-                            <!--<div class="container" style="text-align: center; margin-top: 30px">-->
-                                <!--<button type="button" class="btn btn-dark swiper-button-next-customized ani"-->
-                                        <!--swiper-animate-effect="swing" swiper-animate-duration="1s"-->
-                                        <!--swiper-animate-delay="3s" style="animation-iteration-count: infinite">go-->
-                                    <!--check-->
-                                <!--</button>-->
-                            <!--</div>-->
+                            <!--<div class="slogan"><span>Do you know</span></div>-->
+                            <!--<div class="slogan"><span>how much</span></div>-->
+                            <!--<div class="slogan"><span>you waste?</span></div>-->
+
+                        <!--</div>-->
+
+                        <!--<div class="container" style="text-align: center; margin-top: 30px">-->
+                            <!--<button type="button" class="btn btn-dark swiper-button-next-customized ani"-->
+                                    <!--swiper-animate-effect="swing" swiper-animate-duration="1s"-->
+                                    <!--swiper-animate-delay="3s" style="animation-iteration-count: infinite">go-->
+                                <!--check-->
+                            <!--</button>-->
                         <!--</div>-->
                     <!--</div>-->
+                <!--</div>-->
 
-                    <!--choose the type of construction-->
-                    <div class="swiper-slide swiper-no-swiping">
+                <!--choose the type of construction-->
+                <div class="swiper-slide swiper-no-swiping">
 
-                        <!--<div>choose type of construction</div>-->
+                    <!--<div>choose type of construction</div>-->
 
-                        <div class="containerForSplitView">
-                            <div class="split left">
-                                <h1>Builder</h1>
-                                <button class="btn btn-dark button" onclick="moveOnePageAfter()">Select</button>
-                            </div>
-                            <div class="split right">
-                                <h1>Home builder</h1>
-                                <button class="btn btn-dark button" onclick="moveTwoPageAfter()">Select</button>
+                    <div class="containerForSplitView">
+                        <div class="split left">
+                            <h1>Builder</h1>
+                            <button class="btn-dark button" onclick="moveOnePageAfter()">Select</button>
+                        </div>
+                        <div class="split right">
+                            <h1>Home builder</h1>
+                            <button class="btn-dark button" onclick="moveTwoPageAfter()">Select</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-slide swiper-no-swiping chooseKindOfBuilding">
+
+
+                    <a class="back swiper-button-prev-customized" href="">
+                        <span></span>
+                    </a>
+
+
+                    <div class="row" style="height: 100%; width: 90%; margin: 100px auto 100px">
+                        <div class="containerForCard col-md-3 col-sm-6">
+                            <div class="cardView swiper-button-next-customized" value="1">
+                                <figure class="front">
+                                    <img src="https://source.unsplash.com/QJHzMkfrJpI" alt="front">
+                                    <div class="caption">
+                                        <h2>Hospital</h2>
+                                        <p>Select this</p>
+
+                                    </div>
+                                </figure>
                             </div>
                         </div>
 
-                    </div>
-                    <div class="swiper-slide swiper-no-swiping chooseKindOfBuilding">
+                        <div class="containerForCard col-md-3 col-sm-6">
+                            <div class="cardView swiper-button-next-customized" value="2">
+                                <figure class="front">
+                                    <img src="https://source.unsplash.com/v8ZlRRM83Zs" alt="front">
+                                    <div class="caption">
+                                        <h2>Hotel</h2>
+                                        <p>Select this</p>
 
-
-                        <a class="back swiper-button-prev-customized" href="">
-                            <span></span>
-                        </a>
-
-
-                        <div class="row" style="height: 100%; width: 90%; margin: 0 auto 0">
-                            <div class="containerForCard col-md-3">
-                                <div class="cardView swiper-button-next-customized" value="1">
-                                    <figure class="front">
-                                        <img src="https://source.unsplash.com/QJHzMkfrJpI" alt="front">
-                                        <div class="caption">
-                                            <h2>Hospital</h2>
-                                            <p>check this</p>
-
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-
-                            <div class="containerForCard col-md-3">
-                                <div class="cardView swiper-button-next-customized" value="2">
-                                    <figure class="front">
-                                        <img src="https://source.unsplash.com/v8ZlRRM83Zs" alt="front">
-                                        <div class="caption">
-                                            <h2>Hotel</h2>
-                                            <p>check this</p>
-
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-
-                            <div class="containerForCard col-md-3">
-                                <div class="cardView swiper-button-next-customized" value="3">
-                                    <figure class="front">
-                                        <img src="https://source.unsplash.com/ctUWE7BUEzE" alt="front">
-                                        <div class="caption">
-                                            <h2>Student</h2>
-                                            <p>check this</p>
-
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-
-                            <div class="containerForCard col-md-3">
-                                <div class="cardView swiper-button-next-customized" value="4">
-                                    <figure class="front">
-                                        <img src="https://source.unsplash.com/dhvtr5fwbHI" alt="front">
-                                        <div class="caption">
-                                            <h2>Residential</h2>
-                                            <p>check this</p>
-
-                                        </div>
-                                    </figure>
-                                </div>
+                                    </div>
+                                </figure>
                             </div>
                         </div>
 
-                    </div>
-                    <div class="swiper-slide swiper-no-swiping typeInDetailPage">
+                        <div class="containerForCard col-md-3 col-sm-6">
+                            <div class="cardView swiper-button-next-customized" value="3">
+                                <figure class="front">
+                                    <img src="https://source.unsplash.com/ctUWE7BUEzE" alt="front">
+                                    <div class="caption">
+                                        <h2>Student</h2>
+                                        <p>Select this</p>
 
-                        <a class="back swiper-button-prev-customized" href="">
-                            <span></span>
-                        </a>
-
-                        <div class="user">
-
-                            <form class="form">
-                                <div class="form__group">
-                                    <input id="detailBox1" type="text" placeholder="How many bed rooms"
-                                           class="form__input"/>
-                                </div>
-
-                                <div class="form__group">
-                                    <input id="detailBox2" type="text" placeholder="How many living rooms"
-                                           class="form__input"/>
-                                </div>
-
-                                <div class="form__group">
-                                    <input id="detailBox3" type="text" placeholder="How many kitchens"
-                                           class="form__input"/>
-                                </div>
-
-                                <div class="form__group">
-                                    <input id="detailBox4" type="text" placeholder="How many car parks"
-                                           class="form__input"/>
-                                </div>
-                                <button class="btnForCalculator swiper-button-next-customized" type="button">
-                                    Calculate
-                                </button>
-                            </form>
+                                    </div>
+                                </figure>
+                            </div>
                         </div>
 
-                    </div>
-                    <div class="swiper-slide swiper-no-swiping">
+                        <div class="containerForCard col-md-3 col-sm-6">
+                            <div class="cardView swiper-button-next-customized" value="4">
+                                <figure class="front">
+                                    <img src="https://source.unsplash.com/dhvtr5fwbHI" alt="front">
+                                    <div class="caption">
+                                        <h2>Residential</h2>
+                                        <p>Select this</p>
 
-                        <a class="back swiper-button-prev-customized" href="">
-                            <span></span>
-                        </a>
-
-                        <!--<div class="containerForDisplay">-->
-
-                            <!--<div class="element-card">-->
-                                <!--<div class="front-facing">-->
-                                    <!--<img src="{% static 'img/brickCard.png'%}">-->
-                                    <!--<p class="title">Brick</p>-->
-
-                                <!--</div>-->
-                                <!--<div class="back-facing">-->
-                                    <!--<p>Waste material in units:</p>-->
-                                    <!--<p>How much they cost:</p>-->
-                                    <!--<p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>-->
-                                    <!--</p>-->
-                                <!--</div>-->
-                            <!--</div>-->
-
-                            <!--<div class="element-card">-->
-                                <!--<div class="front-facing">-->
-                                    <!--<img src="{% static 'img/timberCard.png'%}">-->
-                                    <!--<p class="title">Timber</p>-->
-
-                                <!--</div>-->
-                                <!--<div class="back-facing">-->
-                                    <!--<p>Waste material in tones:</p>-->
-                                    <!--<p>How much they cost:</p>-->
-                                    <!--<p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>-->
-                                    <!--</p>-->
-                                <!--</div>-->
-                            <!--</div>-->
-
-                            <!--<div class="element-card">-->
-                                <!--<div class="front-facing">-->
-                                    <!--<img src="https://source.unsplash.com/tSSB4PL-w-E">-->
-                                    <!--<p class="title">Sand</p>-->
-
-                                <!--</div>-->
-                                <!--<div class="back-facing">-->
-                                    <!--<p>Waste material in tones:</p>-->
-                                    <!--<p>How much they cost:</p>-->
-                                    <!--<p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>-->
-                                    <!--</p>-->
-                                <!--</div>-->
-                            <!--</div>-->
-
-                            <!--<div class="element-card">-->
-                                <!--<div class="front-facing">-->
-                                    <!--<img src="{% static 'img/cementCard.png'%}">-->
-                                    <!--<p class="title">Cement</p>-->
-
-                                <!--</div>-->
-                                <!--<div class="back-facing">-->
-                                    <!--<p>Waste material in tones:</p>-->
-                                    <!--<p>How much they cost:</p>-->
-                                    <!--<p><a class="btn" href="{% url 'SearchLocation'%}">Go to map</a>-->
-                                    <!--</p>-->
-                                <!--</div>-->
-                            <!--</div>-->
-
-                        <!--</div>-->
-
-
-                        <!--<div class="card">-->
-                            <!--<div class="photo"></div>-->
-                            <!--<h2>STEPS</h2>-->
-                            <!--<p>THIS WEEK</p>-->
-                            <!--<div class="chart">-->
-                                <!--<div class="bar bar1"><span>20,000</span></div>-->
-                                <!--<div class="bar bar2"><span>10,000</span></div>-->
-                                <!--<div class="bar bar3"><span>15,000</span></div>-->
-                                <!--<div class="bar bar4"><span>24,000</span></div>-->
-                                <!--<div class="bar bar5"><span>7,000</span></div>-->
-                                <!--<div class="bar bar6"><span>7,000</span></div>-->
-                            <!--</div>-->
-                            <!--<h3>93,000</h3>-->
-                        <!--</div>-->
-
-
-
-
-
-
+                                    </div>
+                                </figure>
+                            </div>
+                        </div>
                     </div>
 
-                    <!--<div class="swiper-slide swiper-no-swiping">-->
-                        <!--<div class="container">-->
+                </div>
+                <div class="swiper-slide swiper-no-swiping typeInDetailPage">
 
-                            <!--<p>her are some tips:</p>-->
-                            <!--<a href="{% url 'SearchLocation'%}">go to map</a>-->
-                        <!--</div>-->
+                    <a class="back swiper-button-prev-customized" href="">
+                        <span></span>
+                    </a>
 
-                    <!--</div>-->
+                    <div class="user">
+
+                        <form class="form">
+                            <div class="form__group">
+                                <input id="detailBox1" type="text" placeholder="How many bed rooms"
+                                       class="form__input"/>
+                            </div>
+
+                            <div class="form__group">
+                                <input id="detailBox2" type="text" placeholder="How many living rooms"
+                                       class="form__input"/>
+                            </div>
+
+                            <div class="form__group">
+                                <input id="detailBox3" type="text" placeholder="How many kitchens"
+                                       class="form__input"/>
+                            </div>
+
+                            <div class="form__group">
+                                <input id="detailBox4" type="text" placeholder="How many car parks"
+                                       class="form__input"/>
+                            </div>
+                            <button class="btnForCalculator swiper-button-next-customized" type="button">
+                                Calculate
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+
+                    <a class="back swiper-button-prev-customized" href="">
+                        <span></span>
+                    </a>
+
+                    <div class="containerForDisplay">
+                        <div class="row" style="margin: 80px auto 100px">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card">
+                                    <img src="{% static 'img/calculator-brick.jpg'%}">
+                                    <h4>Brick</h4>
+                                    <p>You waste in units:</p>
+                                    <p id="tonesOfBrick">1</p>
+                                    <p>Your waste cost:</p>
+                                    <p id="costOfBrick">2</p>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card">
+                                    <img src="{% static 'img/calculator-timber.jpg'%}">
+                                    <h4>Timber</h4>
+                                    <p>You waste in Kg:</p>
+                                    <p id="tonesOfTimber">1</p>
+                                    <p>Your waste cost:</p>
+                                    <p id="costOfTimber">2</p>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card">
+                                    <img src="{% static 'img/calculator-sand.jpg'%}">
+                                    <h4>Sand</h4>
+                                    <p>You waste in Kg:</p>
+                                    <p id="tonesOfSand">1</p>
+                                    <p>Your waste cost:</p>
+                                    <p id="costOfSand">2</p>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card">
+                                    <img src="{% static 'img/calculator-concrete.jpg'%}">
+                                    <h4>Cement</h4>
+                                    <p>You waste in Kg:</p>
+                                    <p id="tonesOfCement">1</p>
+                                    <p>Your waste cost:</p>
+                                    <p id="costOfCement">2</p>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="container">
+                            <a href="{% url 'SearchLocation'%}">go to map</a>
+                        </div>
+                    </div>
+
+
+
+
                 </div>
 
+                <!--<div class="swiper-slide swiper-no-swiping">-->
+                    <!--<div class="container">-->
+
+                        <!--<p>her are some tips:</p>-->
+                        <!--<a href="{% url 'SearchLocation'%}">go to map</a>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+
+
             </div>
-        </section>
+
+        </div>
+
     </div>
+    <!--<div style="height: 600px">1</div>-->
 </div>
 
 </body>
@@ -400,51 +380,69 @@
 
 
     //for the third page
+    var box1 = $('#detailBox1');
+    var box2 = $('#detailBox2');
+    var box3 = $('#detailBox3');
+    var box4 = $('#detailBox4');
+
 
 
     $('.cardView').click(function () {
         numberOfBuildingType = $(this).attr('value');
 
 
-        var box1 = $('#detailBox1');
-        var box2 = $('#detailBox2');
-        var box3 = $('#detailBox3');
-        var box4 = $('#detailBox4');
+
 
         //console.log(numberOfBuildingType, typeof numberOfBuildingType, numberOfBuildingType === "1");
         switch (numberOfBuildingType) {
             case "1":
                 //console.log(box1.attr("placeholder"));
-                box1.attr("placeholder", "How many ");
-                box2.attr("placeholder", "How many ");
-                box3.attr("placeholder", "How many ");
-                box4.attr("placeholder", "How many ");
+                box1.attr("placeholder", "Enter number of ");
+                box2.attr("placeholder", "Enter number of ");
+                box3.attr("placeholder", "Enter number of ");
+                box4.attr("placeholder", "Enter number of ");
                 break;
             case "2":
-                box1.attr("placeholder", "How many hotel rooms");
-                box2.attr("placeholder", "How many Serviced apartments");
-                box3.attr("placeholder", "How many ");
-                box4.attr("placeholder", "How many car parks");
+                box1.attr("placeholder", "Enter number of hotel rooms");
+                box2.attr("placeholder", "Enter number of Serviced apartments");
+                box3.attr("placeholder", "Enter number of ");
+                box4.attr("placeholder", "Enter number of car parks");
                 break;
             case "3":
-                box1.attr("placeholder", "How many student rooms");
-                box2.attr("placeholder", "How many beds in each room");
-                box3.attr("placeholder", "How many ");
-                box4.attr("placeholder", "How many car parks");
+                box1.attr("placeholder", "Enter number of student rooms");
+                box2.attr("placeholder", "Enter number of beds in each room");
+                box3.attr("placeholder", "Enter number of ");
+                box4.attr("placeholder", "Enter number of car parks");
                 break;
             case "4":
-                box1.attr("placeholder", "How many one-bedroom units");
-                box2.attr("placeholder", "How many two-bedroom units");
-                box3.attr("placeholder", "How many three-bedroom units");
-                box4.attr("placeholder", "How many car parks");
+                box1.attr("placeholder", "Enter number of one-bedroom units");
+                box2.attr("placeholder", "Enter number of two-bedroom units");
+                box3.attr("placeholder", "Enter number of three-bedroom units");
+                box4.attr("placeholder", "Enter number of car parks");
                 break;
         }
+
+
 
     });
 
     //for the fourth page
+    function validationForUserInput(inputBox1, inputBox2, inputBox3, inputBox4) {
+        let regex = /^[1-9]\d*|0$/;
 
-    let squareMeter;
+        return regex.test(inputBox1);
+    }
+
+
+    function clearUserInput() {
+        box1.val("");
+        box2.val("");
+        box3.val("");
+        box4.val("");
+    }
+
+
+    var squareMeter;
 
     const button = document.querySelector('.btnForCalculator');
     const form = document.querySelector('.form');
@@ -457,6 +455,9 @@
         let detailBox3 = $('#detailBox3').val();
         let detailBox4 = $('#detailBox4').val();
 
+
+        var inputIsValid = validationForUserInput(detailBox1, detailBox2, detailBox3, detailBox4);
+        console.log(inputIsValid);
 
         switch (numberOfBuildingType) {
             case 0:
@@ -481,27 +482,35 @@
 
         console.log(squareMeter);
 
+        var tonesOfBrick = parseFloat(Math.round(squareMeter * 64000 / 93 * 0.08 * 100) / 100).toFixed(2);
+        var costOfBrick = parseFloat(Math.round(tonesOfBrick * 1.859 * 100) / 100).toFixed(2);
+
+        var tonesOfTimber = parseFloat(Math.round(squareMeter * 18880 / 93 * 0.06 * 100) / 100).toFixed(2);
+        var costOfTimber = parseFloat(Math.round(tonesOfBrick * 50 * 100) / 100).toFixed(2);
+
+        var tonesOfSand = parseFloat(Math.round(squareMeter * 164540 / 186 * 0.02 * 100) / 100).toFixed(2);
+        var costOfSand = parseFloat(Math.round(tonesOfBrick * 0.4 * 100) / 100).toFixed(2);
+
+        var tonesOfCement = parseFloat(Math.round(squareMeter * 17052 / 93 * 0.04 * 100) / 100).toFixed(2);
+        var costOfCement = parseFloat(Math.round(tonesOfBrick * 0.7 * 100) / 100).toFixed(2);
+
+        console.log(tonesOfBrick, costOfBrick);
+
+
+
+        $('#tonesOfBrick').text(tonesOfBrick);
+        $('#costOfBrick').text("$ " + costOfBrick);
+        $('#tonesOfTimber').text(tonesOfTimber);
+        $('#costOfTimber').text("$ " + costOfTimber);
+        $('#tonesOfSand').text(tonesOfSand);
+        $('#costOfSand').text("$ " + costOfSand);
+        $('#tonesOfCement').text(tonesOfCement);
+        $('#costOfCement').text("$ " + costOfCement);
+
+
+        clearUserInput();
 
     });
-
-    //for the fifth page
-
-    // $(document).ready(function () {
-    //
-    //     $('.element-card').on('click', function () {
-    //
-    //         if ($(this).hasClass('open')) {
-    //             $(this).removeClass('open');
-    //         } else {
-    //             $('.element-card').removeClass('open');
-    //             $(this).addClass('open');
-    //         }
-    //
-    //     });
-    //
-    // });
-
-
 
 
     //init the swiper
@@ -510,6 +519,7 @@
 
         speed: 400,
         // spaceBetween: 100,
+        autoHeight: true, //enable auto height
 
         // need navigation button
         navigation: {
@@ -540,136 +550,6 @@
     function moveOnePageAfter() {
         swiper.slideTo($('.chooseKindOfBuilding').index(), 1000, false);
     }
-
-
-    // var indexOfPicture = 0;
-    // showCalculator();
-    // //console.log(indexOfPicture);
-    //
-    // function prevCalculator() {
-    //     indexOfPicture -= 1;
-    //     //console.log(indexOfPicture);
-    //     showCalculator();
-    // }
-    //
-    // function nextCalculator() {
-    //     indexOfPicture += 1;
-    //     //console.log(indexOfPicture);
-    //     showCalculator();
-    // }
-    //
-    // function showCalculator() {
-    //     if (indexOfPicture < 0) {
-    //         indexOfPicture = 0;
-    //     } else if (indexOfPicture > 3) {
-    //         indexOfPicture = 3;
-    //     } else {
-    //
-    //         switch (indexOfPicture) {
-    //
-    //             case 0:
-    //                 clearInput();
-    //                 document.getElementById("basic-addon1").placeholder = "1-apartment";
-    //
-    //                 document.getElementById("basic-addon2").placeholder = "2-apartment";
-    //
-    //                 document.getElementById("basic-addon3").placeholder = "3-apartment";
-    //
-    //                 break;
-    //
-    //             case 1:
-    //                 clearInput();
-    //                 document.getElementById("basic-addon1").placeholder = "Hotel rooms";
-    //
-    //                 document.getElementById("basic-addon2").placeholder = "Serviced apartments";
-    //
-    //                 document.getElementById("basic-addon3").placeholder = "Car parks";
-    //
-    //                 break;
-    //
-    //             case 2:
-    //                 clearInput();
-    //                 document.getElementById("basic-addon1").placeholder = "Student apartments";
-    //
-    //                 document.getElementById("basic-addon2").placeholder = "Student beds";
-    //
-    //                 document.getElementById("basic-addon3").placeholder = "Car parks";
-    //
-    //                 break;
-    //         }
-    //
-    //     }
-    //
-    // }
-    //
-    // function clearInput() {
-    //     document.getElementById("basic-addon1").value = "";
-    //
-    //     document.getElementById("basic-addon2").value = "";
-    //
-    //     document.getElementById("basic-addon3").value = "";
-    // }
-    //
-    //
-    // $("#calculatorModal").animatedModal({
-    //     modalTarget:'animatedModal',
-    //     animatedIn: 'zoomIn',
-    //     animatedOut: 'bounceOut',
-    //     color: '#f9f1e6',
-    //
-    //     beforeOpen: function () {
-    //
-    //     },
-    //
-    //     afterOpen: function () {
-    //         var firstInput = $("#basic-addon1").val();
-    //         var secondInput = $("#basic-addon2").val();
-    //         var thirdInput = $("#basic-addon3").val();
-    //
-    //         console.log(firstInput,secondInput,thirdInput,indexOfPicture);
-    //
-    //         var squareMeter;
-    //
-    //         function showNumber(squareMeter) {
-    //             $("#brickWaste").text("Brick: " + squareMeter * 0.5 * 0.06 + " T");
-    //             $("#timberWaste").text("Timber: " + squareMeter * 0.75 * 0.08 + " T");
-    //             $("#concreteWaste").text("Concrete: " + squareMeter * 0.04 + " T");
-    //         }
-    //
-    //
-    //         if (indexOfPicture < 0) {
-    //             indexOfPicture = 0;
-    //         } else if (indexOfPicture > 3) {
-    //             indexOfPicture = 3;
-    //         } else {
-    //             switch (indexOfPicture) {
-    //                 case 0:
-    //                     squareMeter = firstInput * 58 + secondInput * 91 + thirdInput * 148;
-    //                     showNumber(squareMeter);
-    //
-    //                     break;
-    //
-    //                 case 1:
-    //                     squareMeter = firstInput * 30.6 + secondInput * 62.6 + thirdInput * 15.7;
-    //                     showNumber(squareMeter);
-    //
-    //                     break;
-    //
-    //
-    //                 case 2:
-    //                     squareMeter = firstInput * 12 + secondInput * 2.18 + thirdInput * 15.7;
-    //                     showNumber(squareMeter);
-    //
-    //                     break;
-    //             }
-    //         }
-    //     },
-    //
-    //     beforeClose: function () {
-    //         clearInput();
-    //     }
-    //
-    // });
 
 </script>
 </html>
