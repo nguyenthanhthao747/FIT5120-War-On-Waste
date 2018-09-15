@@ -212,40 +212,50 @@
                     <div class="user">
 
                         <form class="form">
-                            <div class="form__group">
-                                <input id="detailBox1" type="text" placeholder="How many bed rooms"
-                                       class="form__input"/>
-                            </div>
 
-                            <div class="form__group">
-                                <input id="detailBox2" type="text" placeholder="How many living rooms"
-                                       class="form__input"/>
-                            </div>
 
-                            <div class="form__group">
-                                <input id="detailBox3" type="text" placeholder="How many kitchens"
-                                       class="form__input"/>
-                            </div>
+                            <input id="detailBox1" type="text" placeholder="Enter number of bed rooms"
+                                   class="form__input" pattern="^[1-9]\d*|0$"/>
 
-                            <div class="form__group">
-                                <input id="detailBox4" type="text" placeholder="How many car parks"
-                                       class="form__input"/>
-                            </div>
-                            <button class="btnForCalculator swiper-button-next-customized" type="button">
-                                Calculate
-                            </button>
+
+
+                            <input id="detailBox2" type="text" placeholder="Enter number of living rooms"
+                                   class="form__input"/>
+
+
+
+                            <input id="detailBox3" type="text" placeholder="Enter number of kitchens"
+                                   class="form__input"/>
+
+
+
+                            <input id="detailBox4" type="text" placeholder="Enter number of car parks"
+                                   class="form__input"/>
+
+                            <div class="invalid-tooltip">Please type in non-negative number</div>
+
+                            <button class="btnForCalculator" type="button">Calculate</button>
                         </form>
+
+
+                        <!--<div class="invalid-feedback">-->
+                            <!--Please type in non-negative number-->
+                        <!--</div>-->
                     </div>
 
+
+                    <div id="errorInput" style="text-align: center; color: red; visibility: collapse">* Please type in non-negative number</div>
+
+
                 </div>
-                <div class="swiper-slide swiper-no-swiping">
+                <div class="swiper-slide swiper-no-swiping displayDetailPage">
 
                     <a class="back swiper-button-prev-customized" href="">
                         <span></span>
                     </a>
 
                     <div class="containerForDisplay">
-                        <div class="row" style="margin: 80px auto 100px">
+                        <div class="row" style="margin: 80px auto 50px">
                             <div class="col-md-3 col-sm-6">
                                 <div class="card">
                                     <img src="{% static 'img/calculator-brick.jpg'%}">
@@ -294,8 +304,12 @@
 
                         </div>
 
-                        <div class="container">
-                            <a href="{% url 'SearchLocation'%}">go to map</a>
+
+
+
+
+                        <div class="container" style="text-align: center; margin-bottom: 50px">
+                            <a href="{% url 'SearchLocation'%}" class="btn yellow">Check drop sites on map</a>
                         </div>
                     </div>
 
@@ -397,21 +411,21 @@
         switch (numberOfBuildingType) {
             case "1":
                 //console.log(box1.attr("placeholder"));
-                box1.attr("placeholder", "Enter number of ");
-                box2.attr("placeholder", "Enter number of ");
-                box3.attr("placeholder", "Enter number of ");
-                box4.attr("placeholder", "Enter number of ");
+                box1.attr("placeholder", "Enter number of hospital rooms");
+                box2.attr("placeholder", "Enter number of waiting rooms");
+                box3.attr("placeholder", "Enter number of ER rooms");
+                box4.attr("placeholder", "Enter number of Equipment storage space");
                 break;
             case "2":
                 box1.attr("placeholder", "Enter number of hotel rooms");
                 box2.attr("placeholder", "Enter number of Serviced apartments");
-                box3.attr("placeholder", "Enter number of ");
+                box3.attr("placeholder", "Enter number of bathrooms in total");
                 box4.attr("placeholder", "Enter number of car parks");
                 break;
             case "3":
                 box1.attr("placeholder", "Enter number of student rooms");
                 box2.attr("placeholder", "Enter number of beds in each room");
-                box3.attr("placeholder", "Enter number of ");
+                box3.attr("placeholder", "Enter number of bathrooms in total");
                 box4.attr("placeholder", "Enter number of car parks");
                 break;
             case "4":
@@ -430,7 +444,10 @@
     function validationForUserInput(inputBox1, inputBox2, inputBox3, inputBox4) {
         let regex = /^[1-9]\d*|0$/;
 
-        return regex.test(inputBox1);
+        return regex.test(inputBox1)
+            & regex.test(inputBox2)
+            & regex.test(inputBox3)
+            & regex.test(inputBox4);
     }
 
 
@@ -447,68 +464,102 @@
     const button = document.querySelector('.btnForCalculator');
     const form = document.querySelector('.form');
 
+    console.log(form);
+
+
+    function clearAnimation() {
+        form.classList.remove('form--no');
+    }
+
     button.addEventListener('click', function () {
-        form.classList.add('form--no');
 
         let detailBox1 = $('#detailBox1').val();
         let detailBox2 = $('#detailBox2').val();
         let detailBox3 = $('#detailBox3').val();
         let detailBox4 = $('#detailBox4').val();
 
-
         var inputIsValid = validationForUserInput(detailBox1, detailBox2, detailBox3, detailBox4);
         console.log(inputIsValid);
 
-        switch (numberOfBuildingType) {
-            case 0:
+        if (!inputIsValid) {
+            form.classList.add('form--no');
+            setTimeout(clearAnimation, 1000);
+
+            //error message
+
+            $('#errorInput').css("visibility", "visible");
 
 
-                break;
-            case "1":
+            // setTimeout(function () {
+            //     $('#errorInput').css("visibility", "collapse");
+            // },5000);
 
-                break;
-            case "2":
-                squareMeter = detailBox1 * 30.6 + detailBox2 * 62.6 + detailBox4 * 15.7;
-                break;
-            case "3":
-                squareMeter = detailBox1 * 12 + detailBox2 * 2.18 + detailBox4 * 15.7;
-                break;
-            case "4":
-                squareMeter = detailBox1 * 58 + detailBox2 * 91 + detailBox3 * 148 + detailBox4 * 15.7;
-                break;
+        } else {
+
+            // console.log(form.classList);
+            //form.classList.remove('form--no');
+            // console.log(form.classList);
+            //
 
 
+
+
+            switch (numberOfBuildingType) {
+                case 0:
+                    //house
+                    squareMeter = detailBox1 * 21.46 + detailBox2 * 23.78 + detailBox3 * 17.9 + detailBox4 * 15.7;
+                    break;
+                case "1":
+                    //hospital
+                    squareMeter = detailBox1 * 70 + detailBox2 * 120 + detailBox3 * 65 + detailBox4 * 40;
+                    break;
+                case "2":
+                    //hotel
+                    squareMeter = detailBox1 * 30.6 + detailBox2 * 62.6 + detailBox3 * 6 + detailBox4 * 15.7;
+                    break;
+                case "3":
+                    //student accommodation
+                    squareMeter = detailBox1 * 12 + detailBox2 * 2.18 + detailBox3 * 6 + detailBox4 * 15.7;
+                    break;
+                case "4":
+                    //residential
+                    squareMeter = detailBox1 * 58 + detailBox2 * 91 + detailBox3 * 148 + detailBox4 * 15.7;
+                    break;
+
+
+            }
+
+            //console.log(squareMeter);
+
+            var tonesOfBrick = parseFloat(Math.round(squareMeter * 64000 / 93 * 0.08 * 100) / 100).toFixed(2);
+            var costOfBrick = parseFloat(Math.round(tonesOfBrick * 1.859 * 100) / 100).toFixed(2);
+
+            var tonesOfTimber = parseFloat(Math.round(squareMeter * 18880 / 93 * 0.06 * 100) / 100).toFixed(2);
+            var costOfTimber = parseFloat(Math.round(tonesOfBrick * 50 * 100) / 100).toFixed(2);
+
+            var tonesOfSand = parseFloat(Math.round(squareMeter * 164540 / 186 * 0.02 * 100) / 100).toFixed(2);
+            var costOfSand = parseFloat(Math.round(tonesOfBrick * 0.4 * 100) / 100).toFixed(2);
+
+            var tonesOfCement = parseFloat(Math.round(squareMeter * 17052 / 93 * 0.04 * 100) / 100).toFixed(2);
+            var costOfCement = parseFloat(Math.round(tonesOfBrick * 0.7 * 100) / 100).toFixed(2);
+
+            //console.log(tonesOfBrick, costOfBrick);
+
+
+            $('#tonesOfBrick').text(tonesOfBrick);
+            $('#costOfBrick').text("$ " + costOfBrick);
+            $('#tonesOfTimber').text(tonesOfTimber);
+            $('#costOfTimber').text("$ " + costOfTimber);
+            $('#tonesOfSand').text(tonesOfSand);
+            $('#costOfSand').text("$ " + costOfSand);
+            $('#tonesOfCement').text(tonesOfCement);
+            $('#costOfCement').text("$ " + costOfCement);
+
+            moveToDisplayPage();
+
+            clearUserInput();
         }
 
-        console.log(squareMeter);
-
-        var tonesOfBrick = parseFloat(Math.round(squareMeter * 64000 / 93 * 0.08 * 100) / 100).toFixed(2);
-        var costOfBrick = parseFloat(Math.round(tonesOfBrick * 1.859 * 100) / 100).toFixed(2);
-
-        var tonesOfTimber = parseFloat(Math.round(squareMeter * 18880 / 93 * 0.06 * 100) / 100).toFixed(2);
-        var costOfTimber = parseFloat(Math.round(tonesOfBrick * 50 * 100) / 100).toFixed(2);
-
-        var tonesOfSand = parseFloat(Math.round(squareMeter * 164540 / 186 * 0.02 * 100) / 100).toFixed(2);
-        var costOfSand = parseFloat(Math.round(tonesOfBrick * 0.4 * 100) / 100).toFixed(2);
-
-        var tonesOfCement = parseFloat(Math.round(squareMeter * 17052 / 93 * 0.04 * 100) / 100).toFixed(2);
-        var costOfCement = parseFloat(Math.round(tonesOfBrick * 0.7 * 100) / 100).toFixed(2);
-
-        console.log(tonesOfBrick, costOfBrick);
-
-
-
-        $('#tonesOfBrick').text(tonesOfBrick);
-        $('#costOfBrick').text("$ " + costOfBrick);
-        $('#tonesOfTimber').text(tonesOfTimber);
-        $('#costOfTimber').text("$ " + costOfTimber);
-        $('#tonesOfSand').text(tonesOfSand);
-        $('#costOfSand').text("$ " + costOfSand);
-        $('#tonesOfCement').text(tonesOfCement);
-        $('#costOfCement').text("$ " + costOfCement);
-
-
-        clearUserInput();
 
     });
 
@@ -549,6 +600,10 @@
 
     function moveOnePageAfter() {
         swiper.slideTo($('.chooseKindOfBuilding').index(), 1000, false);
+    }
+
+    function moveToDisplayPage() {
+        swiper.slideTo($('.displayDetailPage').index(), 1000, false);
     }
 
 </script>
