@@ -33,28 +33,33 @@ function initMap() {
 
     onPlaceChanged();
 
-    // infoWindow = new google.maps.InfoWindow;
+    var iconBase = 'https://maps.google.com/mapfiles/ms/icons/';
+    var icons = {
+        Reuse:{
+            name: 'Reuse',
+            icon: iconBase + 'red-dot.png'
+        },
+        DropOff:{
+            name: 'Drop-off',
+            icon: iconBase + 'green-dot.png'
+        },
+        Recycle:{
+            name: 'Recycle',
+            icon: iconBase + 'blue-dot.png'
+        }
+    };
     //
-    // if (navigator.geolocation) {
-    //     navigator.geolocation.getCurrentPosition(function (position) {
-    //         var pos = {
-    //             lat: position.coords.latitude,
-    //             lng: position.coords.longitude
-    //         };
-    //
-    //         latcurrent = pos.lat;
-    //         lngcurrent = pos.lng;
-    //
-    //         var marker = new google.maps.Marker({position: pos, map: map, title: "Now your are here"});
-    //
-    //         map.setCenter(pos);
-    //     }, function () {
-    //         handleLocationError(true, infoWindow, map.getCenter());
-    //     });
-    // } else {
-    //     // Browser doesn't support Geolocation
-    //     handleLocationError(false, infoWindow, map.getCenter());
+    // var legend = document.getElementById('legend');
+    // for (var key in icons) {
+    //     var type = icons[key];
+    //     var name = type.name;
+    //     var icon = type.icon;
+    //     var div = document.createElement('div');
+    //     div.innerHTML = '<img src="' + icon + '"> ' + name;
+    //     legend.appendChild(div);
     // }
+    //
+    // map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
