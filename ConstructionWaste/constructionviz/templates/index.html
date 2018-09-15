@@ -17,6 +17,7 @@
     <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
     <link href="{% static 'lib/magnific-popup/magnific-popup.css'%}" rel="stylesheet">
     <link href="{% static 'lib/hover/hover.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <!-- Main Stylesheet File -->
     <link href="{% static 'css/style.css'%}" rel="stylesheet">
@@ -102,31 +103,32 @@
         <div class="row justify-content-between">
             <div class="col-lg-3 ">
                 <div class="services-block">
-                    <i class="ion-ios-color-wand-outline"></i>
-                    <span>Waste Calculator</span>
+                    <a href="{% url 'WasteCalculator'%}"><i class="fas fa-calculator"></i></a>
+                    <a href="{% url 'WasteCalculator'%}"><span>Waste Calculator</span></a>
                     <p class="separator">To a green builder, know how much waste for construction</p>
                 </div>
             </div>
             <div class="col-lg-3 ">
                 <div class="services-block">
-                    <i class="ion-ios-analytics-outline"></i>
-                    <span>Analytics</span>
+                    <a class="smoothScroll" href="{% url 'statistics'%}"><i class="fas fa-chart-area"></i></a>
+                    <a class="smoothScroll" href="{% url 'statistics'%}"><span>Analytics</span></a>
                     <p class="separator">To an green builder, tell you what happened with construction waste </p>
                 </div>
             </div>
 
             <div class="col-lg-3 ">
                 <div class="services-block">
-                    <i class="ion-ios-lightbulb-outline"></i>
-                    <span>Find a place</span>
+                    <!--<i class="ion-ios-lightbulb-outline"></i>-->
+                    <a href="{% url 'SearchLocation'%}"><i class="fas fa-map-marker-alt"></i></a>
+                    <a href="{% url 'SearchLocation'%}"><span>Search</span></a>
                     <p class="separator">Find a place to deal with your construction waste</p>
                 </div>
             </div>
 
-            <div class="col-lg-3 ">
+            <div class="col-lg-3 " >
                 <div class="services-block">
-                    <i class="ion-ios-camera-outline"></i>
-                    <span>About Us</span>
+                    <a class="smoothScroll" href="{% url 'about'%}"><i class="fas fa-camera-retro"></i></a>
+                    <a class="smoothScroll" href="{% url 'about'%}"><span>About Us</span></a>
                     <p class="separator">Know more about us</p>
                 </div>
             </div>

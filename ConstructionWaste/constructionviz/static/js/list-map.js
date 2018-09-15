@@ -65,7 +65,6 @@ function onload_map() {
                 DATA = the_json;
                 console.log(the_json);
 
-
                 var datas=[];
                 for (var i = 0; i < DATA.reuse.length; i++) {
                     type = "Reuse";
@@ -115,7 +114,6 @@ function onload_map() {
         }
     );
 }
-
 
 // When the user input address, get the place details for the address and
 // zoom the map.
