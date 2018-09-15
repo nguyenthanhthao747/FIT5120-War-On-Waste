@@ -83,21 +83,19 @@
             </h2>
         </div>
         <div class="row justify-content-between">
-            <div class="col-lg-5">
+            <div class="col-lg-6">
                 <table id="example" class="display" style="width:100%">
                     <thead>
-                    <tr>
-                        <th>Type</th>
-                        <th>Name</th>
-                        <th>Address</th>
-                    </tr>
+                    <tr>Type</tr>
+                    <tr>Name</tr>
+                    <tr>Address</tr>
+                    <tr>Distance</tr>
                     </thead>
-                    <tbody id="carddata">
-                    </tbody>
+
                 </table>
             </div>
 
-            <div class="col-lg-7">
+            <div class="col-lg-6">
                 <div class="div-img-bg">
                     <div class="about-img">
                         <div class="img-responsive">
@@ -112,6 +110,11 @@
                                     <input id="autocomplete" placeholder="Search by address" style="width: 400px"
                                            type="text"/>
                                 </div>
+                                <select id="locationType" class="btn btn-primary btn-xl">
+                                    <option value="drop-off">Drop-off</option>
+                                    <option value="Recycle">Recycle</option>
+                                    <option value="Reuse">Reuse</option>
+                                </select>
                                 <div id="controls" style="display: none"><select id="country">
                                     <option value="au">Melbourne</option>
                                 </select></div>
@@ -119,6 +122,7 @@
                             <div id="map"></div>
                         </div>
 
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-I2HyS_JDhn5oAzxhdS85HRa2Mo2COOo&libraries&libraries=geometry"></script>
                         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-I2HyS_JDhn5oAzxhdS85HRa2Mo2COOo&libraries=places&callback=initMap"
                                 async defer></script>
                     </div>
