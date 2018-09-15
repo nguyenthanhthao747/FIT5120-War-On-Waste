@@ -13,6 +13,9 @@ var countries = {
     }
 };
 
+var latcurrent;
+var lngcurrent;
+
 function initMap() {
     console.log("initMap");
     map = new google.maps.Map(document.getElementById('map'), {
@@ -20,24 +23,47 @@ function initMap() {
         center: countries['au'].center,
     });
 
-    // Create the autocomplete object and associate it with the UI input control.
-    // Restrict the search to the default country, and to place type "cities".
     autocomplete = new google.maps.places.Autocomplete(
-        /** @type {!HTMLInputElement} */ (
-            document.getElementById('autocomplete')), {
+        (document.getElementById('autocomplete')), {
             componentRestrictions: countryRestrict
         });
     places = new google.maps.places.PlacesService(map);
 
     autocomplete.addListener('place_changed', onPlaceChanged);
 
-    // Add a DOM event listener to react when the user selects a country.
-    // document.getElementById('country').addEventListener(
-    //     'change', setAutocompleteCountry);
-    //onload_map();
     onPlaceChanged();
+
+    infoWindow = new google.maps.InfoWindow;
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            latcurrent = pos.lat;
+            lngcurrent = pos.lng;
+
+            var marker = new google.maps.Marker({position: pos, map: map, title: "Now your are here"});
+
+            map.setCenter(pos);
+        }, function () {
+            handleLocationError(true, infoWindow, map.getCenter());
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
 }
 
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+        'Error: The Geolocation service failed.' :
+        'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+}
 
 var markers = [];
 var type;
@@ -46,15 +72,9 @@ var long;
 var name;
 var address;
 var contentString = [];
-var infoWindow = [];
-var tableContent = [];
 
 //calculate the distance between two locations
 var dist;
-var radlat1;
-var radlat2;
-var theta;
-var radtheta;
 
 //add markers to the map to default mel map
 function onload_map() {
@@ -65,7 +85,7 @@ function onload_map() {
                 DATA = the_json;
                 console.log(the_json);
 
-                var datas=[];
+                var datas = [];
                 for (var i = 0; i < DATA.reuse.length; i++) {
                     type = "Reuse";
                     lat = parseFloat(DATA.reuse[i].lat);
@@ -73,15 +93,37 @@ function onload_map() {
                     name = DATA.reuse[i].name;
                     address = DATA.reuse[i].address;
 
+                    var distcurrent = calcDistance(latcurrent, lngcurrent, lat, long);
+                    distcurrent = distcurrent / 1000;
+                    distcurrent = distcurrent.toFixed(2);
                     var data = {};
                     data["Type"] = type;
                     data["Name"] = name;
                     data["Address"] = address;
-                    data["Distance"] = 1;
+                    data["Distance"] = distcurrent;
                     datas.push(data);
+
+                    markers[i] = new google.maps.Marker({
+                        position: {lat: lat, lng: long},
+                        map: map,
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                    });
+                    contentString[i] = '<div id="content">' + '<div id="siteNotice">' + '</div>' +
+                        '<h6 id="firstHeading" class="firstHeading">Reuse Location Name</h6>' + name + '<p></p>' +
+                        '<h6 id="firstHeading" class="firstHeading">Address</h6>' + address;
+
+                    infoWindow[i] = new google.maps.InfoWindow({
+                        content: contentString[i]
+                    });
+
+                    var markerValue = markers[i];
+                    google.maps.event.addListener(markers[i], 'click', (function (markerValue, i) {
+                        return function () {
+                            infoWindow[i].open(map, markers[i]);
+                        }
+
+                    })(markers[i], i));
                 }
-                var jsonString = JSON.stringify(datas);  //[{"id":1,"name":"test1","age":2}]
-                var result=eval("("+jsonString+")");
 
                 for (i = 0; i < DATA['drop-off'].length; i++) {
                     type = "Drop-off";
@@ -89,7 +131,38 @@ function onload_map() {
                     long = parseFloat(DATA['drop-off'][i].long);
                     name = DATA['drop-off'][i].name;
                     address = DATA['drop-off'][i].address;
+
+                    var distcurrent2 = calcDistance(latcurrent, lngcurrent, lat, long);
+                    distcurrent2 = distcurrent2 / 1000;
+                    distcurrent2 = distcurrent2.toFixed(2);
+
+                    var data2 = {};
+                    data2["Type"] = type;
+                    data2["Name"] = name;
+                    data2["Address"] = address;
+                    data2["Distance"] = distcurrent2;
+                    datas.push(data2);
+
+                    markers[i] = new google.maps.Marker({
+                        position: {lat: lat, lng: long},
+                        map: map,
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                    });
+                    contentString[i] = '<div id="content">' + '<div id="siteNotice">' + '</div>' +
+                        '<h6 id="firstHeading" class="firstHeading">Drop-off Location Name</h6>' + name + '<p></p>' +
+                        '<h6 id="firstHeading" class="firstHeading">Address</h6>' + address;
+
+                    infoWindow[i] = new google.maps.InfoWindow({
+                        content: contentString[i]
+                    });
+                    var markerValue = markers[i];
+                    google.maps.event.addListener(markers[i], 'click', (function (markerValue, i) {
+                        return function () {
+                            infoWindow[i].open(map, markers[i]);
+                        }
+                    })(markers[i], i));
                 }
+
 
                 for (i = 0; i < DATA.recycle.length; i++) {
                     type = "Recycle";
@@ -97,19 +170,54 @@ function onload_map() {
                     long = parseFloat(DATA.recycle[i].long);
                     name = DATA.recycle[i].name;
                     address = DATA.recycle[i].address;
-                }
-                $(document).ready(function() {
-                    $('#example').DataTable({
-                        data:result,
-                        columns: [
-                            { data: 'Type'},
-                            { data: 'Name'},
-                            { data: 'Address'},
-                            { data: 'Distance'}
-                        ],
-                        destroy:true
+
+                    var distcurrent3 = calcDistance(latcurrent, lngcurrent, lat, long);
+                    distcurrent3 = distcurrent3 / 1000;
+                    distcurrent3 = distcurrent3.toFixed(2);
+
+                    var data3 = {};
+                    data3["Type"] = type;
+                    data3["Name"] = name;
+                    data3["Address"] = address;
+                    data3["Distance"] = distcurrent3;
+                    datas.push(data3);
+
+                    markers[i] = new google.maps.Marker({
+                        position: {lat: lat, lng: long},
+                        map: map,
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
                     });
-                } );
+                    contentString[i] = '<div id="content">' + '<div id="siteNotice">' + '</div>' +
+                        '<h6 id="firstHeading" class="firstHeading">Recycle Location Name</h6>' + name + '<p></p>' +
+                        '<h6 id="firstHeading" class="firstHeading">Address</h6>' + address;
+
+                    infoWindow[i] = new google.maps.InfoWindow({
+                        content: contentString[i]
+                    });
+                    var markerValue = markers[i];
+                    google.maps.event.addListener(markers[i], 'click', (function (markerValue, i) {
+                        return function () {
+                            infoWindow[i].open(map, markers[i]);
+                        }
+
+                    })(markers[i], i));
+                }
+
+                var jsonString = JSON.stringify(datas);  //[{"id":1,"name":"test1","age":2}]
+                var result = eval("(" + jsonString + ")");
+
+                $(document).ready(function () {
+                    $('#example').DataTable({
+                        data: result,
+                        columns: [
+                            {data: 'Type'},
+                            {data: 'Name'},
+                            {data: 'Address'},
+                            {data: 'Distance'}
+                        ],
+                        destroy: true
+                    });
+                });
             }
         }
     );
@@ -117,78 +225,109 @@ function onload_map() {
 
 // When the user input address, get the place details for the address and
 // zoom the map.
-var type1;
 var lat1;
 var long1;
-var name1;
-var address1;
-
 var origin_lat;
 var origin_long;
-var radtheta2;
 var dist2;
-var radlat3;
-var radlat4;
 
 function onPlaceChanged() {
     console.log("onPlaceChanged");
     var place = autocomplete.getPlace();
     var val = document.getElementById('autocomplete').value;
-    console.log("val:"+val);
+    console.log("val:" + val);
     $.ajax({
         url: "./get_all_locations",
         success: function (the_json) {
             DATA = the_json;
 
             if (val) {
-                var result=null;
+                var result = null;
                 if (place.geometry) {
                     map.panTo(place.geometry.location);
                     origin_lat = place.geometry.location.lat();
                     origin_long = place.geometry.location.lng();
                     map.setZoom(13);
 
-
                     // document.getElementById('carddata').innerHTML = "";
-                    var datas =[];
-                    for (var i = 0; i < DATA.reuse.length; i++) {
+                    var datas = [];
+                    var i = 0;
+
+                    for (i = 0; i < DATA.reuse.length; i++) {
                         type = "Reuse";
                         lat1 = parseFloat(DATA.reuse[i].lat);
                         long1 = parseFloat(DATA.reuse[i].long);
                         name = DATA.reuse[i].name;
                         address = DATA.reuse[i].address;
-                        dist2 = calcDistance(origin_lat,origin_long,lat1,long1);
+                        dist2 = calcDistance(origin_lat, origin_long, lat1, long1);
                         dist2 = dist2 / 1000;
                         dist2 = dist2.toFixed(2);
-                        console.log("name1:"+name1+";dist1:"+dist2);
 
-                        if (dist2 < 20000) {
-                            console.log("name2:"+name1+";dist2"+dist2);
-
-                            var data = {};
-                            data["Type"] = type;
-                            data["Name"] = name;
-                            data["Address"] = address;
-                            data["Distance"] = dist2;
-                            datas.push(data);
+                        if (dist2 < 10) {
+                            var data_reuse = {};
+                            data_reuse["Type"] = type;
+                            data_reuse["Name"] = name;
+                            data_reuse["Address"] = address;
+                            data_reuse["Distance"] = dist2;
+                            datas.push(data_reuse);
                         }
-
                     }
+
+                    for (i = 0; i < DATA['drop-off'].length; i++) {
+                        type = "Drop-off";
+                        lat1 = parseFloat(DATA['drop-off'][i].lat);
+                        long1 = parseFloat(DATA['drop-off'][i].long);
+                        name = DATA['drop-off'][i].name;
+                        address = DATA['drop-off'][i].address;
+                        dist2 = calcDistance(origin_lat, origin_long, lat1, long1);
+                        dist2 = dist2 / 1000;
+                        dist2 = dist2.toFixed(2);
+
+                        if (dist2 < 10) {
+                            var data_drop = {};
+                            data_drop["Type"] = type;
+                            data_drop["Name"] = name;
+                            data_drop["Address"] = address;
+                            data_drop["Distance"] = dist2;
+                            datas.push(data_drop);
+                        }
+                    }
+
+                    for (i = 0; i < DATA.recycle.length; i++) {
+                        type = "Recycle";
+                        lat1 = parseFloat(DATA.recycle[i].lat);
+                        long1 = parseFloat(DATA.recycle[i].long);
+                        name = DATA.recycle[i].name;
+                        address = DATA.recycle[i].address;
+                        dist2 = calcDistance(origin_lat, origin_long, lat1, long1);
+                        dist2 = dist2 / 1000;
+                        dist2 = dist2.toFixed(2);
+
+                        if (dist2 < 10) {
+                            var data_recycle = {};
+                            data_recycle["Type"] = type;
+                            data_recycle["Name"] = name;
+                            data_recycle["Address"] = address;
+                            data_recycle["Distance"] = dist2;
+                            datas.push(data_recycle);
+                        }
+                    }
+
                     var jsonString = JSON.stringify(datas);  //[{"id":1,"name":"test1","age":2}]
-                    result=eval("("+jsonString+")");
+                    result = eval("(" + jsonString + ")");
                 } else {
                     document.getElementById('autocomplete').placeholder = 'Search by address';
                 }
 
                 $('#example').DataTable({
-                    data:result,
+                    data: result,
                     columns: [
-                        { data: 'Type'},
-                        { data: 'Name'},
-                        { data: 'Address'},
-                        { data: 'Distance'}
+                        {data: 'Type'},
+                        {data: 'Name'},
+                        {data: 'Address'},
+                        {data: 'Distance'}
                     ],
-                    destroy:true
+                    destroy: true,
                 });
             } else {
                 onload_map();
@@ -197,7 +336,7 @@ function onPlaceChanged() {
     });
 }
 
-function calcDistance (fromLat, fromLng, toLat, toLng) {
+function calcDistance(fromLat, fromLng, toLat, toLng) {
     return google.maps.geometry.spherical.computeDistanceBetween(
         new google.maps.LatLng(fromLat, fromLng), new google.maps.LatLng(toLat, toLng));
 }
