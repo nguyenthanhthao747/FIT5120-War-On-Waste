@@ -297,7 +297,7 @@ function onPlaceChanged() {
                     map.panTo(place.geometry.location);
                     origin_lat = place.geometry.location.lat();
                     origin_long = place.geometry.location.lng();
-                    map.setZoom(13);
+                    map.setZoom(11);
 
                     // document.getElementById('carddata').innerHTML = "";
                     var datas = [];
@@ -313,7 +313,7 @@ function onPlaceChanged() {
                         dist2 = dist2 / 1000;
                         dist2 = dist2.toFixed(2);
 
-                        if (dist2 < 10) {
+                        if (dist2 < 5) {
                             var data_reuse = {};
                             data_reuse["Type"] = type;
                             data_reuse["Name"] = name;
@@ -369,7 +369,7 @@ function onPlaceChanged() {
                         dist2 = dist2.toFixed(2);
 
 
-                        if (dist2 < 10) {
+                        if (dist2 < 5) {
                             var data_drop = {};
                             data_drop["Type"] = type;
                             data_drop["Name"] = name;
@@ -398,7 +398,7 @@ function onPlaceChanged() {
                         dist2 = dist2.toFixed(2);
                         markers3[i].setMap(null);
 
-                        if (dist2 < 10) {
+                        if (dist2 < 5) {
                             var data_recycle = {};
                             data_recycle["Type"] = type;
                             data_recycle["Name"] = name;
