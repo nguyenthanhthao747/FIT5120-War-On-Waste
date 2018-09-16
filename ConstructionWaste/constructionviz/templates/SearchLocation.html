@@ -107,20 +107,28 @@
                                 </div>
                             </div>
 
-
-                            <!--<select id="locationType" class="btn btn-primary btn-xl">-->
-                            <!--<option value="drop-off">Drop-off</option>-->
-                            <!--<option value="Recycle">Recycle</option>-->
-                            <!--<option value="Reuse">Reuse</option>-->
-                            <!--</select>-->
-
+                            <div id="legend"><h3>Legend</h3></div>
                             <div id="controls" style="display: none"><select id="country">
                                 <option value="au">Melbourne</option>
                             </select></div>
                         </div>
                         <div id="map"></div>
+                        <style>
+                            #legend {
+                                font-family: Arial, sans-serif;
+                                background: #fff;
+                                padding: 10px;
+                                margin: 10px;
+                                border: 3px solid #000;
+                            }
+                            #legend h3 {
+                                margin-top: 0;
+                            }
+                            #legend img {
+                                vertical-align: middle;
+                            }
+                        </style>
                     </div>
-
 
                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-I2HyS_JDhn5oAzxhdS85HRa2Mo2COOo&libraries&libraries=geometry"></script>
                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-I2HyS_JDhn5oAzxhdS85HRa2Mo2COOo&libraries=places&callback=initMap"
