@@ -82,43 +82,11 @@
 
 
             <div class="swiper-wrapper">
-                <!--the first page for the calculator-->
-                <!--<div class="swiper-slide swiper-no-swiping">-->
-
-                    <!--<div class="container" style="margin-top: 50px">-->
-                        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="0.5s" style="animation-iteration-count: infinite">Do you</p>&ndash;&gt;-->
-
-                        <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1s" style="animation-iteration-count: infinite">know</p>&ndash;&gt;-->
-
-                        <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="1.5s" style="animation-iteration-count: infinite">how much</p>&ndash;&gt;-->
-
-                        <!--&lt;!&ndash;<p class="ani col-md-3 firstPageTitle" swiper-animate-effect="bounceInUp" swiper-animate-duration="2.5s" swiper-animate-delay="2s" style="animation-iteration-count: infinite">you waste?</p>&ndash;&gt;-->
-
-                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-                        <!--<div class="containerForSlogan">-->
-
-                            <!--<div class="slogan"><span>Do you know</span></div>-->
-                            <!--<div class="slogan"><span>how much</span></div>-->
-                            <!--<div class="slogan"><span>you waste?</span></div>-->
-
-                        <!--</div>-->
-
-                        <!--<div class="container" style="text-align: center; margin-top: 30px">-->
-                            <!--<button type="button" class="btn btn-dark swiper-button-next-customized ani"-->
-                                    <!--swiper-animate-effect="swing" swiper-animate-duration="1s"-->
-                                    <!--swiper-animate-delay="3s" style="animation-iteration-count: infinite">go-->
-                                <!--check-->
-                            <!--</button>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
 
                 <!--choose the type of construction-->
                 <div class="swiper-slide swiper-no-swiping">
 
-                    <!--<div>choose type of construction</div>-->
+                    <div class="chooseDescription">You are a ...</div>
 
                     <div class="containerForSplitView">
                         <div class="split left">
@@ -139,6 +107,7 @@
                         <span></span>
                     </a>
 
+                    <div class="chooseDescription">choose the type of building</div>
 
                     <div class="row" style="height: 100%; width: 90%; margin: 100px auto 100px">
                         <div class="containerForCard col-md-3 col-sm-6">
@@ -252,9 +221,9 @@
                                 <div class="card">
                                     <img src="{% static 'img/calculator-brick.jpg'%}">
                                     <h4>Brick</h4>
-                                    <p>You waste in units:</p>
+                                    <p>Waste in units:</p>
                                     <p id="tonesOfBrick">1</p>
-                                    <p>Your waste cost:</p>
+                                    <p>Waste cost:</p>
                                     <p id="costOfBrick">2</p>
 
                                 </div>
@@ -263,9 +232,9 @@
                                 <div class="card">
                                     <img src="{% static 'img/calculator-timber.jpg'%}">
                                     <h4>Timber</h4>
-                                    <p>You waste in Kg:</p>
+                                    <p>Waste in Kg:</p>
                                     <p id="tonesOfTimber">1</p>
-                                    <p>Your waste cost:</p>
+                                    <p>Waste cost:</p>
                                     <p id="costOfTimber">2</p>
 
                                 </div>
@@ -274,9 +243,9 @@
                                 <div class="card">
                                     <img src="{% static 'img/calculator-sand.jpg'%}">
                                     <h4>Sand</h4>
-                                    <p>You waste in Kg:</p>
+                                    <p>Waste in Kg:</p>
                                     <p id="tonesOfSand">1</p>
-                                    <p>Your waste cost:</p>
+                                    <p>Waste cost:</p>
                                     <p id="costOfSand">2</p>
 
                                 </div>
@@ -285,9 +254,9 @@
                                 <div class="card">
                                     <img src="{% static 'img/calculator-concrete.jpg'%}">
                                     <h4>Cement</h4>
-                                    <p>You waste in Kg:</p>
+                                    <p>Waste in Kg:</p>
                                     <p id="tonesOfCement">1</p>
-                                    <p>Your waste cost:</p>
+                                    <p>Waste cost:</p>
                                     <p id="costOfCement">2</p>
 
                                 </div>
@@ -480,6 +449,7 @@
             //error message
 
             $('#errorInput').css("visibility", "visible");
+            clearUserInput();
 
 
             // setTimeout(function () {
