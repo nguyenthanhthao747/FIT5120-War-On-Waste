@@ -13,7 +13,7 @@ body {
   background: #ffffff;
   color: #898989;
   font-family: 'Poppins', helvetica;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 300;
   line-height: 20px;
   letter-spacing: 0.02em;
@@ -304,12 +304,11 @@ nav ul li a {
 
 #about .div-img-bg {
   padding-bottom: 30px;
-  border: 20px solid #b8a07e;
 }
 
 #about1 .div-img-bg {
   padding-bottom: 30px;
-  border: 20px solid #b8a07e;
+  /*border: 20px solid;*/
 }
 
 #about .div-img-bg .about-img img {
