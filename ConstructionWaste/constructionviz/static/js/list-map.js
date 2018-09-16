@@ -32,8 +32,6 @@ function initMap() {
     autocomplete.addListener('place_changed', onPlaceChanged);
 
     onPlaceChanged();
-
-    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
