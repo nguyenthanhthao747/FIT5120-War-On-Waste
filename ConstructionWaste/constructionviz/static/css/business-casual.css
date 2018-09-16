@@ -307,7 +307,7 @@ figure a{
 .user {
   width: 90%;
   max-width: 340px;
-  margin: 10vh auto;
+  margin: 10vh auto 5vh;
 }
 
 .user__header {
@@ -748,4 +748,11 @@ figure a{
 
 .yellow:hover {
   background-color: #FFDE29;
+}
+
+#errorInput {
+  text-align: center;
+  color: red;
+  visibility: collapse;
+  margin-bottom: 5vh;
 }
