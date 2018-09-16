@@ -758,11 +758,12 @@ figure a{
 }
 
 .chooseDescription {
+  font-family: 'Poppins', helvetica;
   text-transform: uppercase;
   text-align: center;
   margin:30px auto 20px;
   color: #000000;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 26px;
   letter-spacing: 1px;
 }
