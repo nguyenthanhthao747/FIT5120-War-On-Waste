@@ -231,7 +231,7 @@ figure .caption {
   top: 50%;
   left: 0;
   width: 100%;
-  color: #272833;
+  color: #fff;
   transition: transform 0.35s, color 0.35s;
   transform: translate3d(0,-50%,0);
 }
