@@ -235,7 +235,7 @@ function onload_map() {
                         var result = eval("(" + jsonString + ")");
 
                         $(document).ready(function () {
-                            $('#example').DataTable({
+                            var table = $('#example').DataTable({
                                 data: result,
                                 columns: [
                                     {data: 'Type'},
@@ -246,6 +246,9 @@ function onload_map() {
                                 destroy: true,
                                 searching: false
                             });
+                            table.column( '3:visible' )
+                                .order( 'asc' )
+                                .draw();
                         });
                     }
                 }
@@ -446,7 +449,7 @@ function onPlaceChanged() {
                     document.getElementById('autocomplete').placeholder = 'Search by address';
                 }
 
-                $('#example').DataTable({
+                var table = $('#example').DataTable({
                     data: result,
                     columns: [
                         {data: 'Type'},
@@ -457,6 +460,9 @@ function onPlaceChanged() {
                     destroy: true,
                     searching:false
                 });
+                table.column( '3:visible' )
+                    .order( 'asc' )
+                    .draw();
             } else {
                 onload_map();
             }
