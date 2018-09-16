@@ -39,17 +39,6 @@
     <script src="{% static 'js/list-map.js'%}"></script>
 </head>
 <body>
-<!--{% if user.is_authenticated %}-->
-<!--<nav class="nav justify-content-end text-primary p-1">-->
-<!--&lt;!&ndash; <a class="navbar-brand">Navbar</a> &ndash;&gt;-->
-<!--<span class="float-right">-->
-<!--Hi {{ user.username }}! &nbsp;-->
-<!--<a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important"-->
-<!--href="{% url 'logout' %}">logout</a>-->
-<!--</span>-->
-<!--</nav>-->
-<!--{% endif %}-->
-
 <!-- start section navbar -->
 <nav id="main-nav">
     <div class="row">
@@ -64,8 +53,10 @@
                 <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Search</a></li>
                 <li><a class="smoothScroll" href="{% url 'about'%}">About</a></li>
                 {% if user.is_authenticated %}
-                <li>
-                    <button class="logbutton" href="{% url 'logout' %}">logout</button>
+                <li class="logbutton">
+                    <span>Hi {{ user.username }}! &nbsp;
+                    <a href="{% url 'logout' %}">logout</a>
+                    </span>
                 </li>
                 {% endif %}
             </ul>
@@ -74,7 +65,7 @@
 </nav>
 <!-- End section navbar -->
 
-<!-- start section line chart -->
+<!-- start section -->
 <div id="about1" class="paddsection" style="padding-top: 90px">
     <div class="container">
         <div class="cta-inner text-center rounded">

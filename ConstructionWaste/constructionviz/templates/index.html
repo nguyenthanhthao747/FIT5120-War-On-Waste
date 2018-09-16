@@ -17,7 +17,8 @@
     <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
     <link href="{% static 'lib/magnific-popup/magnific-popup.css'%}" rel="stylesheet">
     <link href="{% static 'lib/hover/hover.min.css'%}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <!-- Main Stylesheet File -->
     <link href="{% static 'css/style.css'%}" rel="stylesheet">
@@ -47,16 +48,16 @@
 
 </head>
 <body>
-{% if user.is_authenticated %}
-<nav class="nav justify-content-end text-primary p-1">
-    <!-- <a class="navbar-brand">Navbar</a> -->
+<!--{% if user.is_authenticated %}-->
+<!--<nav class="nav justify-content-end text-primary p-1">-->
+    <!--<a class="navbar-brand">Navbar</a>-->
     <!--<span class="float-right">-->
     <!--Hi {{ user.username }}! &nbsp;-->
     <!--<a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important"-->
-    <!--href="{% url 'logout' %}">logout</a>-->
+       <!--href="{% url 'logout' %}">logout</a>-->
     <!--</span>-->
-</nav>
-{% endif %}
+<!--</nav>-->
+<!--{% endif %}-->
 
 <!--start section navbar -->
 <nav id="main-nav">
@@ -72,8 +73,10 @@
                 <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Search</a></li>
                 <li><a class="smoothScroll" href="{% url 'about'%}">About</a></li>
                 {% if user.is_authenticated %}
-                <li>
-                    <button class="logbutton" href="{% url 'logout' %}">logout</button>
+                <li class="logbutton">
+                    <span>Hi {{ user.username }}! &nbsp;
+                    <a href="{% url 'logout' %}">logout</a>
+                    </span>
                 </li>
                 {% endif %}
             </ul>
@@ -125,7 +128,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 " >
+            <div class="col-lg-3 ">
                 <div class="services-block">
                     <a class="smoothScroll" href="{% url 'about'%}"><i class="fas fa-camera-retro"></i></a>
                     <a class="smoothScroll" href="{% url 'about'%}"><span>About Us</span></a>
@@ -135,40 +138,6 @@
         </div>
     </div>
 </div>
-<!-- end section services -->
-
-
-<!--&lt;!&ndash; start section services &ndash;&gt;-->
-<!--<div id="services">-->
-<!--<div class="container">-->
-<!--<div class="services-carousel owl-theme">-->
-<!--<div class="services-block">-->
-<!--<i class="ion-ios-color-wand-outline"></i>-->
-<!--<span>Waste Calculator</span>-->
-<!--<p class="separator">To a green builder, know how much waste for construction</p>-->
-<!--</div>-->
-
-<!--<div class="services-block">-->
-<!--<i class="ion-ios-analytics-outline"></i>-->
-<!--<span>Analytics</span>-->
-<!--<p class="separator">To an green builder, tell you what happened with construction waste </p>-->
-<!--</div>-->
-
-<!--<div class="services-block">-->
-<!--<i class="ion-ios-lightbulb-outline"></i>-->
-<!--<span>Find a place</span>-->
-<!--<p class="separator">Find a place to deal with your construction waste</p>-->
-<!--</div>-->
-<!--<div class="services-block">-->
-<!--<i class="ion-ios-camera-outline"></i>-->
-<!--<span>About Us</span>-->
-<!--<p class="separator">Know more about us</p>-->
-<!--</div>-->
-
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--&lt;!&ndash; end section services &ndash;&gt;-->
 
 <!-- start section about us -->
 <div id="about" class="paddsection" style="padding-top: 60px">

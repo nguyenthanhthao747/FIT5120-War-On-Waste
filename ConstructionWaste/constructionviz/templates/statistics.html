@@ -141,7 +141,11 @@
                 <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Search</a></li>
                 <li><a class="smoothScroll" href="{% url 'about'%}">About</a></li>
                 {% if user.is_authenticated %}
-                <li><button class="logbutton" href="{% url 'logout' %}">logout</button></li>
+                <li class="logbutton">
+                    <span>Hi {{ user.username }}! &nbsp;
+                    <a href="{% url 'logout' %}">logout</a>
+                    </span>
+                </li>
                 {% endif %}
             </ul>
         </div>

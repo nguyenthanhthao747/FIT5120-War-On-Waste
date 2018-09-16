@@ -10,146 +10,223 @@
     {% load static %}
     <!-- Bootstrap core CSS -->
     <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Raleway:400,700" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
-    <link href="{% static 'css/business-casual.min.css'%}" rel="stylesheet">
+    <!--<link href="{% static 'css/business-casual.min.css'%}" rel="stylesheet">-->
     <link href="{% static 'css/about.css'%}" rel="stylesheet">
 
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'lib/ionicons/css/ionicons.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/magnific-popup/magnific-popup.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/hover/hover.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+    <!-- Responsive css -->
+    <link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <!--<link href="https://fonts.googleapis.com/css?family=Lora:400,700|Raleway:400,700" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i"
+          rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+
+    <!--animate css modal-->
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">-->
+
+    <!--Swiper CSS-->
+    <!--<link rel="stylesheet" href="{% static 'dist/css/swiper.min.css'%}">-->
+
+    <!--css file from animate js-->
+    <!--<link href="{% static 'dist/css/animate.min.css'%}" rel="stylesheet">-->
 
 </head>
 <body>
-    {% if user.is_authenticated %}
-    <nav class="nav justify-content-end text-primary p-1">
-      <!-- <a class="navbar-brand">Navbar</a> -->
-        <span class="float-right">
-          Hi {{ user.username }}! &nbsp;
-          <a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important" href="{% url 'logout' %}">logout</a>
-        </span>
-    </nav>
-    {% endif %}
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
-        <span class="site-heading-upper text-primary mb-3">Construction and Demolition Waste</span>
-        <!-- <span class="site-heading-lower">War on Waste</span> -->
-    </h1>
+<!--{% if user.is_authenticated %}-->
+<!--<nav class="nav justify-content-end text-primary p-1">-->
+<!--&lt;!&ndash; <a class="navbar-brand">Navbar</a> &ndash;&gt;-->
+<!--<span class="float-right">-->
+<!--Hi {{ user.username }}! &nbsp;-->
+<!--<a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important" href="{% url 'logout' %}">logout</a>-->
+<!--</span>-->
+<!--</nav>-->
+<!--{% endif %}-->
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+
+<!--start section navbar -->
+<nav id="main-nav">
+    <div class="row">
         <div class="container">
-            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Construction and Demolition Waste</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'statistics' %}">Statistics</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'WasteCalculator'%}">Calculator</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'SearchLocation'%}">Search</a>
-                    </li>
-                    <li class="nav-item active px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="{% url 'about' %} ">About
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                </ul>
+            <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+            <ul class="nav-menu list-unstyled">
+                <li>
+                    <a class="smoothScroll" href="{% url 'home'%}">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li><a class="smoothScroll" href="{% url 'WasteCalculator'%}">Calculator</a></li>
+                <li><a class="smoothScroll" href="{% url 'statistics'%}">Statistics</a></li>
+                <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Search</a></li>
+                <li><a class="smoothScroll" href="{% url 'about'%}">About</a></li>
+                {% if user.is_authenticated %}
+                <li class="logbutton">
+                    <span>Hi {{ user.username }}! &nbsp;
+                    <a href="{% url 'logout' %}">logout</a>
+                    </span>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--end with navigation section-->
+
+<!--==========================
+  About Section
+  ============================-->
+<section id="about">
+    <div class="container wow fadeInUp">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="section-title">About Us</h3>
+                <div class="section-title-divider"></div>
+                <!--<p class="section-description"></p>-->
             </div>
         </div>
-    </nav>
-    <section class="page-section about-heading">
-        <div class="container">
-            <!--<img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">-->
+    </div>
+    <div class="container about-container wow fadeInUp">
+        <div class="row">
 
-            <div class="about-heading-content">
-                <div class="row">
-                    <div class="col-xl-9 col-lg-10 mx-auto">
-                        <div class="bg-faded rounded p-5">
-                            <h2 class="section-heading mb-4">
-                                <span class="section-heading-upper">Construction & Demolition Waste</span>
-                                <span class="section-heading-lower">About Us</span>
-                            </h2>
+            <div class="col-lg-6 about-img">
+                <img src="{% static 'img/about.jpg'%}" alt="">
+            </div>
 
-                            <p> We the Cavaliers are an enthusiastic team of Monash students deeply concerned about the War on Waste in Australia. This website elaborates on the existing problem of Construction and Demolition waste in Melbourne region. An in-detailed analysis has gone into - how much waste we have produced, how much we will produce and how we can reduce and recycle. </p>
+            <div class="col-md-6 about-content">
+                <h2 class="about-title">We provide great services and ideas</h2>
+                <p class="about-text">
+                    We the Cavaliers are an enthusiastic team of Monash students deeply concerned about the War
+                    on Waste in Australia.
+                </p>
+                <p class="about-text">
+                    This website elaborates on the existing problem of Construction and
+                    Demolition waste in Melbourne region.
+                </p>
+                <p class="about-text">
+                    An in-detailed analysis has gone into - how much waste
+                    we have produced, how much we will produce and how we can reduce and recycle.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
-                           <br>
+<!--part-->
+<section id="subscribe">
+    <div class="container wow fadeInUp">
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="subscribe-title">Construction and Demolition Waste</h3>
+                <p class="subscribe-text">Keep updated on our latest developments and connect with us to share your own "War on Waste"
+                    stories!</p>
+            </div>
+            <!--<div class="col-md-4 subscribe-btn-container">-->
+                <!--<a class="subscribe-btn" href="#">Subscribe Now</a>-->
+            <!--</div>-->
+        </div>
+    </div>
+</section>
 
-                           <p>Keep updated on our latest developments and connect with us to share your own "War on Waste" stories!</p>
-                        </div>
-                    </div>
+
+<!--==========================
+Team Section
+============================-->
+<div id="about1" class="paddsection" style="padding-top: 90px">
+    <div class="container">
+        <div class="cta-inner text-center rounded">
+<section id="team">
+    <div class="container wow fadeInUp">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="section-title">Our Team</h3>
+                <div class="section-title-divider"></div>
+                <!--<p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem-->
+                    <!--accusantium doloremque</p>-->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="{% static 'img/team/1.png'%}" alt="">
+                    <h4>Thi Thanh Thao Nguyen</h4>
+                    <p class="text-muted">Data analyst</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="{% static 'img/team/2.png'%}" alt="">
+                    <h4>Mayue Jiang</h4>
+                    <p class="text-muted">Programmer</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="{% static 'img/team/3.png'%}" alt="">
+                    <h4>Abhivikram Veer Singh</h4>
+                    <p class="text-muted">Project Manager</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="{% static 'img/team/4.png'%}" alt="">
+                    <h4>Yicong Jin</h4>
+                    <p class="text-muted">Programmer</p>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="page-section cta">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-9 mx-auto">
-                    <div class="cta-inner text-center rounded">
-                        <h2 class="section-heading mb-5">
-                            <span class="section-heading-upper">Construction and Demolition Waste</span>
-                            <span class="section-heading-lower">Our Team</span>
-                        </h2>
 
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="team-member">
-                                    <img class="mx-auto rounded-circle" src="{% static 'img/team/1.png'%}" alt="">
-                                    <h4>Thi Thanh Thao Nguyen</h4>
-                                    <p class="text-muted">Data analyst</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="team-member">
-                                    <img class="mx-auto rounded-circle" src="{% static 'img/team/2.png'%}" alt="">
-                                    <h4>Mayue Jiang</h4>
-                                    <p class="text-muted">Programmer</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="team-member">
-                                    <img class="mx-auto rounded-circle" src="{% static 'img/team/3.png'%}" alt="">
-                                    <h4>Abhivikram Veer Singh</h4>
-                                    <p class="text-muted">Project Manager</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="team-member">
-                                    <img class="mx-auto rounded-circle" src="{% static 'img/team/4.png'%}" alt="">
-                                    <h4>Yicong Jin</h4>
-                                    <p class="text-muted">Programmer</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+    </div>
+</section>
         </div>
-    </section>
+    </div>
+</div>
 
 
+<!--<footer class="footer text-faded text-center py-5">-->
+    <!--<div class="container">-->
+        <!--<p class="m-0 small">Copyright &copy; Team Cavaliers 2018</p>-->
+    <!--</div>-->
+<!--</footer>-->
 
 
-    <footer class="footer text-faded text-center py-5">
-        <div class="container">
-            <p class="m-0 small">Copyright &copy; Team Cavaliers 2018</p>
-        </div>
-    </footer>
+<!-- JavaScript Libraries -->
+<!--<script src="{% static 'lib/jquery/jquery.min.js'%}"></script>-->
+<script src="{% static 'lib/jquery/jquery-migrate.min.js'%}"></script>
+<script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'lib/typed/typed.js'%}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+<script src="{% static 'lib/magnific-popup/magnific-popup.min.js'%}"></script>
+<script src="{% static 'lib/isotope/isotope.pkgd.min.js'%}"></script>
+
+<!-- Contact Form JavaScript File -->
+<script src="{% static 'contactform/contactform.js'%}"></script>
+
+<!-- Template Main Javascript File -->
+<script src="{% static 'js/main.js'%}"></script>
 
 <!-- Bootstrap core JavaScript -->
-<script src="{% static 'jquery/jquery.min.js'%}"></script>
-<script src="{% static 'js/bootstrap.bundle.js'%}"></script>
-
+<!--<script src="{% static 'jquery/jquery.min.js'%}"></script>-->
+<!--<script src="{% static 'js/bootstrap.bundle.js'%}"></script>-->
 
 
 </body>
