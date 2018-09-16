@@ -33,32 +33,6 @@ function initMap() {
 
     onPlaceChanged();
 
-    var iconBase = 'https://maps.google.com/mapfiles/ms/icons/';
-    var icons = {
-        Reuse:{
-            name: 'Reuse',
-            icon: iconBase + 'red-dot.png'
-        },
-        DropOff:{
-            name: 'Drop-off',
-            icon: iconBase + 'green-dot.png'
-        },
-        Recycle:{
-            name: 'Recycle',
-            icon: iconBase + 'blue-dot.png'
-        }
-    };
-
-    var legend = document.getElementById('legend');
-    for (var key in icons) {
-        var type = icons[key];
-        var name = type.name;
-        var icon = type.icon;
-        var div = document.createElement('div');
-        div.innerHTML = '<img src="' + icon + '"> ' + name;
-        legend.appendChild(div);
-    }
-
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
 }
 
