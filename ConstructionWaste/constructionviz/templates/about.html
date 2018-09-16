@@ -79,11 +79,7 @@
                 <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Search</a></li>
                 <li><a class="smoothScroll" href="{% url 'about'%}">About</a></li>
                 {% if user.is_authenticated %}
-                <li class="logbutton">
-                    <span>
-                    <a href="{% url 'logout' %}">logout</a>
-                    </span>
-                </li>
+                <li><a class="smoothScroll" href="{% url 'logout' %}">logout</a></li>
                 {% endif %}
             </ul>
         </div>
