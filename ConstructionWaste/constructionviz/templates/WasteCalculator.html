@@ -79,18 +79,16 @@
             <div class="swiper-wrapper">
 
                 <!--choose the type of construction-->
-                <div class="swiper-slide swiper-no-swiping">
+                <div class="swiper-slide swiper-no-swiping selectUserType">
                     <div class="row">
                         <div class="chooseDescription col-sm-12" >You are a ...</div>
                     </div>
                     <div class="containerForSplitView">
                         <div class="split left">
-
                             <h1>Volume Builder</h1>
                             <button class="btn-dark button" onclick="moveOnePageAfter()">Select</button>
                         </div>
                         <div class="split right">
-
                             <h1>Owner Builder</h1>
                             <button class="btn-dark button" onclick="moveTwoPageAfter()">Select</button>
                         </div>
@@ -100,7 +98,7 @@
                 <div class="swiper-slide swiper-no-swiping chooseKindOfBuilding">
 
 
-                    <a class="back swiper-button-prev-customized" href="">
+                    <a class="back swiper-button-prev-customized" href="" onclick="clearTypeOfBuilding()">
                         <span></span>
                     </a>
                     <div class="row" style="margin-top: 60px;">
@@ -163,7 +161,7 @@
                 </div>
                 <div class="swiper-slide swiper-no-swiping typeInDetailPage">
 
-                    <a class="back swiper-button-prev-customized" href="">
+                    <a class="back swiper-button-prev-customized" href="" onclick="clearTypeOfBuilding()">
                         <span></span>
                     </a>
                     <div class="row" style="margin-top: 60px;">
@@ -173,9 +171,8 @@
 
                         <form class="form">
 
-
                             <input id="detailBox1" type="text" placeholder="Enter number of bed rooms"
-                                   class="form__input" pattern="^[1-9]\d*|0$"/>
+                                   class="form__input"/>
 
 
 
@@ -189,7 +186,7 @@
 
 
 
-                            <input id="detailBox4" type="text" placeholder="Enter number of car parks"
+                            <input id="detailBox4" type="text" placeholder="Enter number of car spots"
                                    class="form__input"/>
 
                             <div class="invalid-tooltip">Please type in non-negative number</div>
@@ -331,9 +328,13 @@
 
 <script>
 
+
+    var numberOfUserType;
+
+
     var numberOfBuildingType = 0;
 
-    // for the split view on second page
+    // for the split view on first page
     const left = document.querySelector(".left");
     const right = document.querySelector(".right");
     const container = document.querySelector(".containerForSplitView");
@@ -355,7 +356,7 @@
     });
 
 
-    //for the third page
+    //for the second page
     var box1 = $('#detailBox1');
     var box2 = $('#detailBox2');
     var box3 = $('#detailBox3');
@@ -366,11 +367,14 @@
     $('.cardView').click(function () {
         numberOfBuildingType = $(this).attr('value');
 
-
-
-
         //console.log(numberOfBuildingType, typeof numberOfBuildingType, numberOfBuildingType === "1");
         switch (numberOfBuildingType) {
+            case 0:
+                box1.attr("placeholder", "Enter number of bed rooms");
+                box2.attr("placeholder", "Enter number of living rooms");
+                box3.attr("placeholder", "Enter number of kitchens");
+                box4.attr("placeholder", "Enter number of car spots");
+                break;
             case "1":
                 //console.log(box1.attr("placeholder"));
                 box1.attr("placeholder", "Enter number of hospital rooms");
@@ -382,13 +386,13 @@
                 box1.attr("placeholder", "Enter number of hotel rooms");
                 box2.attr("placeholder", "Enter number of Serviced apartments");
                 box3.attr("placeholder", "Enter number of bathrooms in total");
-                box4.attr("placeholder", "Enter number of car parks");
+                box4.attr("placeholder", "Enter number of car spots");
                 break;
             case "3":
                 box1.attr("placeholder", "Enter number of student rooms");
                 box2.attr("placeholder", "Enter number of beds in each room");
                 box3.attr("placeholder", "Enter number of bathrooms in total");
-                box4.attr("placeholder", "Enter number of car parks");
+                box4.attr("placeholder", "Enter number of car spots");
                 break;
             case "4":
                 box1.attr("placeholder", "Enter number of one-bedroom units");
@@ -396,13 +400,15 @@
                 box3.attr("placeholder", "Enter number of three-bedroom units");
                 box4.attr("placeholder", "Enter number of car parks");
                 break;
+            default:
+                break;
         }
 
 
 
     });
 
-    //for the fourth page
+    //for the third page
     function validationForUserInput(inputBox1, inputBox2, inputBox3, inputBox4) {
         let regex = /^(?:[1-9][0-9]*|0)$/;
 
@@ -558,14 +564,31 @@
 
     function moveTwoPageAfter() {
         swiper.slideTo($('.typeInDetailPage').index(), 1000, false);
+        numberOfUserType = 2;
+
+        box1.attr("placeholder", "Enter number of bed rooms");
+        box2.attr("placeholder", "Enter number of living rooms");
+        box3.attr("placeholder", "Enter number of kitchens");
+        box4.attr("placeholder", "Enter number of car spots");
     }
 
     function moveOnePageAfter() {
         swiper.slideTo($('.chooseKindOfBuilding').index(), 1000, false);
+        numberOfUserType = 1;
+
     }
 
     function moveToDisplayPage() {
         swiper.slideTo($('.displayDetailPage').index(), 1000, false);
+    }
+    
+    function moveBackToSelectUserType() {
+        swiper.slideTo($('.selectUserType').index(), 1000, false);
+    }
+
+    function clearTypeOfBuilding() {
+        numberOfBuildingType = 0;
+        console.log(numberOfBuildingType);
     }
 
 </script>
