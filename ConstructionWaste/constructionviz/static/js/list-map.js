@@ -83,6 +83,8 @@ var markers3 = [];
 //calculate the distance between two locations
 var dist;
 var infoWindowArr = [];
+var infoWindowArr2 = [];
+var infoWindowArr3 = [];
 //add markers to the map to default mel map
 function onload_map() {
     console.log("onload_map");
@@ -275,8 +277,6 @@ function removeMarkers(markers) {
     }
 }
 
-
-
 function onPlaceChanged() {
     console.log("onPlaceChanged");
     var place = autocomplete.getPlace();
@@ -284,7 +284,6 @@ function onPlaceChanged() {
     removeMarkers(markers);
     removeMarkers(markers2);
     removeMarkers(markers3);
-
 
     $.ajax({
         url: "./get_all_locations",
@@ -313,7 +312,7 @@ function onPlaceChanged() {
                         dist2 = dist2 / 1000;
                         dist2 = dist2.toFixed(2);
 
-                        if (dist2 < 5) {
+                        if (dist2 < 6) {
                             var data_reuse = {};
                             data_reuse["Type"] = type;
                             data_reuse["Name"] = name;
@@ -333,20 +332,10 @@ function onPlaceChanged() {
                             '<h6 id="firstHeading" class="firstHeading">Reuse Location Name</h6>' + name + '<p></p>' +
                             '<h6 id="firstHeading" class="firstHeading">Address</h6>' + address;
 
-                            //contentString.push(contentString_new1);
-
                             var infoWindow_new1 = new google.maps.InfoWindow({
                                 content: contentString_new1
                             });
                             infoWindowArr.push(infoWindow_new1);
-/*
-
-                            markers_new1.addListener('click', function() {
-                                infoWindow_new1.open(map, markers_new1);
-                            });
-*/
-
-
 
                             var markerValue = markers[i];
                             google.maps.event.addListener(markers_new1, 'click', (function (markers_new1, info) {
@@ -369,7 +358,7 @@ function onPlaceChanged() {
                         dist2 = dist2.toFixed(2);
 
 
-                        if (dist2 < 5) {
+                        if (dist2 < 6) {
                             var data_drop = {};
                             data_drop["Type"] = type;
                             data_drop["Name"] = name;
@@ -383,7 +372,24 @@ function onPlaceChanged() {
                                 icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
                             });
 
-                            markers.push(markers_new2);
+                            markers2.push(markers_new2);
+
+                            var contentString_new2 = '<div id="content">' + '<div id="siteNotice">' + '</div>' +
+                                '<h6 id="firstHeading" class="firstHeading">Drop-off Location Name</h6>' + name + '<p></p>' +
+                                '<h6 id="firstHeading" class="firstHeading">Address</h6>' + address;
+
+                            var infoWindow_new2 = new google.maps.InfoWindow({
+                                content: contentString_new2
+                            });
+                            infoWindowArr2.push(infoWindow_new2);
+
+                            var markerValue2 = markers2[i];
+                            google.maps.event.addListener(markers_new2, 'click', (function (markers_new2, info) {
+                                return function () {
+                                    infoWindow_new2.open(map, markers_new2);
+                                }
+
+                            })(markers_new2, infoWindowArr2.length));
                         }
                     }
 
@@ -398,7 +404,7 @@ function onPlaceChanged() {
                         dist2 = dist2.toFixed(2);
                         markers3[i].setMap(null);
 
-                        if (dist2 < 5) {
+                        if (dist2 < 6) {
                             var data_recycle = {};
                             data_recycle["Type"] = type;
                             data_recycle["Name"] = name;
@@ -412,7 +418,25 @@ function onPlaceChanged() {
                                 icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
                             });
 
-                            markers.push(markers_new3);
+                            markers3.push(markers_new3);
+
+                            var contentString_new3 = '<div id="content">' + '<div id="siteNotice">' + '</div>' +
+                                '<h6 id="firstHeading" class="firstHeading">Recycle Location Name</h6>' + name + '<p></p>' +
+                                '<h6 id="firstHeading" class="firstHeading">Address</h6>' + address;
+
+                            var infoWindow_new3 = new google.maps.InfoWindow({
+                                content: contentString_new3
+                            });
+                            infoWindowArr3.push(infoWindow_new3);
+
+                            var markerValue3 = markers3[i];
+                            google.maps.event.addListener(markers_new3, 'click', (function (markers_new3, info) {
+                                return function () {
+                                    infoWindow_new3.open(map, markers_new3);
+                                }
+
+                            })(markers_new3, infoWindowArr3.length));
+
                         }
                     }
 
