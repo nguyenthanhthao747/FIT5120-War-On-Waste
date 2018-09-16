@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30113fc2-7b8b-4d20-b171-af9fe124edda" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/calculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/calculator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -150,13 +151,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="382" />
-          <entry key="html" value="2062" />
+          <entry key="html" value="2071" />
+          <entry key="js" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="382" />
-          <entry key="HTML" value="2062" />
+          <entry key="HTML" value="2071" />
+          <entry key="JavaScript" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -165,7 +168,7 @@
           <entry key="CSS" value="7" />
           <entry key="HTML" value="5" />
           <entry key="Image" value="2" />
-          <entry key="JavaScript" value="1" />
+          <entry key="JavaScript" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -173,7 +176,7 @@
           <entry key="css" value="7" />
           <entry key="html" value="5" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="1" />
+          <entry key="js" value="3" />
           <entry key="png" value="1" />
         </counts>
       </usages-collector>
@@ -182,11 +185,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="421" column="21" lean-forward="true" selection-start-line="420" selection-start-column="30" selection-end-line="421" selection-end-column="21" />
+            <state relative-caret-position="729">
+              <caret line="562" column="20" selection-start-line="562" selection-start-column="20" selection-end-line="562" selection-end-column="20" />
               <folding>
                 <element signature="e#2729#2735#0" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -198,11 +201,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/about.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/calculator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2632">
-              <caret line="160" column="16" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="16" />
+            <state relative-caret-position="18">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -210,8 +213,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="753" column="21" lean-forward="true" selection-start-line="753" selection-start-column="21" selection-end-line="753" selection-end-column="21" />
+            <state relative-caret-position="1702">
+              <caret line="747" lean-forward="true" selection-start-line="747" selection-end-line="747" />
             </state>
           </provider>
         </entry>
@@ -244,6 +247,7 @@
       <find>main.js</find>
       <find>user</find>
       <find>opac</find>
+      <find>calculator.</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -260,6 +264,7 @@
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css" />
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/about.html" />
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html" />
+        <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/calculator.js" />
       </list>
     </option>
   </component>
@@ -522,18 +527,18 @@
       <workItem from="1536589362737" duration="547000" />
       <workItem from="1536728646055" duration="3302000" />
       <workItem from="1536818411211" duration="82000" />
-      <workItem from="1536818514248" duration="34563000" />
+      <workItem from="1536818514248" duration="35868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59038000" />
+    <option name="totallyTimeSpent" value="60343000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1726568" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1726568" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -588,13 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/gooSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/lineChart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -645,13 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="753" column="21" lean-forward="true" selection-start-line="753" selection-start-column="21" selection-end-line="753" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
@@ -666,10 +657,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1702">
+          <caret line="747" lean-forward="true" selection-start-line="747" selection-end-line="747" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/gooSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="421" column="21" lean-forward="true" selection-start-line="420" selection-start-column="30" selection-end-line="421" selection-end-column="21" />
+        <state relative-caret-position="729">
+          <caret line="562" column="20" selection-start-line="562" selection-start-column="20" selection-end-line="562" selection-end-column="20" />
           <folding>
             <element signature="e#2729#2735#0" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -677,6 +682,13 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/calculator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
