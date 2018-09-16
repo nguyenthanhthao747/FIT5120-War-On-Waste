@@ -101,21 +101,21 @@
 
 
 <!-- start section services -->
-<div id="services" class="paddsection" style="padding-top: 120px">
+<div id="services" class="paddsection">
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-lg-3 ">
                 <div class="services-block">
                     <a href="{% url 'WasteCalculator'%}"><i class="fas fa-calculator"></i></a>
                     <a href="{% url 'WasteCalculator'%}"><span>Waste Calculator</span></a>
-                    <p class="separator">To a green builder, know how much waste for construction</p>
+                    <p class="separator">Calculate the different types of construction waste you produce when making a building</p>
                 </div>
             </div>
             <div class="col-lg-3 ">
                 <div class="services-block">
                     <a class="smoothScroll" href="{% url 'statistics'%}"><i class="fas fa-chart-area"></i></a>
                     <a class="smoothScroll" href="{% url 'statistics'%}"><span>Analytics</span></a>
-                    <p class="separator">To an green builder, tell you what happened with construction waste </p>
+                    <p class="separator">Analyze Melbourne's history with Construction and Demolition waste</p>
                 </div>
             </div>
 
@@ -124,7 +124,7 @@
                     <!--<i class="ion-ios-lightbulb-outline"></i>-->
                     <a href="{% url 'SearchLocation'%}"><i class="fas fa-map-marker-alt"></i></a>
                     <a href="{% url 'SearchLocation'%}"><span>Search</span></a>
-                    <p class="separator">Find a place to deal with your construction waste</p>
+                    <p class="separator">Search for the easiest way to deal with your Construction waste</p>
                 </div>
             </div>
 
@@ -132,7 +132,7 @@
                 <div class="services-block">
                     <a class="smoothScroll" href="{% url 'about'%}"><i class="fas fa-camera-retro"></i></a>
                     <a class="smoothScroll" href="{% url 'about'%}"><span>About Us</span></a>
-                    <p class="separator">Know more about us</p>
+                    <p class="separator">Come & Connect with the team</p>
                 </div>
             </div>
         </div>
@@ -140,11 +140,11 @@
 </div>
 
 <!-- start section slides and description-->
-<div class="container about-container wow fadeInUp">
-    <div class="row">
+<div id= "about" class="paddsection">
+    <div class="container">
+        <div class="row justify-content-between">
             <div class="col-lg-7 ">
                 <div class="div-img-bg">
-                    <div class="about-img">
                         <div class="img-responsive">
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
@@ -198,7 +198,6 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -214,6 +213,7 @@
                         us can do…</p>
                 </div>
             </div>
+        </div>
     </div>
 </div>
 <!-- end section about us -->

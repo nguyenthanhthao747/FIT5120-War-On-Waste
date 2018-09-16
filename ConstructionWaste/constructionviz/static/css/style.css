@@ -152,7 +152,8 @@ p {
 
 .paddsection {
   padding-top: 90px;
-  padding-bottom: 90px;
+  padding-bottom: 50px;
+  padding-left: 40px;
 }
 
 .paddsections {
@@ -207,7 +208,7 @@ nav ul li a {
   padding: 2px 0 0 0;
   position: relative;
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   color: #7c5131;
   font-family: 'Poppins', helvetica;
   font-weight: 500;
@@ -292,7 +293,7 @@ nav ul li a {
   width: 100%;
   height: auto;
   background: #f7f7f7;
-  padding-top: 190px;
+  padding-top: 90px;
 }
 
 #about1 {
@@ -330,15 +331,17 @@ nav ul li a {
 }
 
 #about .about-descr .p-heading {
-  font-family: 'Playfair Display', serif;
+  /*font-family: 'Playfair Display', serif;*/
   font-size: 28px;
   text-align: left;
+  color: #0b0b0b;
 }
 
 #about1 .about-descr .p-heading {
-  font-family: 'Playfair Display', serif;
+  /*font-family: 'Playfair Display', serif;*/
   font-size: 28px;
   text-align: left;
+  color: #0b0b0b;
 }
 
 #about .about-descr .separator {
@@ -360,8 +363,8 @@ nav ul li a {
 #services {
   background: #f7f7f7;
   position: relative;
-  padding-bottom: 50px;
-  padding-top: 50px;
+  /*padding-bottom: 50px;*/
+  padding-top: 100px;
 }
 
 .owl-item {
