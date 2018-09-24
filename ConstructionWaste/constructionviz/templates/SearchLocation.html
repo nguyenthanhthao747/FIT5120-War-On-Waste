@@ -36,7 +36,7 @@
     <script src="{% static 'jquery/jquery.min.js'%}"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <!--<script src="{% static 'js/gooSearch.js'%}"></script>-->
-    <script src="{% static 'js/list-map.js'%}"></script>
+    <script src="{% static 'js/list-map.js'%}?v=7.0"></script>
 </head>
 
 <body>
@@ -77,7 +77,7 @@
                         <th>Type</th>
                         <th>Name</th>
                         <th>Address</th>
-                        <th>Distance(Km)</th>
+                        <th class="col_distance">Distance(Km)</th>
                     </tr>
                     </thead>
                 </table>
@@ -124,8 +124,8 @@
                         </style>
                     </div>
 
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-I2HyS_JDhn5oAzxhdS85HRa2Mo2COOo&libraries&libraries=geometry"></script>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-I2HyS_JDhn5oAzxhdS85HRa2Mo2COOo&libraries=places&callback=initMap"
+<!--                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-I2HyS_JDhn5oAzxhdS85HRa2Mo2COOo&libraries&libraries=geometry"></script>-->
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-I2HyS_JDhn5oAzxhdS85HRa2Mo2COOo&libraries=geometry,places&callback=initMap"
                             async defer></script>
                 </div>
 

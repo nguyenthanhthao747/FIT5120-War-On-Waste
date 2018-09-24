@@ -72,6 +72,7 @@
 <div id="about" class="paddsection" style="padding-top: 120px">
     <div class="container">
 
+
         <div data-space-between="10" data-direction="vertical" class="swiper-container">
             <div class="parallax-bg" data-swiper-parallax="-23%"></div>
 
@@ -79,16 +80,18 @@
             <div class="swiper-wrapper">
 
                 <!--choose the type of construction-->
-                <div class="swiper-slide swiper-no-swiping selectUserType">
-                    <div class="row">
-                        <div class="chooseDescription col-sm-12" >You are a ...</div>
-                    </div>
+                <div class="swiper-slide swiper-no-swiping">
+
+                    <div class="chooseDescription">You are a ...</div>
+
                     <div class="containerForSplitView">
                         <div class="split left">
+
                             <h1>Volume Builder</h1>
                             <button class="btn-dark button" onclick="moveOnePageAfter()">Select</button>
                         </div>
                         <div class="split right">
+
                             <h1>Owner Builder</h1>
                             <button class="btn-dark button" onclick="moveTwoPageAfter()">Select</button>
                         </div>
@@ -98,13 +101,13 @@
                 <div class="swiper-slide swiper-no-swiping chooseKindOfBuilding">
 
 
-                    <a class="back swiper-button-prev-customized" href="" onclick="clearTypeOfBuilding()">
+                    <a class="back swiper-button-prev-customized" href="">
                         <span></span>
                     </a>
-                    <div class="row" style="margin-top: 60px;">
-                        <div class="chooseDescription col-sm-12" >choose the type of building</div>
-                    </div>
-                    <div class="row" style="height: 100%; width: 90%; margin: 5vh auto 100px">
+
+                    <div class="chooseDescription">choose the type of building</div>
+
+                    <div class="row" style="height: 100%; width: 90%; margin: 100px auto 100px">
                         <div class="containerForCard col-md-3 col-sm-6">
                             <div class="cardView swiper-button-next-customized" value="1">
                                 <figure class="front">
@@ -161,18 +164,19 @@
                 </div>
                 <div class="swiper-slide swiper-no-swiping typeInDetailPage">
 
-                    <a class="back swiper-button-prev-customized" href="" onclick="clearTypeOfBuilding()">
+                    <a class="back swiper-button-prev-customized" href="">
                         <span></span>
                     </a>
-                    <div class="row" style="margin-top: 60px;">
-                        <div class="chooseDescription col-sm-12">Please type in non-negative numbers in boxes below</div>
-                    </div>
+
+                    <div class="chooseDescription">Please type in non-negative numbers in boxes below</div>
+
                     <div class="user">
 
                         <form class="form">
 
+
                             <input id="detailBox1" type="text" placeholder="Enter number of bed rooms"
-                                   class="form__input"/>
+                                   class="form__input" pattern="^[1-9]\d*|0$"/>
 
 
 
@@ -186,7 +190,7 @@
 
 
 
-                            <input id="detailBox4" type="text" placeholder="Enter number of car spots"
+                            <input id="detailBox4" type="text" placeholder="Enter number of car parks"
                                    class="form__input"/>
 
                             <div class="invalid-tooltip">Please type in non-negative number</div>
@@ -201,7 +205,7 @@
                     </div>
 
 
-                    <div id="errorInput" >* Please type in non-negative number in all fields</div>
+                    <div id="errorInput" >* Please input valid values</div>
 
 
                 </div>
@@ -210,11 +214,11 @@
                     <a class="back swiper-button-prev-customized" href="">
                         <span></span>
                     </a>
-                    <div class="row" style="margin-top: 60px;">
-                        <div class="chooseDescription col-sm-12">Here is the amount of material you may waste</div>
-                    </div>
+
+                    <div class="chooseDescription">Here is the amount of material you may waste</div>
+
                     <div class="containerForDisplay">
-                        <div class="row" style="margin: 5vh auto 50px">
+                        <div class="row" style="margin: 80px auto 50px">
                             <div class="col-md-3 col-sm-6">
                                 <div class="card">
                                     <img src="{% static 'img/calculator-brick.jpg'%}">
@@ -328,13 +332,9 @@
 
 <script>
 
-
-    var numberOfUserType;
-
-
     var numberOfBuildingType = 0;
 
-    // for the split view on first page
+    // for the split view on second page
     const left = document.querySelector(".left");
     const right = document.querySelector(".right");
     const container = document.querySelector(".containerForSplitView");
@@ -356,7 +356,7 @@
     });
 
 
-    //for the second page
+    //for the third page
     var box1 = $('#detailBox1');
     var box2 = $('#detailBox2');
     var box3 = $('#detailBox3');
@@ -367,14 +367,11 @@
     $('.cardView').click(function () {
         numberOfBuildingType = $(this).attr('value');
 
+
+
+
         //console.log(numberOfBuildingType, typeof numberOfBuildingType, numberOfBuildingType === "1");
         switch (numberOfBuildingType) {
-            case 0:
-                box1.attr("placeholder", "Enter number of bed rooms");
-                box2.attr("placeholder", "Enter number of living rooms");
-                box3.attr("placeholder", "Enter number of kitchens");
-                box4.attr("placeholder", "Enter number of car spots");
-                break;
             case "1":
                 //console.log(box1.attr("placeholder"));
                 box1.attr("placeholder", "Enter number of hospital rooms");
@@ -386,13 +383,13 @@
                 box1.attr("placeholder", "Enter number of hotel rooms");
                 box2.attr("placeholder", "Enter number of Serviced apartments");
                 box3.attr("placeholder", "Enter number of bathrooms in total");
-                box4.attr("placeholder", "Enter number of car spots");
+                box4.attr("placeholder", "Enter number of car parks");
                 break;
             case "3":
                 box1.attr("placeholder", "Enter number of student rooms");
                 box2.attr("placeholder", "Enter number of beds in each room");
                 box3.attr("placeholder", "Enter number of bathrooms in total");
-                box4.attr("placeholder", "Enter number of car spots");
+                box4.attr("placeholder", "Enter number of car parks");
                 break;
             case "4":
                 box1.attr("placeholder", "Enter number of one-bedroom units");
@@ -400,18 +397,48 @@
                 box3.attr("placeholder", "Enter number of three-bedroom units");
                 box4.attr("placeholder", "Enter number of car parks");
                 break;
-            default:
-                break;
         }
 
 
 
     });
 
-    //for the third page
+    //for the fourth page
     function validationForUserInput(inputBox1, inputBox2, inputBox3, inputBox4) {
+        
         let regex = /^(?:[1-9][0-9]*|0)$/;
 
+        if(regex.test(inputBox1)
+            || regex.test(inputBox2)
+            || regex.test(inputBox3)
+            || regex.test(inputBox4)){
+            
+            // it means one text box has one number 
+           console.log(regex.test(inputBox1), regex.test(inputBox2), regex.test(inputBox3), regex.test(inputBox4));
+            
+            if(inputBox1 == ""){
+               box1.val("0");
+            }
+            
+            if(inputBox2 == ""){
+               box2.val("0");
+            }
+            
+            if(inputBox3 == ""){
+               box3.val("0");
+            }
+            
+            if(inputBox4 == ""){
+               box4.val("0");
+            }
+            
+            // again check after filling zeros 
+            inputBox1 = $('#detailBox1').val();
+            inputBox2 = $('#detailBox2').val();
+            inputBox3 = $('#detailBox3').val();
+            inputBox4 = $('#detailBox4').val();
+            
+        }
         //console.log(regex.test(inputBox1), regex.test(inputBox2), regex.test(inputBox3), regex.test(inputBox4))
 
         return regex.test(inputBox1)
@@ -564,31 +591,14 @@
 
     function moveTwoPageAfter() {
         swiper.slideTo($('.typeInDetailPage').index(), 1000, false);
-        numberOfUserType = 2;
-
-        box1.attr("placeholder", "Enter number of bed rooms");
-        box2.attr("placeholder", "Enter number of living rooms");
-        box3.attr("placeholder", "Enter number of kitchens");
-        box4.attr("placeholder", "Enter number of car spots");
     }
 
     function moveOnePageAfter() {
         swiper.slideTo($('.chooseKindOfBuilding').index(), 1000, false);
-        numberOfUserType = 1;
-
     }
 
     function moveToDisplayPage() {
         swiper.slideTo($('.displayDetailPage').index(), 1000, false);
-    }
-    
-    function moveBackToSelectUserType() {
-        swiper.slideTo($('.selectUserType').index(), 1000, false);
-    }
-
-    function clearTypeOfBuilding() {
-        numberOfBuildingType = 0;
-        console.log(numberOfBuildingType);
     }
 
 </script>

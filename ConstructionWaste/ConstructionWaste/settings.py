@@ -25,8 +25,8 @@ SECRET_KEY = 'oeqtf$r8!4#!)&%)$khe2kak3-c_o#gp)26ul#j069be7jols6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = ['vic-construction-waste.com']
+ALLOWED_HOSTS = ['127.0.0.1','vic-construction-waste.com']
 
 # Application definition
 
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'ConstructionWaste.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': ['constructionviz/templates', os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,10 +80,21 @@ DATABASES = {
         'NAME': 'ConstructionWaste',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ConstructionWaste',
+#         'USER': 'power_user',
+#         'PASSWORD': 'PostAdmin',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 """
 DATABASES = {
@@ -136,8 +147,9 @@ STATICFILES_DIRS = [
 ]
 
 # my_project/settings.py
-LOGIN_REDIRECT_URL = '/constructionviz'
-LOGOUT_REDIRECT_URL = '/accounts/login'
+#LOGIN_REDIRECT_URL = '/constructionviz'
+#LOGOUT_REDIRECT_URL = '/accounts/login'
+LOGOUT_REDIRECT_URL = '/'
 
 
 ACCOUNT_FORMS = {

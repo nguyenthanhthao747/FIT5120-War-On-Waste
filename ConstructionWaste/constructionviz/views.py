@@ -18,7 +18,7 @@ def home(request):
 #view for search location
 @login_required
 def search_location(request):
-    return render(request, 'searchLocation.html')
+    return render(request, 'SearchLocation.html')
 
 #view for statistics page
 @login_required
@@ -78,11 +78,11 @@ def detail(request, area):
 
         for var in the_rs:
             year.append(var[0])
-            timber.append(var[1]*0.5)
-            plasterboard.append(var[1]*2.4)
-            concrete.append(var[1]*1)
-            bricks.append(var[1]*0.75)
-            tiles.append(var[1]*2.4)
+            timber.append(round(var[1]*0.5,2))
+            plasterboard.append(round(var[1]*2.4,2))
+            concrete.append(round(var[1]*1,2))
+            bricks.append(round(var[1]*0.75,2))
+            tiles.append(round(var[1]*2.4,2))
 
 
         data_to_send = {}
