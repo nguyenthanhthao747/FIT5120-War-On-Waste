@@ -48,16 +48,6 @@
 
 </head>
 <body>
-<!--{% if user.is_authenticated %}-->
-<!--<nav class="nav justify-content-end text-primary p-1">-->
-    <!--<a class="navbar-brand">Navbar</a>-->
-    <!--<span class="float-right">-->
-    <!--Hi {{ user.username }}! &nbsp;-->
-    <!--<a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important"-->
-       <!--href="{% url 'logout' %}">logout</a>-->
-    <!--</span>-->
-<!--</nav>-->
-<!--{% endif %}-->
 
 <!--start section navbar -->
 <nav id="main-nav">
@@ -66,20 +56,17 @@
             <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
             <ul class="nav-menu list-unstyled">
                 <li><a class="smoothScroll" href="{% url 'home'%}">Home<span class="sr-only">(current)</span></a></li>
-                <li><a class="smoothScroll" href="{% url 'WasteCalculator'%}">Calculator</a></li>
                 <li><a class="smoothScroll" href="{% url 'statistics'%}">Statistics</a></li>
-                <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Search</a></li>
-                <li><a class="smoothScroll" href="{% url 'about'%}">About</a></li>
+                <li><a class="smoothScroll" href="{% url 'WasteCalculator'%}">Waste Calculator</a></li>
+                <li><a class="smoothScroll" href="{% url 'SearchLocation'%}">Recycle near you</a></li>
+                <li><a class="smoothScroll" href="{% url 'suggestions'%}">Suggestions</a></li>
+                <li><a class="smoothScroll" href="{% url 'about'%}">About Us</a></li>
                 {% if user.is_authenticated %}
-                <!--<li class="logbutton">-->
-                    <!--<span>-->
-                    <!--<a href="{% url 'logout' %}">logout</a>-->
-                    <!--</span>-->
-                <!--</li>-->
                 <li><a class="smoothScroll" href="{% url 'logout' %}">logout</a></li>
                 {% endif %}
             </ul>
         </div>
+
     </div>
 </nav>
 <!--end with navigation section-->
@@ -105,16 +92,17 @@
         <div class="row justify-content-between">
             <div class="col-lg-3 ">
                 <div class="services-block">
+                    <a class="smoothScroll" href="{% url 'statistics'%}"><i class="fas fa-chart-area"></i></a>
+                    <a class="smoothScroll" href="{% url 'statistics'%}"><span>Statistics</span></a>
+                    <p class="separator">Analyze Melbourne's history with Construction and Demolition waste</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 ">
+                <div class="services-block">
                     <a href="{% url 'WasteCalculator'%}"><i class="fas fa-calculator"></i></a>
                     <a href="{% url 'WasteCalculator'%}"><span>Waste Calculator</span></a>
                     <p class="separator">Calculate the different types of construction waste you produce when making a building</p>
-                </div>
-            </div>
-            <div class="col-lg-3 ">
-                <div class="services-block">
-                    <a class="smoothScroll" href="{% url 'statistics'%}"><i class="fas fa-chart-area"></i></a>
-                    <a class="smoothScroll" href="{% url 'statistics'%}"><span>Analytics</span></a>
-                    <p class="separator">Analyze Melbourne's history with Construction and Demolition waste</p>
                 </div>
             </div>
 
@@ -122,16 +110,24 @@
                 <div class="services-block">
                     <!--<i class="ion-ios-lightbulb-outline"></i>-->
                     <a href="{% url 'SearchLocation'%}"><i class="fas fa-map-marker-alt"></i></a>
-                    <a href="{% url 'SearchLocation'%}"><span>Search</span></a>
+                    <a href="{% url 'SearchLocation'%}"><span>Recycle near you</span></a>
                     <p class="separator">Search for the easiest way to deal with your Construction waste</p>
                 </div>
             </div>
 
+            <!--<div class="col-lg-3 ">-->
+                <!--<div class="services-block">-->
+                    <!--<a class="smoothScroll" href="{% url 'about'%}"><i class="fas fa-camera-retro"></i></a>-->
+                    <!--<a class="smoothScroll" href="{% url 'about'%}"><span>About Us</span></a>-->
+                    <!--<p class="separator">Come & Connect with the team</p>-->
+                <!--</div>-->
+            <!--</div>-->
+
             <div class="col-lg-3 ">
                 <div class="services-block">
-                    <a class="smoothScroll" href="{% url 'about'%}"><i class="fas fa-camera-retro"></i></a>
-                    <a class="smoothScroll" href="{% url 'about'%}"><span>About Us</span></a>
-                    <p class="separator">Come & Connect with the team</p>
+                    <a class="smoothScroll" href="{% url 'suggestions'%}"><i class="fas fa-envelope-open-text"></i></a>
+                    <a class="smoothScroll" href="{% url 'suggestions'%}"><span>Suggestions</span></a>
+                    <p class="separator">Get suggestions for home builders and volume builders</p>
                 </div>
             </div>
         </div>
