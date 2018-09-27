@@ -34,6 +34,16 @@
   white-space: nowrap;
 }
 
+.containerForSplitView h3 {
+  font-size: 2rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 12%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
 .containerForSplitView .button {
   display: block;
   position: absolute;

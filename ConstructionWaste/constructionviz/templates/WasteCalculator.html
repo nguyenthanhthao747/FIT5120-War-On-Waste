@@ -83,16 +83,18 @@
                 <!--choose the type of construction-->
                 <div class="swiper-slide swiper-no-swiping">
 
-                    <div class="chooseDescription">You are a ...</div>
+                    <!--<div class="chooseDescription">You are a ...</div>-->
 
                     <div class="containerForSplitView">
                         <div class="split left">
 
+                            <h3>You are a</h3>
                             <h1>Volume Builder</h1>
                             <button class="btn-dark button" onclick="moveOnePageAfter()">Select</button>
                         </div>
                         <div class="split right">
 
+                            <h3>You are a</h3>
                             <h1>Owner Builder</h1>
                             <button class="btn-dark button" onclick="moveTwoPageAfter()">Select</button>
                         </div>
@@ -169,7 +171,7 @@
                         <span></span>
                     </a>
 
-                    <div class="chooseDescription">Please type in non-negative numbers in boxes below</div>
+                    <!--<div class="chooseDescription">Please type in non-negative numbers in boxes below</div>-->
 
                     <div class="user">
 
@@ -269,6 +271,7 @@
                         </div>
 
                         <div class="container" style="text-align: center; margin: 60px auto 40px">
+                            <a href="" class="btnToMap yellow swiper-button-next-customized">Check how this affect the environment</a>
                             <a href="{% url 'SearchLocation'%}" class="btnToMap yellow">Check drop sites on map</a>
                         </div>
                     </div>
@@ -278,14 +281,22 @@
 
                 </div>
 
-                <!--<div class="swiper-slide swiper-no-swiping">-->
-                    <!--<div class="container">-->
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="container">
 
-                        <!--<p>her are some tips:</p>-->
-                        <!--<a href="{% url 'SearchLocation'%}">go to map</a>-->
-                    <!--</div>-->
+                        <a class="back swiper-button-prev-customized" href="">
+                            <span></span>
+                        </a>
 
-                <!--</div>-->
+
+
+
+
+
+
+                    </div>
+
+                </div>
 
 
             </div>
@@ -528,16 +539,16 @@
             //console.log(squareMeter);
 
             var tonesOfBrick = parseFloat(Math.round(squareMeter * 64000 / 93 * 0.08 * 100) / 100).toFixed(2);
-            var costOfBrick = parseFloat(Math.round(tonesOfBrick * 1.859 * 100) / 100).toFixed(2);
+            var costOfBrick = parseFloat(Math.round(tonesOfBrick * 1.859 * 100) / 100).toFixed(0);
 
             var tonesOfTimber = parseFloat(Math.round(squareMeter * 18880 / 93 * 0.06 * 100) / 100).toFixed(2);
-            var costOfTimber = parseFloat(Math.round(tonesOfTimber * 50 * 100) / 100).toFixed(2);
+            var costOfTimber = parseFloat(Math.round(tonesOfTimber * 50 * 100) / 100).toFixed(0);
 
             var tonesOfSand = parseFloat(Math.round(squareMeter * 164540 / 186 * 0.02 * 100) / 100).toFixed(2);
-            var costOfSand = parseFloat(Math.round(tonesOfSand * 0.4 * 100) / 100).toFixed(2);
+            var costOfSand = parseFloat(Math.round(tonesOfSand * 0.4 * 100) / 100).toFixed(0);
 
             var tonesOfCement = parseFloat(Math.round(squareMeter * 17052 / 93 * 0.04 * 100) / 100).toFixed(2);
-            var costOfCement = parseFloat(Math.round(tonesOfCement * 0.7 * 100) / 100).toFixed(2);
+            var costOfCement = parseFloat(Math.round(tonesOfCement * 0.7 * 100) / 100).toFixed(0);
 
             //console.log(tonesOfBrick, costOfBrick);
 
