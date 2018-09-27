@@ -23,6 +23,7 @@
 
     <!-- Main Stylesheet File -->
     <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    <link href="{% static 'css/about.css'%}" rel="stylesheet">
 
     <!-- Responsive css -->
     <link href="{% static 'css/responsive.css'%}" rel="stylesheet">
@@ -35,7 +36,6 @@
     <!--import map js file-->
     <script src="{% static 'jquery/jquery.min.js'%}"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <!--<script src="{% static 'js/gooSearch.js'%}"></script>-->
     <script src="{% static 'js/list-map.js'%}?v=7.0"></script>
 </head>
 
@@ -64,15 +64,26 @@
 <!-- start section -->
 <div id="about1" class="paddsection" style="padding-top: 90px">
     <div class="container">
-        <div class="cta-inner text-center rounded">
-            <h2 class="section-heading mb-5">
-                <span class="section-heading-upper">Search Drop-off Locations!</span>
-            </h2>
+        <section id="subscribe">
+            <div class="container wow fadeInUp">
+                <h3 class="subscribe-title" style="text-align: center">Find drop-off locations in:</h3>
+                <p></p>
+                <div class="subscribe-text">
+                    <input id="autocomplete" placeholder="Search by address" type="text"/>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="img-responsive">
+            <div id="controls" style="display: none"><select id="country">
+                <option value="au">Melbourne</option>
+            </select></div>
         </div>
 
-        <div class="row justify-content-between">
+        <div class="row justify-content-between" style="padding-top: 40px">
             <div class="col-lg-6">
-                <table id="example" class="display" style="width:100%">
+                <table id="example" class="display">
                     <thead>
                     <tr>
                         <th>Type</th>
@@ -87,56 +98,16 @@
             <div class="col-lg-6">
                 <div class="div-img-bg">
                     <div class="about-img">
-                        <div class="img-responsive">
-                            <div class="about-descr">
-                                <p></p>
-                                <div id="findhotels" class="p-heading"
-                                     style="padding-top: 10px;padding-bottom: 10px;padding-left: 20px">Find
-                                    drop-off locations in:
-                                </div>
-                                <div id="locationField"
-                                     style="padding-top: 10px; padding-bottom: 10px;padding-left: 20px">
-                                    <input id="autocomplete" placeholder="Search by address"
-                                           style="width: 300px"
-                                           type="text"/>
-                                </div>
-                            </div>
-
-                            <!--<div id="legend"><h3>Legend</h3></div>-->
-                            <div id="controls" style="display: none"><select id="country">
-                                <option value="au">Melbourne</option>
-                            </select></div>
-                        </div>
                         <div id="map"></div>
-                        <style>
-                            #legend {
-                                font-family: Arial, sans-serif;
-                                background: #fff;
-                                padding: 10px;
-                                margin: 10px;
-                                border: 3px solid #000;
-                            }
-                            #legend h3 {
-                                margin-top: 0;
-                            }
-                            #legend img {
-                                vertical-align: middle;
-                            }
-                        </style>
                     </div>
-
-<!--                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-I2HyS_JDhn5oAzxhdS85HRa2Mo2COOo&libraries&libraries=geometry"></script>-->
                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-I2HyS_JDhn5oAzxhdS85HRa2Mo2COOo&libraries=geometry,places&callback=initMap"
                             async defer></script>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 </div>
-</div>
+
 <!-- start section footer -->
 <div id="footer" class="text-center">
     <div class="container">
@@ -156,10 +127,7 @@
 </div>
 <!-- End section footer -->
 
-
-<!--d3 JavaScript-->
 <!-- JavaScript Libraries -->
-<!--<script src="{% static 'lib/jquery/jquery.min.js'%}"></script>-->
 <script src="{% static 'lib/jquery/jquery-migrate.min.js'%}"></script>
 <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 <script src="{% static 'lib/typed/typed.js'%}"></script>
@@ -170,10 +138,8 @@
 <!-- Template Main Javascript File -->
 <script src="{% static 'js/main.js'%}"></script>
 
-
 <!-- Bootstrap core JavaScript -->
 <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
-
 
 </body>
 </html>
