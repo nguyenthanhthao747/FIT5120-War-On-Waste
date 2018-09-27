@@ -12,13 +12,18 @@ import ast # for parsinf list from string list '[13, 12]'
 
 #view for home page
 @login_required
+def suggestions(request):
+    return render(request, 'suggestions.html')
+
+#view for home page
+@login_required
 def home(request):
     return render(request, 'index.html')
 
 #view for search location
 @login_required
 def search_location(request):
-    return render(request, 'SearchLocation.html')
+    return render(request, 'searchLocation.html')
 
 #view for statistics page
 @login_required
