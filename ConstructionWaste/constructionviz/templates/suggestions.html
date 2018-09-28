@@ -66,97 +66,253 @@
 </nav>
 <!--end with navigation section-->
 
-<section class="comonSection portfolios2" id="portfolio">
+<!--suggestion section-->
+<section class="comonSection portfolios2" id="portfolio" style="padding-top: 60px">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center wow fadeInUp" data-wow-duration="700ms" data-wow-delay="300ms">
-                <h2 class="sectionTitle2">
-                    <small>Recent Case studies</small>
-                    What we have done so far.
-                </h2>
-            </div>
-        </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="folioNav folioNav2">
                     <ul id="filter">
                         <li class="active" data-group="all">All</li>
-                        <li data-group="webdesign">Home Builder</li>
-                        <li data-group="mobile">Volume Builder</li>
+                        <li data-group="Volume">Volume Builder</li>
+                        <li data-group="Home">Home Builder</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
     <div class="folioGrid2" id="folioGrid2">
-        <div class="folioItem2" data-groups='["all", "photography", "mobile"]'>
-            <img src="{% static 'img/p1.jpg'%}" alt=""/>
+        <div class="folioItem2" data-groups='["all", "Home"]'>
+            <img src="{% static 'img/youtube.jpg'%}" alt=""/>
+            <!--<img src="{% static 'img/p1.jpg'%}" alt=""/>-->
             <div class="fI2Hover">
                 <div class="fI2content">
-                    <h2><a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">model1 Website</a></h2>
+                    <h2><a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">Videos</a></h2>
                 </div>
             </div>
         </div>
-        <div class="folioItem2" data-groups='["all", "webdesign", "mobile"]'>
-            <img src="{% static 'img/p2.jpg'%}" alt=""/>
+        <div class="folioItem2" data-groups='["all", "Home"]'>
+            <img src="{% static 'img/article-pic.jpg'%}" alt=""/>
             <div class="fI2Hover">
                 <div class="fI2content">
-                    <h2><a href="singlefolio.html">Cooking Website</a></h2>
-                    <div class="fI2Cats">
-                        <a href="#">Photography</a><span>/</span><a href="#">Development</a>
-                    </div>
+                    <h2><a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">Articles</a></h2>
                 </div>
             </div>
         </div>
-        <div class="folioItem2" data-groups='["all", "mobile", "photography"]'>
-            <img src="{% static 'img/p3.jpg'%}" alt=""/>
+        <div class="folioItem2" data-groups='["all", "Home"]'>
+            <img src="{% static 'img/forum.png'%}" alt=""/>
             <div class="fI2Hover">
                 <div class="fI2content">
-                    <h2><a href="singlefolio.html">Agency Website</a></h2>
-                    <div class="fI2Cats">
-                        <a href="#">Photography</a><span>/</span><a href="#">Mobile</a>
-                    </div>
+                    <h2><a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">Groups</a></h2>
                 </div>
             </div>
         </div>
-        <div class="folioItem2" data-groups='["all", "webdesign"]'>
+        <div class="folioItem2" data-groups='["all", "Volume"]'>
             <img src="{% static 'img/p4.jpg'%}" alt=""/>
             <div class="fI2Hover">
                 <div class="fI2content">
                     <h2><a href="singlefolio.html">Agency Website</a></h2>
-                    <div class="fI2Cats">
-                        <a href="#">Photography</a><span>/</span><a href="#">Mobile</a>
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="folioItem2" data-groups='["all", "webdesign"]'>
+        <div class="folioItem2" data-groups='["all", "Volume"]'>
             <img src="{% static 'img/p5.jpg'%}" alt=""/>
             <div class="fI2Hover">
                 <div class="fI2content">
                     <h2><a href="singlefolio.html">Agency Website</a></h2>
-                    <div class="fI2Cats">
-                        <a href="#">Photography</a><span>/</span><a href="#">Mobile</a>
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="folioItem2" data-groups='["all", "webdesign"]'>
+        <div class="folioItem2" data-groups='["all", "Volume"]'>
             <img src="{% static 'img/p6.jpg'%}" alt=""/>
             <div class="fI2Hover">
                 <div class="fI2content">
                     <h2><a href="singlefolio.html">Agency Website</a></h2>
-                    <div class="fI2Cats">
-                        <a href="#">Photography</a><span>/</span><a href="#">Mobile</a>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Modal 1 -->
+<!-- Modal 1 videos-->
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2 class="text-uppercase">Suggestion Videos</h2>
+                            <p class="item-intro text-muted">See these videos to know how to deposit construction
+                                waste </p>
+                            <p class="item-intro text-muted">Design Strategies: Reducing Construction Waste</p>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/ctBDRargorw"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                            <p class="item-intro text-muted">Reuse: Opportunities for better use of waste construction
+                                materials </p>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/r0Ejq_4GXEA"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                            <p class="item-intro text-muted">Avoiding and Reducing Construction Waste Part 2</p>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/_Ykat9toU7U"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                            <p class="item-intro text-muted">C&D Waste (Construction & Demolition) Recycling Process</p>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/qYWjWdlCF14"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                            <p class="item-intro text-muted">How San Francisco Is Becoming A Zero Waste City</p>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Cg3OA1s8-SI"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                            <p class="item-intro text-muted">Tips To Reduce The Cost Of Building A House - Ways To
+                                Reduce The Cost Of Building A New House</p>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/e-ZljsOxc9E"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <p></p>
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fa fa-times"></i>
+                                Return Back
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2 articles-->
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2 class="text-uppercase">Suggestion Articles</h2>
+                            <p class="item-intro text-muted">Read articles to know how to deal with construction
+                                waste</p>
+                            <p></p>
+
+                            <div class="post-preview">
+                                <a href="https://www.allmetrobins.com.au/how-to-reduce-waste-on-your-construction-site/">
+                                    <h3 class="post-title">
+                                        How to reduce waste on your construction site
+                                    </h3>
+                                    <h4 class="post-subtitle">
+                                        Sustainability has become an increasingly important topic...
+                                    </h4>
+                                </a>
+                                <p class="post-meta">Posted by
+                                    <a href="https://www.allmetrobins.com.au/author/admin/">admin</a>
+                                    on September 5, 2017</p>
+                            </div>
+                            <hr>
+
+                            <div class="post-preview">
+                                <a href="https://www.epa.gov/smm/best-practices-reducing-reusing-and-recycling-construction-and-demolition-materials">
+                                    <h3 class="post-title">
+                                        Best Practices for Reducing, Reusing, and Recycling Construction and Demolition
+                                        Materials
+                                    </h3>
+                                    <h4 class="post-subtitle">
+                                        Builders, construction teams and design practitioners can divert...
+                                    </h4>
+                                </a>
+                                <p class="post-meta">Posted by
+                                    <a href="https://www.epa.gov/">United States Environmental Protection Agency</a>
+                                </p>
+                            </div>
+                            <hr>
+
+                            <div class="post-preview">
+                                <a href="https://www.reconomy.com/blog/how-can-good-design-minimise-waste-construction-industry">
+                                    <h3 class="post-title">
+                                        How Can Good Design Minimise Waste in the Construction Industry?
+                                    </h3>
+                                    <h4 class="post-subtitle">
+                                        Minimising waste is increasingly a client-driven imperative...
+                                    </h4>
+                                </a>
+                                <p class="post-meta">Posted by
+                                    <a href="#">PAUL COX</a>
+                                    on August 3, 2016</p>
+                            </div>
+                            <hr>
+
+                            <div class="post-preview">
+                                <a href="https://www.norbord.com/na/blog/reduce-waste-on-your-construction-site/">
+                                    <h3 class="post-title">
+                                        Reduce waste on your construction site
+                                    </h3>
+                                    <h4 class="post-subtitle">
+                                        The construction industry is responsible for an enormous amount of waste...
+                                    </h4>
+                                </a>
+                                <p class="post-meta">Posted by
+                                    <a href="https://www.norbord.com/na">Norbord</a>
+                                    on May 2, 2018</p>
+                            </div>
+                            <hr>
+
+                            <div class="post-preview">
+                                <a href="http://www.ercofusa.com/reducing-construction-waste-through-recycling-and-reuse/">
+                                    <h3 class="post-title">
+                                        Reducing Construction Waste through Recycling and Reuse
+                                    </h3>
+                                    <h4 class="post-subtitle">
+                                        The new construction industry generates an average of 3.9 pounds of...
+                                    </h4>
+                                </a>
+                                <p class="post-meta">Posted by
+                                    <a href="http://www.ercofusa.com/">erc</a>
+                                    on September 10, 2015</p>
+                            </div>
+                            <hr>
+
+                            <div class="post-preview">
+                                <a href="http://www.wbdg.org/resources/construction-waste-management">
+                                    <h3 class="post-title">
+                                        Construction waste management
+                                    </h3>
+                                    <h4 class="post-subtitle">
+                                        Responsible management of waste is an essential aspect of sustainable...
+                                    </h4>
+                                </a>
+                                <p class="post-meta">Posted by
+                                    <a href="https://www.erdc.usace.army.mil/Locations/CERL.aspx/">Tom Napier</a>
+                                    on October 17, 2016</p>
+                            </div>
+                            <hr>
+
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fa fa-times"></i>
+                                Return Back
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -171,16 +327,12 @@
                             <!-- Project Details Go Here -->
                             <h2 class="text-uppercase">Project Name</h2>
                             <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <ul class="list-inline">
-                                <li>Date: January 2017</li>
-                                <li>Client: Threads</li>
-                                <li>Category: Illustration</li>
-                            </ul>
+
+
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Close Project</button>
+                                Close Project
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -188,10 +340,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 
 <!-- JavaScript Libraries -->
@@ -202,18 +350,9 @@
 <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
 <script src="{% static 'lib/magnific-popup/magnific-popup.min.js'%}"></script>
 <script src="{% static 'lib/isotope/isotope.pkgd.min.js'%}"></script>
-<!--<script src="{% static 'js/mixer.js'%}"></script>-->
 <script src="{% static 'js/wow.min.js'%}"></script>
 <script src="{% static 'js/jquery.appear.js'%}"></script>
-<!--<script src="{% static 'js/prettyPhoto.js'%}"></script>-->
 <script src="{% static 'js/jquery.shuffle.min.js'%}"></script>
-<!--<script src="{% static 'js/mixer.js'%}"></script>-->
-<!--<script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>-->
-<!--<script src="{% static 'js/modernizr.custom.js'%}"></script>-->
-<!--<script src="{% static 'js/classie.js'%}"></script>-->
-<!--<script src="{% static 'js/blogpopup.js'%}"></script>-->
-<!--<script src="{% static 'js/jquery.themepunch.tools.min.js'%}"></script>-->
-<!--<script src="{% static 'js/jquery.themepunch.revolution.min.js'%}"></script>-->
 
 <!-- Template Main Javascript File -->
 <script src="{% static 'js/main.js'%}"></script>
