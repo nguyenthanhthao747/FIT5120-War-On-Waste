@@ -1,16 +1,16 @@
 
 .swiper-container {
-  width: 100%;
+  width: 90%;
   height: 100%;
   border-radius: 15px;
 
 }
 
-.firstPageTitle {
-  color: #856404;
-  font-size: 2em;
-  text-align: center;
-}
+/*.firstPageTitle {*/
+  /*color: #856404;*/
+  /*font-size: 2em;*/
+  /*text-align: center;*/
+/*}*/
 
 /*css for split view on second page*/
 :root {
@@ -19,13 +19,13 @@
   --left-button-hover-color: rgba(161, 11, 11, 0.6);
   --right-bg-color: rgba(43, 43, 43, 0.4);
   --right-button-hover-color: rgba(92, 92, 92, 0.6);
-  --hover-width: 75%;
-  --other-width: 25%;
+  --hover-width: 70%;
+  --other-width: 30%;
   --speed: 1000ms;
 }
 
 .containerForSplitView h1 {
-  font-size: 3rem;
+  font-size: 4vw;
   color: #fff;
   position: absolute;
   left: 50%;
@@ -50,7 +50,7 @@
   left: 50%;
   top: 70%;
   height: 2.5rem;
-  width: 10rem;
+  width: 18vw;
   text-align: center;
   border: #fff solid 0.2rem;
   font-size: 1rem;
@@ -58,6 +58,8 @@
   text-transform: uppercase;
   text-decoration: none;
   transform: translateX(-50%);
+  max-width: 10rem;
+  min-width: 5rem;
 }
 
 .split.left .button:hover {
@@ -157,7 +159,7 @@
   }
 }
 
-/*css for third page*/
+/*css for second page*/
 .containerForCard, figure{
   width:95%;
   height: 300px;
@@ -165,8 +167,8 @@
 
 .containerForCard{
   position:relative;
-  margin: 20px 0 auto 0;
-
+  margin: 40px auto 10px;
+  max-width: 300px;
 }
 
 .cardView{
@@ -548,8 +550,7 @@ figure a{
 
 .containerForDisplay .card {
   width: 90%;
-  height: 100%;
-  float: left;
+
   border-radius: 8px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -557,7 +558,8 @@ figure a{
   top: 0;
   text-align: center;
   transition: all 0.25s;
-  margin-top: 30px;
+  margin: 30px auto 10px auto;
+  max-width: 300px;
 }
 
 .containerForDisplay .card img{
@@ -566,6 +568,8 @@ figure a{
   width: 100%;
   height: 100%;
   overflow: hidden;
+  min-height: 170px;
+  max-height: 180px;
 }
 
 .containerForDisplay .card:nth-child(2) {
@@ -579,13 +583,15 @@ figure a{
 
 .containerForDisplay .card h4 {
   font-weight: 700;
+  font-size: 20px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .containerForDisplay .card p {
   margin: 0 auto;
   padding: 0 1rem;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -633,11 +639,12 @@ figure a{
   font-family: 'Poppins', helvetica;
   text-transform: uppercase;
   text-align: center;
-  margin:30px auto 20px;
+  margin:80px auto 10px;
   color: #000000;
   font-weight: 600;
   font-size: 26px;
   letter-spacing: 1px;
+  line-height: 30px;
 }
 
 /*css for the earth on the fifth page*/
@@ -684,15 +691,16 @@ figure a{
 
 .bubble-speech {
   position: relative;
-  font-family: 'Source Sans Pro', sans-serif;
   margin: auto;
   line-height: 22px;
   letter-spacing: 1px;
   margin-top: 16px;
   margin-bottom: 48px;
-  width: 300px;
+  width: 70%;
   background-color: #efefef;
   padding: 16px;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .bubble-speech.bubble-left:after {
@@ -705,25 +713,6 @@ figure a{
   border-top: 0 #efefef solid;
   border-bottom: 12px transparent solid;
   border-left: 20px #efefef solid;
-}
-
-.bubble-square {
-  width: 33px;
-  height: 25px;
-  text-align: center;
-}
-
-.bubble-speech.bubble-center:after {
-  z-index: 9002;
-  display: block;
-  content: "";
-  position: absolute;
-  bottom: -11px;
-  left: 50%;
-  margin-left: -18px;
-  border-right: 20px transparent solid;
-  border-top: 12px #efefef solid;
-  border-left: 20px transparent solid;
 }
 
 .bubble-speech.bubble-right:after {
@@ -739,12 +728,10 @@ figure a{
 }
 
 .bubble-speech .author {
-  max-width: 200px;
   font-weight: bold;
-  margin: 0;
-  padding: 0 12px 2px 0;
+  color: #0b0b0b;
+  margin-bottom: 10px;
 }
-
 
 
 
