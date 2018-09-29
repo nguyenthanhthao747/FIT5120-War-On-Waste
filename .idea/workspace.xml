@@ -152,18 +152,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="397" />
-          <entry key="html" value="2487" />
+          <entry key="css" value="486" />
+          <entry key="html" value="2640" />
           <entry key="js" value="14" />
-          <entry key="txt" value="102" />
+          <entry key="txt" value="162" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="397" />
-          <entry key="HTML" value="2487" />
+          <entry key="CSS" value="486" />
+          <entry key="HTML" value="2640" />
           <entry key="JavaScript" value="14" />
-          <entry key="PLAIN_TEXT" value="102" />
+          <entry key="PLAIN_TEXT" value="162" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -192,8 +192,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-117">
-              <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
+            <state relative-caret-position="589">
+              <caret line="338" column="61" lean-forward="true" selection-start-line="338" selection-start-column="61" selection-end-line="338" selection-end-column="61" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -208,8 +208,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+            <state relative-caret-position="615">
+              <caret line="745" column="1" selection-start-line="745" selection-start-column="1" selection-end-line="745" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -404,13 +404,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/goomap.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/SearchLocation.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/about.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/suggestions.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -537,7 +532,7 @@
       <workItem from="1536728646055" duration="3302000" />
       <workItem from="1536818411211" duration="82000" />
       <workItem from="1536818514248" duration="48349000" />
-      <workItem from="1538022218435" duration="1862000" />
+      <workItem from="1538022218435" duration="4993000" />
     </task>
     <task id="LOCAL-00001" summary="change the font size">
       <created>1537084931362</created>
@@ -567,11 +562,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537100619282</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="change small stuffs on calculator">
+      <created>1538043116633</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1538043116633</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74686000" />
+    <option name="totallyTimeSpent" value="77817000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -588,7 +590,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32771084" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32891566" />
@@ -635,7 +637,8 @@
     <MESSAGE value="change nav bar format" />
     <MESSAGE value="improve when in small size" />
     <MESSAGE value="fix bugs on calculator page" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs on calculator page" />
+    <MESSAGE value="change small stuffs on calculator" />
+    <option name="LAST_COMMIT_MESSAGE" value="change small stuffs on calculator" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/ConstructionWaste/urls.py">
@@ -743,20 +746,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/suggestions.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="745" column="1" selection-start-line="745" selection-start-column="1" selection-end-line="745" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-117">
-          <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
+        <state relative-caret-position="589">
+          <caret line="338" column="61" lean-forward="true" selection-start-line="338" selection-start-column="61" selection-end-line="338" selection-end-column="61" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
