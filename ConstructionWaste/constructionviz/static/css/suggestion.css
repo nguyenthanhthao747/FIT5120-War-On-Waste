@@ -196,6 +196,7 @@
     overflow: hidden;
     position: relative;
 }
+
 .folioItem2 img{
     width: 100%;
     height: auto;
@@ -284,6 +285,9 @@
 .marginFolioMores{
     margin-top: 92px;
 }
+
+
+
 /*=======================================================================
 // Portfolio 3
 =========================================================================*/
