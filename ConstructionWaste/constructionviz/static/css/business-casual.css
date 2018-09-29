@@ -1,6 +1,6 @@
 
 .swiper-container {
-  width: 90%;
+  width: 100%;
   height: 100%;
   border-radius: 15px;
 
@@ -29,7 +29,7 @@
   color: #fff;
   position: absolute;
   left: 50%;
-  top: 20%;
+  top: 30%;
   transform: translateX(-50%);
   white-space: nowrap;
 }
@@ -39,7 +39,7 @@
   color: #fff;
   position: absolute;
   left: 50%;
-  top: 12%;
+  top: 18%;
   transform: translateX(-50%);
   white-space: nowrap;
 }
@@ -75,7 +75,7 @@
 .containerForSplitView {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 550px;
   background: var(--container-bg-color);
 }
 
@@ -696,11 +696,12 @@ figure a{
   letter-spacing: 1px;
   margin-top: 16px;
   margin-bottom: 48px;
-  width: 70%;
+  width: 90%;
   background-color: #efefef;
   padding: 16px;
   text-align: center;
   font-size: 1.2rem;
+  max-width: 280px;
 }
 
 .bubble-speech.bubble-left:after {

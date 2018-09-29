@@ -69,7 +69,6 @@
 <!-- End section navbar -->
 
 <!--calculator-->
-<!-- start section map visual -->
 <div id="about" class="paddsection" style="padding-top: 120px">
     <div class="container">
 
@@ -81,7 +80,7 @@
             <div class="swiper-wrapper">
 
                 <!--choose the type of construction-->
-                <div class="swiper-slide swiper-no-swiping">
+                <div class="swiper-slide swiper-no-swiping chooseUserPage">
 
                     <div class="containerForSplitView">
                         <div class="split left">
@@ -99,10 +98,9 @@
                     </div>
 
                 </div>
-                <div class="swiper-slide swiper-no-swiping chooseKindOfBuilding">
+                <div class="swiper-slide swiper-no-swiping chooseBuildingPage">
 
-
-                    <a class="back swiper-button-prev-customized" href="">
+                    <a class="back swiper-button-prev-customized">
                         <span></span>
                     </a>
 
@@ -165,7 +163,7 @@
                 </div>
                 <div class="swiper-slide swiper-no-swiping typeInDetailPage">
 
-                    <a class="back swiper-button-prev-customized" href="">
+                    <a class="back" onclick="moveBackPage()">
                         <span></span>
                     </a>
 
@@ -177,7 +175,7 @@
 
 
                             <input id="detailBox1" type="text" placeholder="Enter number of bed rooms"
-                                   class="form__input" pattern="^[1-9]\d*|0$"/>
+                                   class="form__input"/>
 
 
 
@@ -194,25 +192,22 @@
                             <input id="detailBox4" type="text" placeholder="Enter number of car parks"
                                    class="form__input"/>
 
-                            <div class="invalid-tooltip">Please type in non-negative number</div>
+                            <!--<div class="invalid-tooltip">Please type in non-negative number</div>-->
 
-                            <button class="btnForCalculator" type="button">Calculate</button>
+                            <button class="btnForCalculator" type="button" onclick="clearErrorInformation()">Calculate</button>
                         </form>
 
-
-                        <!--<div class="invalid-feedback">-->
-                            <!--Please type in non-negative number-->
-                        <!--</div>-->
+                        <!--<div class="invalid-feedback">Please type in non-negative number</div>-->
                     </div>
 
 
-                    <div id="errorInput" >* Please input valid values</div>
+                    <div id="errorInput" >Please type in non-negative number</div>
 
 
                 </div>
                 <div class="swiper-slide swiper-no-swiping displayDetailPage">
 
-                    <a class="back swiper-button-prev-customized" href="">
+                    <a class="back swiper-button-prev-customized">
                         <span></span>
                     </a>
 
@@ -273,15 +268,12 @@
                         </div>
                     </div>
 
-
-
-
                 </div>
 
                 <div class="swiper-slide swiper-no-swiping">
                     <div class="container">
 
-                        <a class="back swiper-button-prev-customized" href="">
+                        <a class="back swiper-button-prev-customized">
                             <span></span>
                         </a>
 
@@ -307,8 +299,6 @@
                                     </div>
                                 </div>
 
-
-
                                 <div class="col-lg-4 col-sm-12">
 
                                     <div class="earth">
@@ -316,8 +306,6 @@
                                     </div>
 
                                 </div>
-
-
 
                                 <div class="col-lg-4 col-sm-12">
 
@@ -336,8 +324,6 @@
                                     </div>
 
                                 </div>
-
-
 
                             </div>
 
@@ -391,6 +377,7 @@
 
 
 <script>
+    var typeOfUser = 0;
 
     var numberOfBuildingType = 0;
 
@@ -427,6 +414,7 @@
     $('.cardView').click(function () {
         numberOfBuildingType = $(this).attr('value');
 
+        console.log(numberOfBuildingType);
         //console.log(numberOfBuildingType, typeof numberOfBuildingType, numberOfBuildingType === "1");
         switch (numberOfBuildingType) {
             case "1":
@@ -529,6 +517,10 @@
         form.classList.remove('form--no');
     }
 
+    function clearErrorInformation() {
+        $('#errorInput').css("visibility", "collapse");
+    }
+
     button.addEventListener('click', function () {
 
         let detailBox1 = $('#detailBox1').val();
@@ -560,6 +552,7 @@
             // console.log(form.classList);
             //
 
+            console.log(numberOfBuildingType);
             switch (numberOfBuildingType) {
                 case 0:
                     //house
@@ -581,8 +574,6 @@
                     //residential
                     squareMeter = detailBox1 * 58 + detailBox2 * 91 + detailBox3 * 148 + detailBox4 * 15.7;
                     break;
-
-
             }
 
             //console.log(squareMeter);
@@ -599,7 +590,7 @@
             tonesOfCement = parseFloat(Math.round(squareMeter * 17052 / 93 * 0.04 * 100) / 100).toFixed(0);
             var costOfCement = parseFloat(Math.round(tonesOfCement * 0.7 * 100) / 100).toFixed(0);
 
-            console.log(tonesOfBrick, costOfBrick);
+            //console.log(tonesOfBrick, costOfBrick);
 
 
             $('#tonesOfBrick').text(tonesOfBrick);
@@ -631,7 +622,7 @@
             //for sf6
             var sf6Value = tonesOfWaste *0.001 * 0.1;
 
-            console.log(co2Value, ch4Value, n2oValue, sf6Value);
+            //console.log(co2Value, ch4Value, n2oValue, sf6Value);
 
             $('#co2Value').text(co2Value);
 
@@ -690,15 +681,41 @@
 
     function moveTwoPageAfter() {
         swiper.slideTo($('.typeInDetailPage').index(), 1000, false);
+        typeOfUser = 1;
+
+        box1.attr("placeholder", "Enter number of bed rooms");
+        box2.attr("placeholder", "Enter number of living rooms");
+        box3.attr("placeholder", "Enter number of kitchens");
+        box4.attr("placeholder", "Enter number of car parks");
+
     }
 
     function moveOnePageAfter() {
-        swiper.slideTo($('.chooseKindOfBuilding').index(), 1000, false);
+        swiper.slideTo($('.chooseBuildingPage').index(), 1000, false);
+        typeOfUser = 0;
     }
 
     function moveToDisplayPage() {
         swiper.slideTo($('.displayDetailPage').index(), 1000, false);
+
     }
+
+    function moveBackPage() {
+
+        console.log(typeOfUser);
+
+        if (typeOfUser == 0) {
+            swiper.slideTo($('.chooseBuildingPage').index(), 1000, false);
+        } else {
+            swiper.slideTo($('.chooseUserPage').index(), 1000, false);
+        }
+
+        numberOfBuildingType = 0;
+
+    }
+
+
+
 
 </script>
 </html>
