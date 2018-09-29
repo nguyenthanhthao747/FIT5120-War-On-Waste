@@ -69,7 +69,6 @@
 <!-- End section navbar -->
 
 <!--calculator-->
-<!-- start section map visual -->
 <div id="about" class="paddsection" style="padding-top: 120px">
     <div class="container">
 
@@ -81,9 +80,7 @@
             <div class="swiper-wrapper">
 
                 <!--choose the type of construction-->
-                <div class="swiper-slide swiper-no-swiping">
-
-                    <!--<div class="chooseDescription">You are a ...</div>-->
+                <div class="swiper-slide swiper-no-swiping chooseUserPage">
 
                     <div class="containerForSplitView">
                         <div class="split left">
@@ -101,17 +98,16 @@
                     </div>
 
                 </div>
-                <div class="swiper-slide swiper-no-swiping chooseKindOfBuilding">
+                <div class="swiper-slide swiper-no-swiping chooseBuildingPage">
 
-
-                    <a class="back swiper-button-prev-customized" href="">
+                    <a class="back swiper-button-prev-customized">
                         <span></span>
                     </a>
 
                     <div class="chooseDescription">choose the type of building</div>
 
-                    <div class="row" style="height: 100%; width: 90%; margin: 100px auto 100px">
-                        <div class="containerForCard col-md-3 col-sm-6">
+                    <div class="row" style="height: 100%; width: 90%; margin: 20px auto 100px; align-items: center">
+                        <div class="containerForCard col-lg-3 col-md-6">
                             <div class="cardView swiper-button-next-customized" value="1">
                                 <figure class="front">
                                     <img src="https://source.unsplash.com/QJHzMkfrJpI" alt="front">
@@ -124,7 +120,7 @@
                             </div>
                         </div>
 
-                        <div class="containerForCard col-md-3 col-sm-6">
+                        <div class="containerForCard col-lg-3 col-md-6">
                             <div class="cardView swiper-button-next-customized" value="2">
                                 <figure class="front">
                                     <img src="https://source.unsplash.com/v8ZlRRM83Zs" alt="front">
@@ -137,7 +133,7 @@
                             </div>
                         </div>
 
-                        <div class="containerForCard col-md-3 col-sm-6">
+                        <div class="containerForCard col-lg-3 col-md-6">
                             <div class="cardView swiper-button-next-customized" value="3">
                                 <figure class="front">
                                     <img src="https://source.unsplash.com/ctUWE7BUEzE" alt="front">
@@ -150,7 +146,7 @@
                             </div>
                         </div>
 
-                        <div class="containerForCard col-md-3 col-sm-6">
+                        <div class="containerForCard col-lg-3 col-md-6">
                             <div class="cardView swiper-button-next-customized" value="4">
                                 <figure class="front">
                                     <img src="https://source.unsplash.com/dhvtr5fwbHI" alt="front">
@@ -167,11 +163,11 @@
                 </div>
                 <div class="swiper-slide swiper-no-swiping typeInDetailPage">
 
-                    <a class="back swiper-button-prev-customized" href="">
+                    <a class="back" onclick="moveBackPage()">
                         <span></span>
                     </a>
 
-                    <!--<div class="chooseDescription">Please type in non-negative numbers in boxes below</div>-->
+                    <div class="chooseDescription">Please type in building information below</div>
 
                     <div class="user">
 
@@ -179,7 +175,7 @@
 
 
                             <input id="detailBox1" type="text" placeholder="Enter number of bed rooms"
-                                   class="form__input" pattern="^[1-9]\d*|0$"/>
+                                   class="form__input"/>
 
 
 
@@ -196,70 +192,67 @@
                             <input id="detailBox4" type="text" placeholder="Enter number of car parks"
                                    class="form__input"/>
 
-                            <div class="invalid-tooltip">Please type in non-negative number</div>
+                            <!--<div class="invalid-tooltip">Please type in non-negative number</div>-->
 
-                            <button class="btnForCalculator" type="button">Calculate</button>
+                            <button class="btnForCalculator" type="button" onclick="clearErrorInformation()">Calculate</button>
                         </form>
 
-
-                        <!--<div class="invalid-feedback">-->
-                            <!--Please type in non-negative number-->
-                        <!--</div>-->
+                        <!--<div class="invalid-feedback">Please type in non-negative number</div>-->
                     </div>
 
 
-                    <div id="errorInput" >* Please input valid values</div>
+                    <div id="errorInput" >Please type in non-negative number</div>
 
 
                 </div>
                 <div class="swiper-slide swiper-no-swiping displayDetailPage">
 
-                    <a class="back swiper-button-prev-customized" href="">
+                    <a class="back swiper-button-prev-customized">
                         <span></span>
                     </a>
 
                     <div class="chooseDescription">Here is the amount of material you may waste</div>
 
                     <div class="containerForDisplay">
-                        <div class="row" style="margin: 80px auto 50px">
-                            <div class="col-md-3 col-sm-6">
+                        <div class="row" style="margin: 50px auto 50px">
+                            <div class="col-lg-3 col-md-6">
                                 <div class="card">
                                     <img src="{% static 'img/calculator-brick.jpg'%}">
                                     <h4>Brick</h4>
-                                    <p>Waste in units:</p>
+                                    <p>Waste approx:</p>
                                     <p id="tonesOfBrick">1</p>
                                     <p>Waste cost:</p>
                                     <p id="costOfBrick">2</p>
 
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-lg-3 col-md-6">
                                 <div class="card">
                                     <img src="{% static 'img/calculator-timber.jpg'%}">
                                     <h4>Timber</h4>
-                                    <p>Waste in Kg:</p>
+                                    <p>Waste approx:</p>
                                     <p id="tonesOfTimber">1</p>
                                     <p>Waste cost:</p>
                                     <p id="costOfTimber">2</p>
 
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-lg-3 col-md-6">
                                 <div class="card">
                                     <img src="{% static 'img/calculator-sand.jpg'%}">
                                     <h4>Sand</h4>
-                                    <p>Waste in Kg:</p>
+                                    <p>Waste approx:</p>
                                     <p id="tonesOfSand">1</p>
                                     <p>Waste cost:</p>
                                     <p id="costOfSand">2</p>
 
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-lg-3 col-md-6">
                                 <div class="card">
                                     <img src="{% static 'img/calculator-concrete.jpg'%}">
                                     <h4>Cement</h4>
-                                    <p>Waste in Kg:</p>
+                                    <p>Waste approx:</p>
                                     <p id="tonesOfCement">1</p>
                                     <p>Waste cost:</p>
                                     <p id="costOfCement">2</p>
@@ -271,54 +264,42 @@
                         </div>
 
                         <div class="container" style="text-align: center; margin: 60px auto 40px">
-                            <a href="" class="btnToMap yellow swiper-button-next-customized">Check how this affect the environment</a>
-                            <a href="{% url 'SearchLocation'%}" class="btnToMap yellow">Check drop sites on map</a>
+                            <a href="" class="btnToMap yellow swiper-button-next-customized">Check the carbon emissions</a>
                         </div>
                     </div>
-
-
-
 
                 </div>
 
                 <div class="swiper-slide swiper-no-swiping">
                     <div class="container">
 
-                        <a class="back swiper-button-prev-customized" href="">
+                        <a class="back swiper-button-prev-customized">
                             <span></span>
                         </a>
 
-                        <div class="chooseDescription">Here is the emissions generate by the waste</div>
+                        <div class="chooseDescription">Here is the carbon emissions generated by the waste</div>
 
                         <div class="container">
 
-                            <div class="row">
+                            <div class="row" style="margin: 50px auto 0px">
 
-                                <div class="col-md-4">
+                                <div class="col-lg-4 col-sm-12">
                                     <div class="bubble-speech bubble-right">
-                                        <h2 class="author">
-                                            CO2
-                                        </h2>
-
+                                        <h3 class="author">CO2</h3>
                                         <div class="message">
-                                            100 metric tonnes
+                                            <span id="co2Value" class="count">200</span> metric tonnes
                                         </div>
                                     </div>
 
                                     <div class="bubble-speech bubble-right">
-                                        <h2 class="author">
-                                            CH4
-                                        </h2>
-
+                                        <h3 class="author">CH4</h3>
                                         <div class="message">
-                                            100 metric tonnes
+                                            <span id="ch4Value" class="count">200</span> metric tonnes
                                         </div>
                                     </div>
                                 </div>
 
-
-
-                                <div class="col-md-4">
+                                <div class="col-lg-4 col-sm-12">
 
                                     <div class="earth">
                                         <div></div>
@@ -326,98 +307,38 @@
 
                                 </div>
 
-
-
-                                <div class="col-md-4">
+                                <div class="col-lg-4 col-sm-12">
 
                                     <div class="bubble-speech bubble-left">
-                                        <h2 class="author">
-                                            N2O
-                                        </h2>
-
+                                        <h3 class="author">N2O</h3>
                                         <div class="message">
-                                            100 metric tonnes
+                                            <span id="n2oValue" class="count">200</span> metric tonnes
                                         </div>
                                     </div>
 
                                     <div class="bubble-speech bubble-left">
-                                        <h2 class="author">
-                                            SF6 and HCFC 22
-                                        </h2>
-
+                                        <h3 class="author">SF6 & HCFC 22</h3>
                                         <div class="message">
-                                            100 metric tonnes
+                                            <span id="sf6Value" class="count">200</span> metric tonnes
                                         </div>
                                     </div>
 
                                 </div>
 
-
-
                             </div>
 
                         </div>
-
-
-                        <!--<div class="earth">-->
-                            <!--<div></div>-->
-                        <!--</div>-->
-
-
-
-                        <!--<div class="bubble-speech bubble-right">-->
-                            <!--<h2 class="author">-->
-                                <!--CO2 emissions-->
-                            <!--</h2>-->
-
-                            <!--<div class="message">-->
-                                <!--100 metric tonnes-->
-                            <!--</div>-->
-                        <!--</div>-->
-
-                        <!--<div class="bubble-speech bubble-right">-->
-                            <!--<h2 class="author">-->
-                                <!--CH4 emissions-->
-                            <!--</h2>-->
-
-                            <!--<div class="message">-->
-                                <!--100 metric tonnes-->
-                            <!--</div>-->
-                        <!--</div>-->
-
-                        <!--<div class="bubble-speech bubble-left">-->
-                            <!--<h2 class="author">-->
-                                <!--N2O emissions-->
-                            <!--</h2>-->
-
-                            <!--<div class="message">-->
-                                <!--100 metric tonnes-->
-                            <!--</div>-->
-                        <!--</div>-->
-
-                        <!--<div class="bubble-speech bubble-left">-->
-                            <!--<h2 class="author">-->
-                                <!--SF6 and HCFC 22 emissions-->
-                            <!--</h2>-->
-
-                            <!--<div class="message">-->
-                                <!--100 metric tonnes-->
-                            <!--</div>-->
-                        <!--</div>-->
-
-
-
+                        <div class="container" style="text-align: center; margin: 30px auto 40px">
+                            <a href="{% url 'suggestions'%}" class="btnToMap yellow">Check our suggestions</a>
+                            <a href="{% url 'SearchLocation'%}" class="btnToMap yellow">Check drop sites on map</a>
+                        </div>
                     </div>
-
                 </div>
-
 
             </div>
 
         </div>
-
     </div>
-    <!--<div style="height: 600px">1</div>-->
 </div>
 
 </body>
@@ -456,6 +377,7 @@
 
 
 <script>
+    var typeOfUser = 0;
 
     var numberOfBuildingType = 0;
 
@@ -492,9 +414,7 @@
     $('.cardView').click(function () {
         numberOfBuildingType = $(this).attr('value');
 
-
-
-
+        console.log(numberOfBuildingType);
         //console.log(numberOfBuildingType, typeof numberOfBuildingType, numberOfBuildingType === "1");
         switch (numberOfBuildingType) {
             case "1":
@@ -523,9 +443,6 @@
                 box4.attr("placeholder", "Enter number of car parks");
                 break;
         }
-
-
-
     });
 
     //for the fourth page
@@ -586,11 +503,22 @@
     const button = document.querySelector('.btnForCalculator');
     const form = document.querySelector('.form');
 
-    console.log(form);
+
+    var tonesOfBrick;
+    var tonesOfTimber;
+    var tonesOfSand;
+    var tonesOfCement;
+
+
+    //console.log(form);
 
 
     function clearAnimation() {
         form.classList.remove('form--no');
+    }
+
+    function clearErrorInformation() {
+        $('#errorInput').css("visibility", "collapse");
     }
 
     button.addEventListener('click', function () {
@@ -624,6 +552,7 @@
             // console.log(form.classList);
             //
 
+            console.log(numberOfBuildingType);
             switch (numberOfBuildingType) {
                 case 0:
                     //house
@@ -645,22 +574,20 @@
                     //residential
                     squareMeter = detailBox1 * 58 + detailBox2 * 91 + detailBox3 * 148 + detailBox4 * 15.7;
                     break;
-
-
             }
 
             //console.log(squareMeter);
 
-            var tonesOfBrick = parseFloat(Math.round(squareMeter * 64000 / 93 * 0.08 * 100) / 100).toFixed(2);
+            tonesOfBrick = parseFloat(Math.round(squareMeter * 64000 / 93 * 0.08 * 100) / 100).toFixed(0);
             var costOfBrick = parseFloat(Math.round(tonesOfBrick * 1.859 * 100) / 100).toFixed(0);
 
-            var tonesOfTimber = parseFloat(Math.round(squareMeter * 18880 / 93 * 0.06 * 100) / 100).toFixed(2);
+            tonesOfTimber = parseFloat(Math.round(squareMeter * 18880 / 93 * 0.06 * 100) / 100).toFixed(0);
             var costOfTimber = parseFloat(Math.round(tonesOfTimber * 5 * 100) / 100).toFixed(0);
 
-            var tonesOfSand = parseFloat(Math.round(squareMeter * 164540 / 186 * 0.02 * 100) / 100).toFixed(2);
+            tonesOfSand = parseFloat(Math.round(squareMeter * 164540 / 186 * 0.02 * 100) / 100).toFixed(0);
             var costOfSand = parseFloat(Math.round(tonesOfSand * 0.4 * 100) / 100).toFixed(0);
 
-            var tonesOfCement = parseFloat(Math.round(squareMeter * 17052 / 93 * 0.04 * 100) / 100).toFixed(2);
+            tonesOfCement = parseFloat(Math.round(squareMeter * 17052 / 93 * 0.04 * 100) / 100).toFixed(0);
             var costOfCement = parseFloat(Math.round(tonesOfCement * 0.7 * 100) / 100).toFixed(0);
 
             //console.log(tonesOfBrick, costOfBrick);
@@ -668,21 +595,45 @@
 
             $('#tonesOfBrick').text(tonesOfBrick);
             $('#costOfBrick').text("$ " + costOfBrick);
-            $('#tonesOfTimber').text(tonesOfTimber);
+            $('#tonesOfTimber').text(tonesOfTimber + " Kg");
             $('#costOfTimber').text("$ " + costOfTimber);
-            $('#tonesOfSand').text(tonesOfSand);
+            $('#tonesOfSand').text(tonesOfSand + " Kg");
             $('#costOfSand').text("$ " + costOfSand);
-            $('#tonesOfCement').text(tonesOfCement);
+            $('#tonesOfCement').text(tonesOfCement + " Kg");
             $('#costOfCement').text("$ " + costOfCement);
 
             moveToDisplayPage();
 
             clearUserInput();
+
+            //for the emissions on the fifth page
+
+            var tonesOfWaste = parseFloat(tonesOfBrick) + parseFloat(tonesOfTimber) + parseFloat(tonesOfSand) + parseFloat(tonesOfCement);
+
+            //for co2
+            var co2Value = tonesOfWaste *0.001 * 0.8;
+
+            //for ch4
+            var ch4Value = tonesOfWaste *0.001 * 0.45;
+
+            //for n2o
+            var n2oValue = tonesOfWaste *0.001 * 0.2;
+
+            //for sf6
+            var sf6Value = tonesOfWaste *0.001 * 0.1;
+
+            //console.log(co2Value, ch4Value, n2oValue, sf6Value);
+
+            $('#co2Value').text(co2Value);
+
+            $('#ch4Value').text(ch4Value);
+
+            $('#n2oValue').text(n2oValue);
+
+            $('#sf6Value').text(sf6Value);
         }
 
-
     });
-
 
     //init the swiper
     var swiper = new Swiper('.swiper-container', {
@@ -709,22 +660,62 @@
             },
             slideChangeTransitionEnd: function () {
                 swiperAnimate(this);
+
+                $('.count').each(function () {
+                    $(this).prop('Counter',0).animate({
+                        Counter: $(this).text()
+                    }, {
+                        duration: 1000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $(this).text(Math.ceil(now));
+                        }
+                    });
+                });
             },
+
+
         }
     });
 
 
     function moveTwoPageAfter() {
         swiper.slideTo($('.typeInDetailPage').index(), 1000, false);
+        typeOfUser = 1;
+
+        box1.attr("placeholder", "Enter number of bed rooms");
+        box2.attr("placeholder", "Enter number of living rooms");
+        box3.attr("placeholder", "Enter number of kitchens");
+        box4.attr("placeholder", "Enter number of car parks");
+
     }
 
     function moveOnePageAfter() {
-        swiper.slideTo($('.chooseKindOfBuilding').index(), 1000, false);
+        swiper.slideTo($('.chooseBuildingPage').index(), 1000, false);
+        typeOfUser = 0;
     }
 
     function moveToDisplayPage() {
         swiper.slideTo($('.displayDetailPage').index(), 1000, false);
+
     }
+
+    function moveBackPage() {
+
+        console.log(typeOfUser);
+
+        if (typeOfUser == 0) {
+            swiper.slideTo($('.chooseBuildingPage').index(), 1000, false);
+        } else {
+            swiper.slideTo($('.chooseUserPage').index(), 1000, false);
+        }
+
+        numberOfBuildingType = 0;
+
+    }
+
+
+
 
 </script>
 </html>
