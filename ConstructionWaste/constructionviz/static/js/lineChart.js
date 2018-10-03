@@ -1,3 +1,6 @@
+//This js file is for line chart.
+
+//customize or change the default behavior of a chart
 Chart.pluginService.register({
     beforeDraw: function (chart, easing) {
         if (chart.config.options.chartArea && chart.config.options.chartArea.backgroundColor) {
@@ -13,19 +16,7 @@ Chart.pluginService.register({
     }
 });
 
-/*
-var DATA = {
-    "data": {
-        "area": "Southbank",
-        "year": [2002, 2003, 2004, 2005, 2006, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018],
-        "timber": [663004.5, 92184.5, 435450.0, 298578.5, 369478.5, 6274.0, 603561.5, 644821.0, 158797.5, 177346.0, 592557.5, 179394.0, 738220.5, 399174.0, 419187.0, 560068.5],
-        "plasterboard": [3182421.6, 442485.6, 2090160.0, 1433176.8, 1773496.8, 30115.199999999997, 2897095.1999999997, 3095140.8, 762228.0, 851260.7999999999, 2844276.0, 861091.2, 3543458.4, 1916035.2, 2012097.5999999999, 2688328.8],
-        "concrete": [1326009, 184369, 870900, 597157, 738957, 12548, 1207123, 1289642, 317595, 354692, 1185115, 358788, 1476441, 798348, 838374, 1120137],
-        "bricks": [994506.75, 138276.75, 653175.0, 447867.75, 554217.75, 9411.0, 905342.25, 967231.5, 238196.25, 266019.0, 888836.25, 269091.0, 1107330.75, 598761.0, 628780.5, 840102.75],
-        "tiles": [3182421.6, 442485.6, 2090160.0, 1433176.8, 1773496.8, 30115.199999999997, 2897095.1999999997, 3095140.8, 762228.0, 851260.7999999999, 2844276.0, 861091.2, 3543458.4, 1916035.2, 2012097.5999999999, 2688328.8]
-    }
-}; */
-
+//define variables
 var DATA = {};
 var YEAR = {};
 
@@ -33,25 +24,24 @@ var config = {};
 
 var line_cart_cutom = {};
 
+//create function to load line chart
 function onload_line_chart() {
+    //get selected suburb from drop down list in html
     selected_suburb = $("#SuburbSelect").val();
 
-
-
-    console.log(selected_suburb);
-
+      //get data from server
       $.ajax({
         url: "./detail/" + selected_suburb + "/",
         success: function(the_json){
           DATA = the_json;
 
-          // DATA["data"]["area"] = {}
-
+          //match server's data with selected suburb
           DATA.data.area = selected_suburb;
-
-          console.log("on change chart data", the_json);
+          //config for the line chart
           config = {
+              //define the chart type
               type: 'line',
+              //define data for chart
               data: {
                   labels: DATA.data.year,
                   datasets: [{
@@ -86,6 +76,7 @@ function onload_line_chart() {
                       data: DATA.data.tiles,
                   }]
               },
+                  //define some custom options for the line chart
                   options: {
                       chartArea: {
                           backgroundColor: '#ffffff',
@@ -125,24 +116,21 @@ function onload_line_chart() {
               };
 
               $('#graph-container').html("");
-              // $('#canvas').remove(); // this is my <canvas> element
               $('#graph-container').append('<canvas id="canvas"><canvas>');
 
             var ctx = canvas = document.querySelector('#canvas').getContext('2d');
             line_cart_cutom = new Chart(ctx, config);
-
         }
       });
 }
 
-
+//function for loading line chart after change
 function onchange_line_chart() {
-    console.log("onchange_line_chart");
-
+    //get selected suburb from drop down list in html
     selected_suburb = $("#SuburbSelect").val();
 
+    //match server data with selected suburb
     DATA.data.area = selected_suburb;
-    console.log(selected_suburb);
 
       $.ajax({
         url: "./detail/" + selected_suburb,
@@ -199,7 +187,6 @@ function onchange_line_chart() {
       });
 }
 
-
 $(document).ready(function() {
     console.log( "ready!" );
 
@@ -209,22 +196,3 @@ $(document).ready(function() {
         onchange_line_chart();
       });
 });
-
-// document.getElementById('addData').addEventListener('click', function (datasets) {
-//     if (config.data.datasets.length > 0) {
-//         var year = YEAR[config.data.labels.length % YEAR.length];
-//         config.data.labels.push(year);
-//         config.data.datasets.forEach(function (dataset) {
-//             dataset.data.push(datasets);
-//         });
-//         window.myLine.update();
-//     }
-// });
-//
-// document.getElementById('removeData').addEventListener('click', function () {
-//     config.data.labels.splice(-1, 1); // remove the label first
-//     config.data.datasets.forEach(function (dataset) {
-//         dataset.data.pop();
-//     });
-//     window.myLine.update();
-// });

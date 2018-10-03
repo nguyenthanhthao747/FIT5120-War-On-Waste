@@ -61,19 +61,19 @@
 </nav>
 <!-- End section navbar -->
 
-<!-- start section -->
+<!-- start section search location function: google map and data table-->
 <div id="about1" class="paddsection" style="padding-top: 90px">
     <div class="container">
         <section id="subscribe">
             <div class="container wow fadeInUp">
                 <h3 class="subscribe-title" style="text-align: center">Find drop-off locations in:</h3>
                 <p></p>
+                <!--Create a search box for user-->
                 <div class="subscribe-text">
                     <input id="autocomplete" placeholder="Search by address" type="text"/>
                 </div>
             </div>
         </section>
-
 
         <div class="img-responsive">
             <div id="controls" style="display: none"><select id="country">
@@ -81,6 +81,7 @@
             </select></div>
         </div>
 
+        <!--create a data table with four columns-->
         <div class="row justify-content-between" style="padding-top: 40px">
             <div class="col-lg-6">
                 <table id="example" class="display">
@@ -95,11 +96,13 @@
                 </table>
             </div>
 
+            <!--define the google map-->
             <div class="col-lg-6">
                 <div class="div-img-bg">
                     <div class="about-img">
                         <div id="map"></div>
                     </div>
+                    <!--define the style of legend-->
                     <style>
                         #legend {
                             font-family: Arial, sans-serif;
@@ -115,9 +118,11 @@
                             vertical-align: middle;
                         }
                     </style>
+                    <!--import google map api to generate initial map-->
                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-I2HyS_JDhn5oAzxhdS85HRa2Mo2COOo&libraries=geometry,places&callback=initMap"
                             async defer></script>
                 </div>
+                <!--add legend for the map-->
                 <div class="row">
                   <div class="col-sm-4">
                     <div class="media">
@@ -158,12 +163,11 @@
                     </div>
                   </div>
                 </div>
-
-
             </div>
         </div>
     </div>
 </div>
+<!-- end section search location function: google map and data table-->
 
 <!-- start section footer -->
 <div id="footer" class="text-center">
@@ -179,7 +183,6 @@
             -->
             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
-
     </div>
 </div>
 <!-- End section footer -->
