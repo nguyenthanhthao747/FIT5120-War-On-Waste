@@ -446,6 +446,8 @@ figure a{
 
 
 /*css for backbutton */
+
+
 .back {
   position: absolute;
   top: 20px;
@@ -639,7 +641,7 @@ figure a{
   font-family: 'Poppins', helvetica;
   text-transform: uppercase;
   text-align: center;
-  margin:80px auto 10px;
+  margin: 80px auto 10px;
   color: #000000;
   font-weight: 600;
   font-size: 26px;
@@ -734,5 +736,65 @@ figure a{
   margin-bottom: 10px;
 }
 
+/*css for tooltip*/
+
+.tooltip {
+  visibility: hidden;
+  z-index: 1;
+  opacity: .40;
+
+  width: 100%;
+  padding: 0px 20px;
+
+  background: #333;
+  color: #E086D3;
+
+  position: absolute;
+  top:-180%;
+  /*left: -5%;*/
+  font-family: 'Poppins', helvetica;
+
+  border-radius: 9px;
+
+  transform: translateY(9px);
+  transition: all 0.3s ease-in-out;
+
+  box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
+}
+
+
+/* tooltip  after*/
+.tooltip::after {
+  content: " ";
+  width: 0;
+  height: 0;
+
+  border-style: solid;
+  border-width: 12px 12.5px 0 12.5px;
+  border-color: #333 transparent transparent transparent;
+
+  position: absolute;
+  left: 40%;
+
+}
+
+.author:hover .tooltip{
+  visibility: visible;
+  transform: translateY(-10px);
+  opacity: 1;
+  transition: .3s linear;
+  animation: odsoky 1s ease-in-out infinite  alternate;
+
+}
+@keyframes odsoky {
+  0%{
+    transform: translateY(6px);
+  }
+
+  100%{
+    transform: translateY(1px);
+  }
+
+}
 
 
