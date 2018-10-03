@@ -200,6 +200,14 @@ function onload_map() {
                             var markerValue3 = markers3[i];
                             google.maps.event.addListener(markers3[i], 'click', (function (markerValue3, i) {
                                 return function () {
+
+                                    // markers1.forEach(function(marker) {
+                                    //     marker.infowindow.close(map, marker);
+                                    // });
+                                    // markers2.forEach(function(marker) {
+                                    //     marker.infowindow.close(map, marker);
+                                    // });
+
                                     infoWindowArr[i].open(map, markers3[i]);
                                 }
 
