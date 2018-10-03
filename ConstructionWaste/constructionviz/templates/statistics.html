@@ -61,6 +61,7 @@
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
 
+    <!--create style for canvas-->
     <style>
         canvas {
             -moz-user-select: none;
@@ -69,6 +70,7 @@
         }
     </style>
 
+    <!--create style for map graph-->
     <style>
         html, body {
             height: 100%;
@@ -116,17 +118,6 @@
         }</style>
 </head>
 <body>
-<!--{% if user.is_authenticated %}-->
-<!--<nav class="nav justify-content-end text-primary p-1">-->
-    <!--&lt;!&ndash; <a class="navbar-brand">Navbar</a> &ndash;&gt;-->
-    <!--<span class="float-right">-->
-          <!--Hi {{ user.username }}! &nbsp;-->
-          <!--<a class="btn btn-warning my-2 my-sm-0" style="background-color: #e6a756 !important"-->
-             <!--href="{% url 'logout' %}">logout</a>-->
-        <!--</span>-->
-<!--</nav>-->
-<!--{% endif %}-->
-
 <!-- start section navbar -->
 <nav id="main-nav">
     <div class="row">
@@ -325,6 +316,7 @@
                 </div>
             </div>
 
+            <!--add a drop down list to choose suburb-->
             <div class="col-lg-3">
                 <div class="about-descr">
                     <div class="intro-button mx-auto" style="right: 180px; bottom:5px;">
@@ -343,8 +335,9 @@
                             <option value="Melbourne (Remainder)">Melbourne (Remainder)</option>
                         </select>
                     </div>
+                    <!--description for line chart-->
                     <p class="p-heading">Line chart for C&D waste</p>
-                    <p class="separator">This line show the tonnes of waste for different types of construction materials in
+                    <p class="separator">This chart show the tonnes of waste for different types of construction materials in
                         each suburb.</p>
 
                 </div>

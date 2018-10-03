@@ -1,3 +1,6 @@
+//This js file is for search location function
+
+//define variables
 var map, places, infoWindow;
 var autocomplete;
 var countryRestrict = {'country': 'au'};
@@ -5,6 +8,7 @@ var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/i
 var hostnameRegexp = new RegExp('^https?://.+?/');
 var DATA = {};
 
+//restrict area be au
 var countries = {
     'au': {
         center: {lat: -37.814, lng: 144.96332},
@@ -16,6 +20,7 @@ var countries = {
 var latcurrent;
 var lngcurrent;
 
+//define the initial map
 function initMap() {
     console.log("initMap");
     map = new google.maps.Map(document.getElementById('map'), {
@@ -31,12 +36,11 @@ function initMap() {
 
     autocomplete.addListener('place_changed', onPlaceChanged);
 
-//    onPlaceChanged();
     $(".col_distance").hide();
-    
+
     onpageload_add_data();
 }
-
+//function for handle error
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
@@ -78,8 +82,7 @@ function onload_map() {
 
             map.setCenter(pos);
 
-
-            //
+            //get data from server
             $.ajax({
                     url: "./get_all_locations",
                     success: function (the_json) {
@@ -211,7 +214,8 @@ function onload_map() {
 
                         $(document).ready(function () {
                             $(".col_distance").show();
-                            
+
+                            //define data table
                             var table = $('#example').DataTable({
                                 data: result,
                                 columns: [
@@ -257,10 +261,13 @@ function removeMarkers(markers) {
     }
 }
 
+//function for load map after change place
 function onPlaceChanged() {
     console.log("onPlaceChanged");
     var place = autocomplete.getPlace();
     var val = document.getElementById('autocomplete').value;
+
+    //remove all markers and prepare to add new markers
     removeMarkers(markers);
     removeMarkers(markers2);
     removeMarkers(markers3);
@@ -338,6 +345,8 @@ function onPlaceChanged() {
                         dist2 = dist2.toFixed(2);
 
 
+                        //judge the distance from user input address to all locations
+                        //if distance < 6 km, show the data in the list
                         if (dist2 < 6) {
                             var data_drop = {};
                             data_drop["Type"] = type;
@@ -448,12 +457,11 @@ function onPlaceChanged() {
         }
     });
 }
-
+//the function to calculate distance
 function calcDistance(fromLat, fromLng, toLat, toLng) {
     return google.maps.geometry.spherical.computeDistanceBetween(
         new google.maps.LatLng(fromLat, fromLng), new google.maps.LatLng(toLat, toLng));
 }
-
 
 function onpageload_add_data(){
     $.ajax({
