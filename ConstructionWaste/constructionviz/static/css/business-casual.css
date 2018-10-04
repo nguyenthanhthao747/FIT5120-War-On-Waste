@@ -740,7 +740,7 @@ figure a{
 
 .tooltip {
   visibility: hidden;
-  z-index: 1;
+  z-index: 9003;
   opacity: .40;
 
   width: 100%;
