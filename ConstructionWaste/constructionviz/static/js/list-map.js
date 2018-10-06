@@ -34,7 +34,18 @@ function initMap() {
         });
     places = new google.maps.places.PlacesService(map);
 
-    autocomplete.addListener('place_changed', onPlaceChanged);
+    // autocomplete.addListener('place_changed', onPlaceChanged);
+
+    autocomplete.addListener('place_changed', function () {
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+            // User entered the name of a Place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            window.alert("No details available for input: '" + place.name + "', Please choose address from list.");
+            return;
+        }else onPlaceChanged();
+
+    });
 
     $(".col_distance").hide();
 

@@ -484,6 +484,9 @@ nav ul li a {
 #portfolio {
   position: relative;
   padding-bottom: 50px;
+  width: 80%;
+  margin: 0 auto;
+
 }
 
 #portfolio .portfolio-list {

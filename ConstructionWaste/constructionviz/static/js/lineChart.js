@@ -82,10 +82,6 @@ function onload_line_chart() {
                           backgroundColor: '#ffffff',
                       },
                       responsive: true,
-                      title: {
-                          display: true,
-                          text: 'Line Chart'
-                      },
                       tooltips: {
                           mode: 'index',
                           intersect: false,
