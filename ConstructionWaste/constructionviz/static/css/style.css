@@ -398,7 +398,7 @@ nav ul li a {
 }
 
 #about .about-descr .separator {
-  max-width: 80%;
+  max-width: 100%;
   margin-bottom: 0;
   text-align: left;
 }
@@ -738,4 +738,48 @@ nav ul li a {
   text-transform: capitalize;
 }
 
-.logbutton:hover {background-color: #e7e7e7;}
+.logbutton:hover {
+  background-color: #e7e7e7;
+}
+
+
+.transferButton {
+  border-radius: 4px;
+  background-color: #333;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  padding: 16px;
+  width: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 36px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+.transferButton{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.transferButton:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 14px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.transferButton:hover{
+  padding-right: 24px;
+  padding-left:8px;
+}
+
+.transferButton:hover:after {
+  opacity: 1;
+  right: 10px;
+}

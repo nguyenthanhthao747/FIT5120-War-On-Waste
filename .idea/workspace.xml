@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="30113fc2-7b8b-4d20-b171-af9fe124edda" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -143,44 +143,44 @@
     <session id="1146725851">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="997" />
-          <entry key="html" value="3832" />
+          <entry key="css" value="1016" />
+          <entry key="html" value="3952" />
           <entry key="js" value="25" />
-          <entry key="txt" value="268" />
+          <entry key="txt" value="315" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="997" />
-          <entry key="HTML" value="3832" />
+          <entry key="CSS" value="1016" />
+          <entry key="HTML" value="3952" />
           <entry key="JavaScript" value="25" />
-          <entry key="PLAIN_TEXT" value="268" />
+          <entry key="PLAIN_TEXT" value="315" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="15" />
-          <entry key="HTML" value="19" />
+          <entry key="CSS" value="16" />
+          <entry key="HTML" value="20" />
           <entry key="Image" value="2" />
           <entry key="JavaScript" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="15" />
-          <entry key="html" value="19" />
+          <entry key="css" value="16" />
+          <entry key="html" value="20" />
           <entry key="jpg" value="1" />
           <entry key="js" value="8" />
           <entry key="png" value="1" />
@@ -194,8 +194,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="300" column="196" selection-start-line="300" selection-start-column="196" selection-end-line="300" selection-end-column="196" />
+            <state relative-caret-position="435">
+              <caret line="293" column="20" selection-start-line="293" selection-start-column="20" selection-end-line="293" selection-end-column="20" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -209,10 +209,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="176" column="6" lean-forward="true" selection-start-line="176" selection-start-column="6" selection-end-line="176" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="396" column="17" lean-forward="true" selection-start-line="396" selection-start-column="17" selection-end-line="396" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5323">
-              <caret line="442" column="15" lean-forward="true" selection-start-line="442" selection-start-column="15" selection-end-line="442" selection-end-column="15" />
+            <state relative-caret-position="569">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -228,8 +252,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>opac</find>
-      <find>calculator.</find>
       <find>p-heading</find>
       <find>splitview</find>
       <find>container</find>
@@ -258,6 +280,8 @@
       <find>font-fa</find>
       <find>bac</find>
       <find>back</find>
+      <find>z-index</find>
+      <find>about</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -269,15 +293,15 @@
       <list>
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/gooSearch.js" />
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/calculator.js" />
-        <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css" />
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/SearchLocation.html" />
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html" />
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/about.html" />
-        <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html" />
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/responsive.css" />
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/list-map.js" />
-        <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css" />
         <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html" />
+        <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css" />
+        <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css" />
+        <option value="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html" />
       </list>
     </option>
   </component>
@@ -423,16 +447,17 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/goomap.css</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/suggestion.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/article1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/article2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/social.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/video.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/youtube.jpg</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/lineChart.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/list-map.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/theme.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/SearchLocation.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/about.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/suggestions.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -440,6 +465,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/mapvisual.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/map.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -561,7 +588,8 @@
       <workItem from="1538022218435" duration="10213000" />
       <workItem from="1538209996999" duration="15979000" />
       <workItem from="1538358982487" duration="1321000" />
-      <workItem from="1538477375572" duration="6938000" />
+      <workItem from="1538477375572" duration="8423000" />
+      <workItem from="1538788578133" duration="1709000" />
     </task>
     <task id="LOCAL-00001" summary="change the font size">
       <created>1537084931362</created>
@@ -626,11 +654,25 @@
       <option name="project" value="LOCAL" />
       <updated>1538572739841</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="change tooltip, change font">
+      <created>1538585931905</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1538585931905</updated>
+    </task>
+    <task id="LOCAL-00011" summary="change z-index">
+      <created>1538615809508</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1538615809508</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107275000" />
+    <option name="totallyTimeSpent" value="110469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -698,7 +740,9 @@
     <MESSAGE value="basic structure done" />
     <MESSAGE value="fix bugs when display in small screen" />
     <MESSAGE value="almost finish calculator" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost finish calculator" />
+    <MESSAGE value="change tooltip, change font" />
+    <MESSAGE value="change z-index" />
+    <option name="LAST_COMMIT_MESSAGE" value="change z-index" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/ConstructionWaste/urls.py">
@@ -758,13 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1420">
-          <caret line="147" column="27" lean-forward="true" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/046741d8660ecb543c49e38b1886c6bf/Message/MessageTemp/ca1d32a591f0c83daffd7b9a3b54e767/File/nodejs.js" />
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/lineChart.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -775,13 +812,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/suggestions.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-429">
-          <caret line="231" column="18" lean-forward="true" selection-start-line="231" selection-start-column="18" selection-end-line="231" selection-end-column="18" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/responsive.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -807,10 +837,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="300" column="196" selection-start-line="300" selection-start-column="196" selection-end-line="300" selection-end-column="196" />
+        <state relative-caret-position="435">
+          <caret line="293" column="20" selection-start-line="293" selection-start-column="20" selection-end-line="293" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -822,10 +859,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
+    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5323">
-          <caret line="442" column="15" lean-forward="true" selection-start-line="442" selection-start-column="15" selection-end-line="442" selection-end-column="15" />
+        <state relative-caret-position="273">
+          <caret line="396" column="17" lean-forward="true" selection-start-line="396" selection-start-column="17" selection-end-line="396" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="176" column="6" lean-forward="true" selection-start-line="176" selection-start-column="6" selection-end-line="176" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
