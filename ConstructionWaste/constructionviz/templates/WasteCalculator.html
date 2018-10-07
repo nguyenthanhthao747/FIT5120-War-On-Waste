@@ -71,11 +71,9 @@
 <!--calculator-->
 <div id="about" class="paddsection" style="padding-top: 120px">
     <div class="container">
-
-
+        <!--parallax background set up-->
         <div data-space-between="10" data-direction="vertical" class="swiper-container">
             <div class="parallax-bg" data-swiper-parallax="-23%"></div>
-
 
             <div class="swiper-wrapper">
 
@@ -98,14 +96,18 @@
                     </div>
 
                 </div>
+
+                <!--second page for choose the type of building-->
                 <div class="swiper-slide swiper-no-swiping chooseBuildingPage">
 
+                    <!--back button-->
                     <a class="back swiper-button-prev-customized">
                         <span></span>
                     </a>
 
                     <div class="chooseDescription">choose the type of building</div>
 
+                    <!--container for the four card display-->
                     <div class="row" style="height: 100%; width: 90%; margin: 20px auto 100px; align-items: center">
                         <div class="containerForCard col-lg-3 col-md-6">
                             <div class="cardView swiper-button-next-customized" value="1">
@@ -159,62 +161,56 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+                <!--third page for user to tyoe in the detail of their building-->
                 <div class="swiper-slide swiper-no-swiping typeInDetailPage">
 
+                    <!--back button-->
                     <a class="back" onclick="moveBackPage()">
                         <span></span>
                     </a>
 
                     <div class="chooseDescription">Please type in building information below</div>
 
+                    <!--form for user to input-->
                     <div class="user">
-
                         <form class="form">
-
 
                             <input id="detailBox1" type="text" placeholder="Enter number of bed rooms"
                                    class="form__input"/>
 
-
-
                             <input id="detailBox2" type="text" placeholder="Enter number of living rooms"
                                    class="form__input"/>
-
-
 
                             <input id="detailBox3" type="text" placeholder="Enter number of kitchens"
                                    class="form__input"/>
 
-
-
                             <input id="detailBox4" type="text" placeholder="Enter number of car parks"
                                    class="form__input"/>
 
-                            <!--<div class="invalid-tooltip">Please type in non-negative number</div>-->
-
-                            <button class="btnForCalculator" type="button" onclick="clearErrorInformation()">Calculate</button>
+                            <button class="btnForCalculator swiper-button-prev-customized" type="button" onclick="clearErrorInformation()">Calculate</button>
                         </form>
 
-                        <!--<div class="invalid-feedback">Please type in non-negative number</div>-->
                     </div>
 
-
+                    <!--error message-->
                     <div id="errorInput" >Please type in non-negative number</div>
-
-
                 </div>
+
+                <!--fourth page to display the waste information base on the detail-->
                 <div class="swiper-slide swiper-no-swiping displayDetailPage">
 
+                    <!--back button-->
                     <a class="back swiper-button-prev-customized">
                         <span></span>
                     </a>
 
                     <div class="chooseDescription">Here is the amount of material you may waste</div>
 
+                    <!--container for displaying the number-->
                     <div class="containerForDisplay">
-                        <div class="row" style="margin: 50px auto 50px">
+                        <div class="row" style="margin: 50px auto 20px">
                             <div class="col-lg-3 col-md-6">
                                 <div class="card">
                                     <img src="{% static 'img/calculator-brick.jpg'%}">
@@ -223,7 +219,6 @@
                                     <p id="tonesOfBrick">1</p>
                                     <p>Waste cost:</p>
                                     <p id="costOfBrick">2</p>
-
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
@@ -234,7 +229,6 @@
                                     <p id="tonesOfTimber">1</p>
                                     <p>Waste cost:</p>
                                     <p id="costOfTimber">2</p>
-
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
@@ -245,7 +239,6 @@
                                     <p id="tonesOfSand">1</p>
                                     <p>Waste cost:</p>
                                     <p id="costOfSand">2</p>
-
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6">
@@ -256,33 +249,33 @@
                                     <p id="tonesOfCement">1</p>
                                     <p>Waste cost:</p>
                                     <p id="costOfCement">2</p>
-
                                 </div>
                             </div>
-
-
                         </div>
 
-                        <div class="container" style="text-align: center; margin: 60px auto 40px">
+                        <!--button to the carbon emissions page-->
+                        <div class="container" style="text-align: center; margin: 30px auto 40px">
                             <a href="" class="btnToMap yellow swiper-button-next-customized">Check the carbon emissions</a>
                         </div>
                     </div>
-
                 </div>
 
+                <!--fifth page for the carbon emission-->
                 <div class="swiper-slide swiper-no-swiping">
                     <div class="container">
 
+                        <!--back button-->
                         <a class="back swiper-button-prev-customized">
                             <span></span>
                         </a>
 
                         <div class="chooseDescription">Here is the carbon emissions generated by the waste</div>
 
+                        <!--container for carbon emissions-->
                         <div class="container">
 
-                            <div class="row" style="margin: 50px auto 0px">
-
+                            <div class="row" style="margin: 50px auto 20px">
+                                <!--left side of the page-->
                                 <div class="col-lg-4 col-sm-12">
                                     <div class="bubble-speech bubble-right">
                                         <h3 class="author" >CO<sub>2</sub>
@@ -307,14 +300,14 @@
                                     </div>
                                 </div>
 
+                                <!--place for the rotating earth-->
                                 <div class="col-lg-4 col-sm-12">
-
                                     <div class="earth">
                                         <div></div>
                                     </div>
-
                                 </div>
 
+                                <!--right side of the page-->
                                 <div class="col-lg-4 col-sm-12">
 
                                     <div class="bubble-speech bubble-left">
@@ -338,25 +331,21 @@
                                             <span id="sf6Value" class="count">200</span> metric tonnes
                                         </div>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
+
+                        <!--two buttons to check the suggestion page or map page-->
                         <div class="container" style="text-align: center; margin: 30px auto 40px">
                             <a href="{% url 'suggestions'%}" class="btnToMap yellow">Check our suggestions</a>
                             <a href="{% url 'SearchLocation'%}" class="btnToMap yellow">Check drop sites on map</a>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>
-
 </body>
 <!-- end calculator display -->
 <!-- start section footer -->
@@ -385,18 +374,16 @@
 
 <script src="{% static 'dist/js/swiper.min.js'%}"></script>
 
-<!--<script src="{% static 'js/animatedModal.min.js'%}"></script>-->
-
 <!--animate js form -->
 <script src="{% static 'dist/js/swiper.animate1.0.3.min.js'%}"></script>
 
-
 <script>
-    var typeOfUser = 0;
 
+    //var for user type and building type
+    var typeOfUser = 0;
     var numberOfBuildingType = 0;
 
-    // for the split view on second page
+    // for the split view on first page
     const left = document.querySelector(".left");
     const right = document.querySelector(".right");
     const container = document.querySelector(".containerForSplitView");
@@ -417,20 +404,20 @@
         container.classList.remove("hover-right");
     });
 
-
-    //for the third page
+    //for the third page, the building detail user input
     var box1 = $('#detailBox1');
     var box2 = $('#detailBox2');
     var box3 = $('#detailBox3');
     var box4 = $('#detailBox4');
 
-
-
+    //card view for display on the second page
     $('.cardView').click(function () {
         numberOfBuildingType = $(this).attr('value');
 
-        console.log(numberOfBuildingType);
+        //console.log(numberOfBuildingType);
         //console.log(numberOfBuildingType, typeof numberOfBuildingType, numberOfBuildingType === "1");
+
+        //transfer to third page with different hint in the box
         switch (numberOfBuildingType) {
             case "1":
                 //console.log(box1.attr("placeholder"));
@@ -460,51 +447,46 @@
         }
     });
 
-    //for the fourth page
+    //for the third page
+    //validation for the user's input
     function validationForUserInput(inputBox1, inputBox2, inputBox3, inputBox4) {
-        
+
         let regex = /^(?:[1-9][0-9]*|0)$/;
 
-        if(regex.test(inputBox1)
-            || regex.test(inputBox2)
-            || regex.test(inputBox3)
-            || regex.test(inputBox4)){
-            
-            // it means one text box has one number 
-           console.log(regex.test(inputBox1), regex.test(inputBox2), regex.test(inputBox3), regex.test(inputBox4));
-            
+        if(regex.test(inputBox1) || regex.test(inputBox2) || regex.test(inputBox3) || regex.test(inputBox4)){
+
+            // it means one text box has one number
+            //console.log(regex.test(inputBox1), regex.test(inputBox2), regex.test(inputBox3), regex.test(inputBox4));
+
             if(inputBox1 == ""){
-               box1.val("0");
+                box1.val("0");
             }
-            
+
             if(inputBox2 == ""){
-               box2.val("0");
+                box2.val("0");
             }
-            
+
             if(inputBox3 == ""){
-               box3.val("0");
+                box3.val("0");
             }
-            
+
             if(inputBox4 == ""){
-               box4.val("0");
+                box4.val("0");
             }
-            
-            // again check after filling zeros 
+
+            // again check after filling zeros
             inputBox1 = $('#detailBox1').val();
             inputBox2 = $('#detailBox2').val();
             inputBox3 = $('#detailBox3').val();
             inputBox4 = $('#detailBox4').val();
-            
+
         }
         //console.log(regex.test(inputBox1), regex.test(inputBox2), regex.test(inputBox3), regex.test(inputBox4))
 
-        return regex.test(inputBox1)
-            & regex.test(inputBox2)
-            & regex.test(inputBox3)
-            & regex.test(inputBox4);
+        return regex.test(inputBox1) & regex.test(inputBox2) & regex.test(inputBox3) & regex.test(inputBox4);
     }
 
-
+    //function to clear the user input on the third page
     function clearUserInput() {
         box1.val("");
         box2.val("");
@@ -512,13 +494,13 @@
         box4.val("");
     }
 
-
+    //var of the building's squaremeter
     var squareMeter;
 
     const button = document.querySelector('.btnForCalculator');
     const form = document.querySelector('.form');
 
-
+    //var for different tonnes of material
     var tonesOfBrick;
     var tonesOfTimber;
     var tonesOfSand;
@@ -527,25 +509,30 @@
 
     //console.log(form);
 
-
+    //function to remove the shacking animation
     function clearAnimation() {
         form.classList.remove('form--no');
     }
 
+    //function to collapse the error message div
     function clearErrorInformation() {
         $('#errorInput').css("visibility", "collapse");
     }
 
+
     button.addEventListener('click', function () {
 
+        //get the user input from third page
         let detailBox1 = $('#detailBox1').val();
         let detailBox2 = $('#detailBox2').val();
         let detailBox3 = $('#detailBox3').val();
         let detailBox4 = $('#detailBox4').val();
 
+        //validate it before use
         var inputIsValid = validationForUserInput(detailBox1, detailBox2, detailBox3, detailBox4);
-        console.log(inputIsValid);
+        //console.log(inputIsValid);
 
+        //pop error if not pass validation, else do that normal stuff
         if (!inputIsValid) {
             form.classList.add('form--no');
             setTimeout(clearAnimation, 1000);
@@ -554,7 +541,6 @@
 
             $('#errorInput').css("visibility", "visible");
             clearUserInput();
-
 
             // setTimeout(function () {
             //     $('#errorInput').css("visibility", "collapse");
@@ -567,7 +553,9 @@
             // console.log(form.classList);
             //
 
-            console.log(numberOfBuildingType);
+            //console.log(numberOfBuildingType);
+
+            //switch base on the building type
             switch (numberOfBuildingType) {
                 case 0:
                     //house
@@ -593,6 +581,7 @@
 
             //console.log(squareMeter);
 
+            //calculate the number of materials or cost of materials
             tonesOfBrick = parseFloat(Math.round(squareMeter * 64000 / 93 * 0.08 * 100) / 100).toFixed(0);
             var costOfBrick = parseFloat(Math.round(tonesOfBrick * 1.859 * 100) / 100).toFixed(0);
 
@@ -607,8 +596,8 @@
 
             //console.log(tonesOfBrick, costOfBrick);
 
-
-            $('#tonesOfBrick').text(tonesOfBrick);
+            //set the result into the display section on the fourth page
+            $('#tonesOfBrick').text(tonesOfBrick + " Bricks");
             $('#costOfBrick').text("$ " + costOfBrick);
             $('#tonesOfTimber').text(tonesOfTimber + " Kg");
             $('#costOfTimber').text("$ " + costOfTimber);
@@ -617,12 +606,13 @@
             $('#tonesOfCement').text(tonesOfCement + " Kg");
             $('#costOfCement').text("$ " + costOfCement);
 
+            //move to the fourth page
             moveToDisplayPage();
 
+            //clear the user input in the third page
             clearUserInput();
 
-            //for the emissions on the fifth page
-
+            //calculate the emissions on the fifth page
             var tonesOfWaste = parseFloat(tonesOfBrick) + parseFloat(tonesOfTimber) + parseFloat(tonesOfSand) + parseFloat(tonesOfCement);
 
             //for co2
@@ -639,6 +629,7 @@
 
             //console.log(co2Value, ch4Value, n2oValue, sf6Value);
 
+            //set the value of emissions on the fifth page
             $('#co2Value').text(co2Value);
 
             $('#ch4Value').text(ch4Value);
@@ -650,13 +641,16 @@
 
     });
 
-    //init the swiper
-    var swiper = new Swiper('.swiper-container', {
-        //direction: 'vertical',
 
+    //init the swiper
+
+    var swiper = new Swiper('.swiper-container', {
+
+        //speed between the different page
         speed: 400,
-        // spaceBetween: 100,
-        autoHeight: true, //enable auto height
+
+        //enable auto height
+        autoHeight: true,
 
         // need navigation button
         navigation: {
@@ -666,18 +660,18 @@
 
         on: {
             init: function () {
-
                 //hide animate
                 swiperAnimateCache(this);
 
                 //start animate
                 swiperAnimate(this);
             },
+
             slideChangeTransitionEnd: function () {
                 swiperAnimate(this);
 
                 $('.count').each(function () {
-                    $(this).prop('Counter',0).animate({
+                    $(this).prop('Counter', 0).animate({
                         Counter: $(this).text()
                     }, {
                         duration: 1000,
@@ -688,12 +682,10 @@
                     });
                 });
             },
-
-
         }
     });
 
-
+    //function to move to the third page and reset the type of user
     function moveTwoPageAfter() {
         swiper.slideTo($('.typeInDetailPage').index(), 1000, false);
         typeOfUser = 1;
@@ -705,20 +697,21 @@
 
     }
 
+    //function to move to the second page and reset the type of user
     function moveOnePageAfter() {
         swiper.slideTo($('.chooseBuildingPage').index(), 1000, false);
         typeOfUser = 0;
     }
 
+    //function to move to the fourth page, the display card page
     function moveToDisplayPage() {
         swiper.slideTo($('.displayDetailPage').index(), 1000, false);
-
     }
 
+    //function for decide go back how many pages and reset the building type
     function moveBackPage() {
 
-        console.log(typeOfUser);
-
+        //console.log(typeOfUser);
         if (typeOfUser == 0) {
             swiper.slideTo($('.chooseBuildingPage').index(), 1000, false);
         } else {
@@ -726,11 +719,7 @@
         }
 
         numberOfBuildingType = 0;
-
-    }
-
-
-
-
+    };
 </script>
+
 </html>
