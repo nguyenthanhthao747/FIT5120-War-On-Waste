@@ -11,37 +11,37 @@ import json
 import ast # for parsinf list from string list '[13, 12]'
 
 #view for home page
-@login_required
+#@login_required
 def suggestions(request):
     return render(request, 'suggestions.html')
 
 #view for home page
-@login_required
+#@login_required
 def home(request):
     return render(request, 'index.html')
 
 #view for search location
-@login_required
+#@login_required
 def search_location(request):
     return render(request, 'searchLocation.html')
 
 #view for statistics page
-@login_required
+#@login_required
 def statistics(request):
     return render(request, 'statistics.html')
 
 #view for about page
-@login_required
+#@login_required
 def about(request):
     return render(request, 'about.html')
 
 #view for calculator
-@login_required
+#@login_required
 def waste_calculator(request):
     return render(request, 'WasteCalculator.html')
 
 #view for test the website
-@login_required
+#@login_required
 def test_json(request):
 
     dict_obect = {}
@@ -49,7 +49,7 @@ def test_json(request):
     dict_obect["test_object"] = "Hello World"
     return render(request, 'home.html', {'object': dict_obect})
 
-@login_required
+#@login_required
 def detail(request, area):
     try:
         sql_str = f"""select year_completed,
@@ -83,11 +83,11 @@ def detail(request, area):
 
         for var in the_rs:
             year.append(var[0])
-            timber.append(round(var[1]*0.5,2))
-            plasterboard.append(round(var[1]*2.4,2))
-            concrete.append(round(var[1]*1,2))
-            bricks.append(round(var[1]*0.75,2))
-            tiles.append(round(var[1]*2.4,2))
+            timber.append(round(var[1]*0.0005,2))
+            plasterboard.append(round(var[1]*0.0024,2))
+            concrete.append(round(var[1]*0.0001,2))
+            bricks.append(round(var[1]*0.00075,2))
+            tiles.append(round(var[1]*0.0024,2))
 
 
         data_to_send = {}
@@ -112,7 +112,7 @@ def detail(request, area):
     #return render(request, 'pet_detail.html', {'construction': construction})
 
 #function to get the data for map chart
-@login_required
+#@login_required
 def get_json_data(request, year):
 
     dict_data = {}
@@ -182,7 +182,7 @@ def get_json_data(request, year):
 
 
 #function to get all the location for search page
-@login_required
+#@login_required
 def get_all_locations(request):
 
     dict_data = {}
@@ -222,7 +222,7 @@ def get_all_locations(request):
         raise Http404('Construction not found')
 
 #function to search locations
-@login_required
+#@login_required
 def search_locations(request, type, longi, latti):
     dict_data = {}
     dict_data["result"] = []

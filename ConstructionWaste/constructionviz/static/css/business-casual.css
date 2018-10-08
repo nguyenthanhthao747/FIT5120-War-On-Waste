@@ -704,7 +704,6 @@ figure a{
   text-align: center;
   font-size: 1.2rem;
   max-width: 280px;
-
 }
 
 .bubble-speech.bubble-left:after {
@@ -717,7 +716,6 @@ figure a{
   border-top: 0 #efefef solid;
   border-bottom: 12px transparent solid;
   border-left: 20px #efefef solid;
-
 }
 
 .bubble-speech.bubble-right:after {
@@ -730,7 +728,6 @@ figure a{
   border-top: 0 #efefef solid;
   border-bottom: 12px transparent solid;
   border-right: 20px #efefef solid;
-
 }
 
 .bubble-speech .author {

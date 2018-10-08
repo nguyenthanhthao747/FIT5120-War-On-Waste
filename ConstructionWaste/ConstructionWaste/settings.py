@@ -91,7 +91,7 @@ DATABASES = {
 #         'NAME': 'ConstructionWaste',
 #         'USER': 'power_user',
 #         'PASSWORD': 'PostAdmin',
-#         'HOST': 'localhost',
+#         'HOST': 'vic-construction-waste.com',
 #         'PORT': '5432',
 #     }
 # }
