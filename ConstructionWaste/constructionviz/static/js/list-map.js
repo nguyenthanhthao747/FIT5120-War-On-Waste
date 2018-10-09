@@ -41,8 +41,14 @@ function initMap() {
         if (!place.geometry) {
             // User entered the name of a Place that was not suggested and
             // pressed the Enter key, or the Place Details request failed.
-            window.alert("No details available for input: '" + place.name + "', Please choose address from list.");
-            return;
+            //window.alert("No details available for input: '" + place.name + "', Please choose address from list.");
+
+            document.getElementById("popup").style.display="block";
+            document.getElementById("overlay").style.display="block";
+
+
+            return false;
+
         }else onPlaceChanged();
 
     });
@@ -51,6 +57,13 @@ function initMap() {
 
     onpageload_add_data();
 }
+
+//function for close the popup diagram
+function popupClose(){
+    document.getElementById("popup").style.display="none";
+    document.getElementById("overlay").style.display="none";
+}
+
 //function for handle error
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);

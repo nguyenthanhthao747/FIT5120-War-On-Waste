@@ -189,7 +189,7 @@
                             <input id="detailBox4" type="text" placeholder="Enter number of car parks"
                                    class="form__input"/>
 
-                            <button class="btnForCalculator swiper-button-prev-customized" type="button" onclick="clearErrorInformation()">Calculate</button>
+                            <button class="btnForCalculator" type="button" onclick="clearErrorInformation()">Calculate</button>
                         </form>
 
                     </div>
@@ -583,10 +583,10 @@
 
             //calculate the number of materials or cost of materials
             tonesOfBrick = parseFloat(Math.round(squareMeter * 64000 / 93 * 0.08 * 100) / 100).toFixed(0);
-            var costOfBrick = parseFloat(Math.round(tonesOfBrick * 1.859 * 100) / 100).toFixed(0);
+            var costOfBrick = parseFloat(Math.round(tonesOfBrick * 0.1859 * 100) / 100).toFixed(0);
 
             tonesOfTimber = parseFloat(Math.round(squareMeter * 18880 / 93 * 0.06 * 100) / 100).toFixed(0);
-            var costOfTimber = parseFloat(Math.round(tonesOfTimber * 5 * 100) / 100).toFixed(0);
+            var costOfTimber = parseFloat(Math.round(tonesOfTimber * 0.5 * 100) / 100).toFixed(0);
 
             tonesOfSand = parseFloat(Math.round(squareMeter * 164540 / 186 * 0.02 * 100) / 100).toFixed(0);
             var costOfSand = parseFloat(Math.round(tonesOfSand * 0.4 * 100) / 100).toFixed(0);
@@ -643,7 +643,6 @@
 
 
     //init the swiper
-
     var swiper = new Swiper('.swiper-container', {
 
         //speed between the different page
@@ -667,6 +666,7 @@
                 swiperAnimate(this);
             },
 
+            //start animation when transfer from page to page
             slideChangeTransitionEnd: function () {
                 swiperAnimate(this);
 
@@ -719,7 +719,7 @@
         }
 
         numberOfBuildingType = 0;
-    };
+    }
 </script>
 
 </html>

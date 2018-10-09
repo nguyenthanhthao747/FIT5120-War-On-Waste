@@ -783,3 +783,54 @@ nav ul li a {
   opacity: 1;
   right: 10px;
 }
+
+
+/*css for the error message in the search location page*/
+.popup {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 101;
+  width: 500px; /*Change your width here*/
+  height: 200px; /*Change your height here*/
+  margin: auto;
+}
+
+/* Popup Inner */
+.popup .popup-inner {
+  position: relative;
+  padding: 1em;
+}
+
+.popup .popup-inner input.s3-btn-close {
+  position: absolute;
+  top: -0.5em;
+  right: -0.5em;
+
+  background: black;
+  border: solid 2px white;
+  color: white;
+  cursor: pointer;
+
+  border-radius: 15px;
+
+  outline: none;
+}
+
+
+.overlay {
+  background:rgba(0,0,0,0.8);
+  opacity:0.8;
+  filter:alpha(opacity=80);
+  position:absolute;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  z-index:100;
+}
+
+
