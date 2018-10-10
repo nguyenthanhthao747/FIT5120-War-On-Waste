@@ -146,9 +146,9 @@
             </div>
 
             <!--add a drop down list to choose suburb-->
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-sm-12">
                 <div class="about-descr">
-                    <div class="intro-button mx-auto" style="right: 180px; bottom:5px;">
+                    <div class="intro-button mx-auto" style="text-align: center; bottom:5px;">
                         <select id="SuburbSelect" class="btn btn-primary btn-xl">
                             <option value="Southbank">Southbank</option>
                             <option value="Parkville">Parkville</option>
@@ -170,9 +170,12 @@
             </div>
         </div>
 
-        <div class="container" style="text-align: center">
-            <a class="transferButton" href="{% url 'WasteCalculator'%}"><span>Check our waste calculator!</span></a>
+        <div style="text-align: center">
+            <div class="col-sm-12" style="text-align: center">
+                <a class="transferButton" href="{% url 'WasteCalculator'%}"><span>Check our waste calculator!</span></a>
+            </div>
         </div>
+
     </div>
 </div>
 <!-- end section line chart -->

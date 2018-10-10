@@ -665,6 +665,13 @@ figure a{
   box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000;
 }
 
+@media (max-width: 400px){
+  .earth {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 .earth:after {
   position: absolute;
   content: "";
