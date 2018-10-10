@@ -152,7 +152,7 @@ p {
 
 .paddsection {
   padding-top: 90px;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
   /*padding-left: 40px;*/
 }
 
@@ -346,7 +346,7 @@ nav ul li a {
   width: 100%;
   height: auto;
   background: #f7f7f7;
-  padding-top: 90px;
+  padding-top: 70px;
 }
 
 #about1 {
@@ -404,7 +404,7 @@ nav ul li a {
 }
 
 #about1 .about-descr .separator {
-  max-width: 80%;
+  max-width: 100%;
   margin-bottom: 0;
   text-align: left;
 }

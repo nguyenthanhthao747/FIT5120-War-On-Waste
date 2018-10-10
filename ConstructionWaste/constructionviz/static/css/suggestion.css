@@ -6,16 +6,20 @@
     position: relative;
     padding: 286px 0 0;
 }
+
 .portfolios .container{
     position: relative;
     z-index: 99;
 }
+
 .portfolios .sectionTitle{
     margin-bottom: 50px;
 }
+
 .portfolios #folioGrid1{
     overflow: visible !important;
 }
+
 .folioNav{
     width: 100%;
     text-align: center;
@@ -23,12 +27,14 @@
     margin-bottom: 82px;
     line-height: .8;
 }
+
 .folioNav ul{
     margin: 0px;
     padding: 0px;
     width: 100%;
     line-height: .8;
 }
+
 .folioNav ul li{
     display: inline-block;
     line-height: .8;
@@ -40,7 +46,7 @@
     color: #999;
     padding: 0 7px 20px;
     cursor: pointer;
-    margin-right: 56px;
+    /*margin-right: 56px;*/
     position: relative;
     transition: all ease 400ms;
     -moz-transition: all ease 400ms;
@@ -48,9 +54,17 @@
     -ms-transition: all ease 400ms;
     -o-transition: all ease 400ms;
 }
+
+@media (max-width: 400px) {
+    .folioNav ul li{
+        font-size: 10px;
+    }
+}
+
 .folioNav ul li:last-child{
     margin-right: 0px;
 }
+
 .folioNav ul li:after{
     width: 0%;
     position: absolute;
@@ -182,6 +196,12 @@
     font-weight: 700;
     letter-spacing: 2px;
     line-height: .8;
+}
+
+@media (max-width: 400px) {
+    .folioNav2 ul li{
+        letter-spacing: 0px;
+    }
 }
 .folioNav2 ul li:after{
     background: #b89840;
@@ -456,7 +476,7 @@
     width: 100%;
 }
 .callToAction:after{
-    background: rgba(0, 0, 0, 0) url("../images/bg/8.jpg") no-repeat scroll center top;
+    /*background: rgba(0, 0, 0, 0) url("../images/bg/8.jpg") no-repeat scroll center top;*/
     content: "";
     height: 100%;
     left: 0;
@@ -694,6 +714,8 @@
     background-color: transparent;
 }
 
+
+
 .portfolio-modal .close-modal:hover {
     opacity: 0.3;
 }
@@ -721,4 +743,30 @@
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
     background-color: #212529;
+}
+
+/*use the style when windoe size smaller than 400px*/
+@media (max-width: 400px) {
+    .portfolio-modal .close-modal {
+
+        width: 50px;
+        height: 50px;
+
+    }
+
+    .portfolio-modal .close-modal .lr {
+        /* Safari and Chrome */
+        z-index: 1051;
+        width: 1px;
+        height: 50px;
+        margin-left: 35px;
+    }
+
+    .portfolio-modal .close-modal .lr .rl {
+        /* Safari and Chrome */
+        z-index: 1052;
+        width: 1px;
+        height: 50px;
+    }
+
 }
