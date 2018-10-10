@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="30113fc2-7b8b-4d20-b171-af9fe124edda" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/suggestion.css" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/suggestion.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/suggestions.html" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/suggestions.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -157,33 +154,33 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="1427" />
+          <entry key="css" value="1496" />
           <entry key="html" value="6467" />
           <entry key="js" value="198" />
-          <entry key="txt" value="493" />
+          <entry key="txt" value="537" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1427" />
+          <entry key="CSS" value="1496" />
           <entry key="HTML" value="6467" />
           <entry key="JavaScript" value="198" />
-          <entry key="PLAIN_TEXT" value="493" />
+          <entry key="PLAIN_TEXT" value="537" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="24" />
-          <entry key="HTML" value="26" />
+          <entry key="CSS" value="27" />
+          <entry key="HTML" value="27" />
           <entry key="Image" value="2" />
           <entry key="JavaScript" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="24" />
-          <entry key="html" value="26" />
+          <entry key="css" value="27" />
+          <entry key="html" value="27" />
           <entry key="jpg" value="1" />
           <entry key="js" value="10" />
           <entry key="png" value="1" />
@@ -194,11 +191,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/suggestions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+            <state relative-caret-position="-337">
+              <caret line="82" column="26" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#4;n#div#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -208,19 +205,53 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css">
+        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/about.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9844">
-              <caret line="803" column="27" selection-start-line="803" selection-start-column="27" selection-end-line="803" selection-end-column="27" />
+            <state relative-caret-position="-899" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3114">
+              <caret line="173" column="42" lean-forward="true" selection-start-line="173" selection-start-column="42" selection-end-line="173" selection-end-column="42" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/suggestion.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="201" column="21" lean-forward="true" selection-start-line="201" selection-start-column="21" selection-end-line="201" selection-end-column="21" />
+            <state relative-caret-position="216">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="12060">
+              <caret line="670" column="18" lean-forward="true" selection-start-line="670" selection-start-column="18" selection-end-line="670" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
@@ -236,10 +267,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>invalid</find>
-      <find>errorInput</find>
-      <find>i</find>
-      <find>markerValue3</find>
       <find>onload_map</find>
       <find>back butt</find>
       <find>font-fa</find>
@@ -266,6 +293,10 @@
       <find>SuburbSelect</find>
       <find>btn-xl</find>
       <find>intro-button</find>
+      <find>ul li</find>
+      <find>comonSection</find>
+      <find>body</find>
+      <find>folioGrid2</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -346,6 +377,14 @@
               <item name="FIT5120-War-On-Waste" type="462c0819:PsiDirectoryNode" />
               <item name="ConstructionWaste" type="462c0819:PsiDirectoryNode" />
               <item name="constructionviz" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FIT5120-War-On-Waste" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FIT5120-War-On-Waste" type="462c0819:PsiDirectoryNode" />
+              <item name="ConstructionWaste" type="462c0819:PsiDirectoryNode" />
+              <item name="constructionviz" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -383,28 +422,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/ConstructionWaste/__pycache__/__init__.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/ConstructionWaste/__pycache__/settings.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/ConstructionWaste/__pycache__/urls.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/ConstructionWaste/__pycache__/wsgi.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/ConstructionWaste/settings.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/__pycache__/__init__.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/__pycache__/admin.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/__pycache__/models.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/__pycache__/urls.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/__pycache__/views.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/migrations/__pycache__/0001_initial.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/migrations/__pycache__/0002_auto_20180825_1012.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/migrations/__pycache__/0003_auto_20180825_1124.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/migrations/__pycache__/__init__.cpython-36.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/js/theme.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/SearchLocation.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/about.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/suggestions.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/views.py</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -412,20 +429,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/calculator-accommodation.jpeg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/calculator-hotel.jpeg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/calculator-residential.jpeg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/calculatorBuilding-hospital.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/calculatorBuilding-house.jpeg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/calculatorBuilding-school.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/p1.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/p2.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/p3.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/p4.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/p5.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/p6.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/static/img/timberCard.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/business-casual.css</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -433,6 +436,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/business-casual.css</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -548,7 +552,7 @@
       <workItem from="1538209996999" duration="15979000" />
       <workItem from="1538358982487" duration="1321000" />
       <workItem from="1538477375572" duration="8423000" />
-      <workItem from="1538788578133" duration="20456000" />
+      <workItem from="1538788578133" duration="23425000" />
     </task>
     <task id="LOCAL-00001" summary="change the font size">
       <created>1537084931362</created>
@@ -655,11 +659,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539150783486</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="suggestion pofilo nav changed">
+      <created>1539165613243</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1539165613243</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129216000" />
+    <option name="totallyTimeSpent" value="132185000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -733,7 +744,8 @@
     <MESSAGE value="add comments for calculator" />
     <MESSAGE value="change the popup message in map page" />
     <MESSAGE value="statistic page smaller size finish, calculator earth finish, map popup finish" />
-    <option name="LAST_COMMIT_MESSAGE" value="statistic page smaller size finish, calculator earth finish, map popup finish" />
+    <MESSAGE value="suggestion pofilo nav changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="suggestion pofilo nav changed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/ConstructionWaste/urls.py">
@@ -830,13 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1137">
-          <caret line="670" column="18" lean-forward="true" selection-start-line="670" selection-start-column="18" selection-end-line="670" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/WasteCalculator.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
@@ -873,14 +878,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9844">
-          <caret line="803" column="27" selection-start-line="803" selection-start-column="27" selection-end-line="803" selection-end-column="27" />
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/business-casual.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12060">
+          <caret line="670" column="18" lean-forward="true" selection-start-line="670" selection-start-column="18" selection-end-line="670" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/statistics.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
+        <state relative-caret-position="3114">
           <caret line="173" column="42" lean-forward="true" selection-start-line="173" selection-start-column="42" selection-end-line="173" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -894,21 +906,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/suggestion.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/about.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-899" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/templates/suggestions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+        <state relative-caret-position="-337">
+          <caret line="82" column="26" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#div#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConstructionWaste/constructionviz/static/css/suggestion.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="201" column="21" lean-forward="true" selection-start-line="201" selection-start-column="21" selection-end-line="201" selection-end-column="21" />
         </state>
       </provider>
     </entry>
