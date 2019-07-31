@@ -83,6 +83,13 @@
             <!--height: 400px;-->
         <!--}-->
     <!--</style>-->
+
+<link href="http://cdn.pydata.org/bokeh/release/bokeh-1.3.1.min.css" rel="stylesheet" type="text/css"/>
+ <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.1.min.css" rel="stylesheet" type="text/css">
+ <script src="http://cdn.pydata.org/bokeh/release/bokeh-1.3.1.min.js"></script>
+ <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.1.min.js"></script>
+ {{ chart.plot_script | safe }}
+
 </head>
 <body>
 <!-- start section navbar -->
@@ -124,6 +131,8 @@
     </div>
 </div>
 <!-- end section map visual -->
+
+{{ chart.plot_div | safe }}
 
 
 <!-- start section line chart -->

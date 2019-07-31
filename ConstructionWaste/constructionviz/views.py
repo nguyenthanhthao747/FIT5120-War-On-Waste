@@ -7,41 +7,66 @@ from django.db import connection
 from django.http import Http404
 from django.contrib.auth.decorators import login_required
 
+# chart library bokeh
+from django.shortcuts import render, render_to_response
+from bokeh.plotting import figure, output_file, show
+from bokeh.embed import components
+
 import json
 import ast # for parsinf list from string list '[13, 12]'
 
 #view for home page
-#@login_required
+@login_required
 def suggestions(request):
     return render(request, 'suggestions.html')
 
 #view for home page
-#@login_required
+@login_required
 def home(request):
     return render(request, 'index.html')
 
 #view for search location
-#@login_required
+@login_required
 def search_location(request):
     return render(request, 'searchLocation.html')
 
 #view for statistics page
-#@login_required
+@login_required
 def statistics(request):
-    return render(request, 'statistics.html')
+    x = [1,2,3,4,5]
+    y = [1,2,3,4,5]
+
+
+    if "filter1" in request.GET:
+        print("uganda", request.GET["filter1"])
+
+    #setup graph plot for displaying line chart
+    plot = figure(title = 'Line Graph bokeh', x_axis_label='X-Axis', y_axis_label='Y-Axis', plot_width=400, plot_height=400)
+
+    #plot line chart
+    plot.line(x,y,line_width=2)
+
+    #store components
+    script,div = components(plot)
+
+    dict_obect = {}
+    dict_obect["plot_script"] = script
+    dict_obect["plot_div"] = div
+
+    return render(request, 'statistics.html', {"chart": dict_obect})
 
 #view for about page
-#@login_required
+@login_required
 def about(request):
     return render(request, 'about.html')
 
 #view for calculator
-#@login_required
+@login_required
 def waste_calculator(request):
     return render(request, 'WasteCalculator.html')
 
 #view for test the website
-#@login_required
+@login_required
 def test_json(request):
 
     dict_obect = {}
@@ -49,7 +74,7 @@ def test_json(request):
     dict_obect["test_object"] = "Hello World"
     return render(request, 'home.html', {'object': dict_obect})
 
-#@login_required
+@login_required
 def detail(request, area):
     try:
         sql_str = f"""select year_completed,
@@ -112,7 +137,7 @@ def detail(request, area):
     #return render(request, 'pet_detail.html', {'construction': construction})
 
 #function to get the data for map chart
-#@login_required
+@login_required
 def get_json_data(request, year):
 
     dict_data = {}
@@ -182,7 +207,7 @@ def get_json_data(request, year):
 
 
 #function to get all the location for search page
-#@login_required
+@login_required
 def get_all_locations(request):
 
     dict_data = {}
@@ -222,7 +247,7 @@ def get_all_locations(request):
         raise Http404('Construction not found')
 
 #function to search locations
-#@login_required
+@login_required
 def search_locations(request, type, longi, latti):
     dict_data = {}
     dict_data["result"] = []
